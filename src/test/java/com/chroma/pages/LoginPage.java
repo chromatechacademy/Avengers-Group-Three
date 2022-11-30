@@ -13,10 +13,13 @@ public class LoginPage extends PageInitializer {
     // NullPointerException
     @FindBy(xpath = "//input[@placeholder='Username']")
     public WebElement usernameTextBox;
+    //username text box
     @FindBy(xpath = "//input[@placeholder='Password']")
     public WebElement passwordTextBox;
+    //password text box
     @FindBy(xpath = "//button[normalize-space()='Sign In']")
     public WebElement signInBtn;
+    //sign in button
 
     public LoginPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);

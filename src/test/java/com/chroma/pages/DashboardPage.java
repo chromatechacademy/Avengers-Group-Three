@@ -11,6 +11,7 @@ public class DashboardPage extends PageInitializer {
     //used a simple xpath for a boolean
     @FindBy(xpath = "//span[normalize-space()='Chroma Tech Academy']")
     public WebElement textBox;
+    //boolean 
 
     public DashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);

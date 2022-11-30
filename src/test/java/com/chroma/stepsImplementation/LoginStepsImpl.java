@@ -11,8 +11,10 @@ public class LoginStepsImpl extends PageInitializer {
     public static void login(String username, String password) throws IOException {
         loginPage.usernameTextBox.sendKeys(username);
         loginPage.passwordTextBox.sendKeys(password);
+        //constructor for username and password
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
+        //methods for both reports
         loginPage.signInBtn.click();
 
     }

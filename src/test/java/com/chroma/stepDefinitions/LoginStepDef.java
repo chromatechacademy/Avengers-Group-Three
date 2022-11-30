@@ -29,6 +29,7 @@ public class LoginStepDef {
     @When("user logs with valid username {string} and password {string}")
     public void user_logs_with_valid_username_and_password(String username, String password) throws IOException {
         LoginStepsImpl.login(username, password);
+        // cleaner code for username and password
 
     }
 
@@ -38,6 +39,7 @@ public class LoginStepDef {
         Assert.assertTrue(isChromaTextDisplayed);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
+        // screenshots for both reports
 
     }
 }
