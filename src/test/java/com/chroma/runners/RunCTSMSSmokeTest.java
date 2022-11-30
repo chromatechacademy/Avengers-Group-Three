@@ -1,10 +1,7 @@
 package com.chroma.runners;
-
 import org.junit.runner.RunWith;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
-
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = { "html:target/html-reports/cucumber-default-report", "json:target/cucumber.json",
 		"junit:target/cucumber.xml", "rerun:target/failed.txt",
@@ -17,6 +14,7 @@ import cucumber.api.junit.Cucumber;
 		strict = true
 )
 
-public class RunCTSMSSmokeTest {
-    
+
+public class RunCTSMSSmokeTest {   
+
 }
