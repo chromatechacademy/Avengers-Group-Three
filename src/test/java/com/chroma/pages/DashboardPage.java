@@ -7,10 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.web.WebDriverUtils;
 
-public class DashboardPage extends PageInitializer{
+public class DashboardPage extends PageInitializer {
+    //used a simple xpath for a boolean
     @FindBy(xpath = "//span[normalize-space()='Chroma Tech Academy']")
     public WebElement textBox;
-    public DashboardPage(){
+
+    public DashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 }

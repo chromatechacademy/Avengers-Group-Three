@@ -1,4 +1,5 @@
 package com.chroma.appsCommon;
+
 import com.chroma.pages.DashboardPage;
 import com.chroma.pages.LoginPage;
 import com.chroma.pages.SamplePage;
@@ -16,7 +17,7 @@ public class PageInitializer extends WebDriverUtils {
 
         samplePage = new SamplePage();
         loginPage = new LoginPage();
-        dashboardPage =new DashboardPage();
+        dashboardPage = new DashboardPage();
 
     }
 
