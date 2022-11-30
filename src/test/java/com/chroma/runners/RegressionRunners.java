@@ -16,7 +16,6 @@ import cucumber.api.junit.Cucumber;
 		monochrome = true, 
 		strict = true
 )
-
-public class Runners {
+public class RegressionRunners {
     
 }
