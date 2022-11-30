@@ -28,8 +28,8 @@ public class LoginStepDef {
 
     @When("user logs with valid username {string} and password {string}")
     public void user_logs_with_valid_username_and_password(String username, String password) throws IOException {
-        LoginStepsImpl.login(username, password);
         // cleaner code for username and password
+        LoginStepsImpl.login(username, password);
 
     }
 
@@ -37,9 +37,9 @@ public class LoginStepDef {
     public void user_is_navigated_to_the_dashboard_page() {
         boolean isChromaTextDisplayed = dashboardPage.textBox.isDisplayed();
         Assert.assertTrue(isChromaTextDisplayed);
+        // screenshots for both reports
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-        // screenshots for both reports
 
     }
 }

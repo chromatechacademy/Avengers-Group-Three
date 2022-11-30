@@ -9,12 +9,13 @@ public class LoginStepsImpl extends PageInitializer {
     // Add step implementation methods in this class
     // NOTE: Every step implementation class Extends PageInitializer
     public static void login(String username, String password) throws IOException {
+        // constructor for username and password
         loginPage.usernameTextBox.sendKeys(username);
         loginPage.passwordTextBox.sendKeys(password);
-        //constructor for username and password
+        // methods for both reports
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-        //methods for both reports
+
         loginPage.signInBtn.click();
 
     }

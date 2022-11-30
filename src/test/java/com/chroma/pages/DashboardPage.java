@@ -8,10 +8,10 @@ import com.chroma.appsCommon.PageInitializer;
 import com.chroma.web.WebDriverUtils;
 
 public class DashboardPage extends PageInitializer {
-    //used a simple xpath for a boolean
+    // used a simple xpath for a boolean
+    // Chroma Tech Academy text box
     @FindBy(xpath = "//span[normalize-space()='Chroma Tech Academy']")
     public WebElement textBox;
-    //boolean 
 
     public DashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);

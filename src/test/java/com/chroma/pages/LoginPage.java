@@ -11,15 +11,16 @@ import com.chroma.web.WebDriverUtils;
 public class LoginPage extends PageInitializer {
     // Use a constructor to initialize all page elements, else you will get a
     // NullPointerException
+
+    // username text box
     @FindBy(xpath = "//input[@placeholder='Username']")
     public WebElement usernameTextBox;
-    //username text box
+    // password text box
     @FindBy(xpath = "//input[@placeholder='Password']")
     public WebElement passwordTextBox;
-    //password text box
+    // sign in button
     @FindBy(xpath = "//button[normalize-space()='Sign In']")
     public WebElement signInBtn;
-    //sign in button
 
     public LoginPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
