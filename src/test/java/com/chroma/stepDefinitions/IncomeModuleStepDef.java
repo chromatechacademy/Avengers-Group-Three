@@ -26,6 +26,6 @@ public class IncomeModuleStepDef {
 
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
-
     }
 }
+
