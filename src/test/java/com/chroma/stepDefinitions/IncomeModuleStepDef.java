@@ -1,12 +1,8 @@
 package com.chroma.stepDefinitions;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
-
 import com.chroma.pages.DashboardPage;
 import com.chroma.utils.CucumberLogUtils;
-import com.chroma.web.WebDriverUtils;
-
 import cucumber.api.java.en.Then;
 
 public class IncomeModuleStepDef {
