@@ -17,8 +17,9 @@ import cucumber.api.java.en.When;
 // NOTE: Every step definitions class Extends PageInitializer
 
 public class LoginStepDef {
-    LoginPage loginPage = new LoginPage();
-    DashboardPage dashboardPage = new DashboardPage();
+
+    public LoginPage loginPage = new LoginPage();
+    public DashboardPage dashboardPage = new DashboardPage();
 
     @Given("a user is on the CTSMS login page {string}")
     public void a_user_is_on_the_CTSMS_login_page(String url) {
@@ -41,5 +42,16 @@ public class LoginStepDef {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
 
+    }
+
+    @Then("message {string} displays")
+    public void message_displays(String invalidLoginMessage) {
+      boolean isErrorDisplayed = loginPage.invalidLoginMessage.getText().contentEquals(invalidLoginMessage);
+       Assert.assertTrue(isErrorDisplayed);
+
+       CucumberLogUtils.logScreenShot();
+       CucumberLogUtils.logExtentScreenshot();
+       
+       
     }
 }
