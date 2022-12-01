@@ -7,6 +7,7 @@ import com.chroma.web.CommonUtils;
 public class StudentInformationModulSpetsImpl {
     /**
      * Method for Assert Student Info Module
+     * 
      * @param studentDetails
      * @param studentAdmission
      * @param disabledStudents
@@ -15,11 +16,9 @@ public class StudentInformationModulSpetsImpl {
      * @param studentHouse
      * @param disableReason
      */
-
-
     public static void AssertStudentInfoModule(String studentDetails, String studentAdmission,
-    String disabledStudents, String bulkDelete, String studentCategories, String studentHouse,
-    String disableReason) {
+            String disabledStudents, String bulkDelete, String studentCategories, String studentHouse,
+            String disableReason) {
         CommonUtils.sleep(3000);
 
         String actualStudentDetails = DashboardPage.dynamicXpathForSubModule(studentDetails).getText();
@@ -46,10 +45,5 @@ public class StudentInformationModulSpetsImpl {
         // screenshots for both reports
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-
-
-
     }
-    
 }
-

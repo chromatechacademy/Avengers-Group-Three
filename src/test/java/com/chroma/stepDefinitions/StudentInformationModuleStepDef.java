@@ -18,16 +18,14 @@ public class StudentInformationModuleStepDef extends PageInitializer {
     @When("user clicks on {string}")
     public void user_clicks_on(String string) throws InterruptedException {
         dashboardPage.studentInfoBtn.click();
-        CommonUtils.sleep(3000);    
+        CommonUtils.sleep(3000);
     }
 
     @Then("user is able to see links displayed {string}, {string}, {string}, {string}, {string}, {string}, {string}")
     public void user_is_able_to_see_links_displayed(String studentDetails, String studentAdmission,
             String disabledStudents, String bulkDelete, String studentCategories, String studentHouse,
             String disableReason) {
-
         StudentInformationModulSpetsImpl.AssertStudentInfoModule(studentDetails, studentAdmission, disabledStudents,
                 bulkDelete, studentCategories, studentHouse, disableReason);
     }
-
 }
