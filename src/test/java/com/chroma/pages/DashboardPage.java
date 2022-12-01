@@ -14,6 +14,11 @@ public class DashboardPage extends PageInitializer {
     @FindBy(xpath = "//span[normalize-space()='Chroma Tech Academy']")
     public WebElement dashBoardChromaTechText;
 
+    // Student Information Module Btn
+    @FindBy(xpath = "//i[@class = 'fa fa-user-plus ftlayer']")
+    public WebElement studentInfoBtn;
+
+
     /**
      * Use this method to locate modules
      * 

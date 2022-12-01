@@ -1,10 +1,7 @@
 package com.chroma.stepDefinitions;
 
-import org.openqa.selenium.By;
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.pages.DashboardPage;
-import com.chroma.utils.CucumberLogUtils;
-import com.chroma.web.CommonUtils;
+import com.chroma.stepsImplementation.StudentInformationModulSpetsImpl;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -20,10 +17,8 @@ public class StudentInformationModuleStepDef extends PageInitializer {
 
     @When("user clicks on {string}")
     public void user_clicks_on(String string) throws InterruptedException {
-        // JavascriptUtils.clickByJS(WebDriverUtils.driver.findElement(By.xpath("//span[normalize-space()='Student
-        // Information']")));
-        WebDriverUtils.driver.findElement(By.xpath("//span[normalize-space()='Student Information']")).click();
-        Thread.sleep(2000);
+       dashboardPage.studentInfoBtn.click();
+         Thread.sleep(2000);
 
     }
 
@@ -32,32 +27,7 @@ public class StudentInformationModuleStepDef extends PageInitializer {
             String disabledStudents, String bulkDelete, String studentCategories, String studentHouse,
             String disableReason) {
 
-        CommonUtils.sleep(3000);
-
-        String actualStudentDetails = DashboardPage.dynamicXpathForSubModule(studentDetails).getText();
-        CommonUtils.assertEquals(studentDetails, actualStudentDetails);
-
-        String actualStudentAdmission = DashboardPage.dynamicXpathForSubModule(studentAdmission).getText();
-        CommonUtils.assertEquals(studentAdmission, actualStudentAdmission);
-
-        String actualDisableStudents = DashboardPage.dynamicXpathForSubModule(disabledStudents).getText();
-        CommonUtils.assertEquals(disabledStudents, actualDisableStudents);
-
-        String actualBulkDelete = DashboardPage.dynamicXpathForSubModule(bulkDelete).getText();
-        CommonUtils.assertEquals(bulkDelete, actualBulkDelete);
-
-        String actualStudentCategories = DashboardPage.dynamicXpathForSubModule(studentCategories).getText();
-        CommonUtils.assertEquals(studentCategories, actualStudentCategories);
-
-        String actualStudentHouse = DashboardPage.dynamicXpathForSubModule(studentHouse).getText();
-        CommonUtils.assertEquals(studentHouse, actualStudentHouse);
-
-        String actualDisableReason = DashboardPage.dynamicXpathForSubModule(disableReason).getText();
-        CommonUtils.assertEquals(disableReason, actualDisableReason);
-
-        // screenshots for both reports
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+       StudentInformationModulSpetsImpl.AssertStudentInfoModule(studentDetails, studentAdmission, disabledStudents, bulkDelete, studentCategories, studentHouse, disableReason);
 
     }
 
