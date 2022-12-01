@@ -2,8 +2,6 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.utils.CucumberLogUtils;
-
-
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -14,7 +12,7 @@ public class Hooks extends PageInitializer {
     public void start(Scenario scenario) {
         CucumberLogUtils.scenario = scenario;
         setUp();
-        initializeAllPages(); 
+        initializeAllPages();
     }
 
     @After
