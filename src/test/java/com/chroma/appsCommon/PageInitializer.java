@@ -7,14 +7,11 @@ import com.chroma.web.WebDriverUtils;
 
 public class PageInitializer extends WebDriverUtils {
 
-    // Sample of instantiating an instance
-
     public static SamplePage samplePage;
     public static LoginPage loginPage;
     public static DashboardPage dashboardPage;
 
     public void initializeAllPages() {
-
         samplePage = new SamplePage();
         loginPage = new LoginPage();
         dashboardPage = new DashboardPage();
