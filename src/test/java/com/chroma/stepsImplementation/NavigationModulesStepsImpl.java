@@ -2,68 +2,61 @@ package com.chroma.stepsImplementation;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.DashboardPage;
+import com.chroma.web.CommonUtils;
 
 import org.testng.Assert;
 
 public class NavigationModulesStepsImpl extends PageInitializer {
-    // Add step implementation methods in this class
-    // NOTE: Every step implementation class Extends PageInitializer{
+        // Add step implementation methods in this class
+        // NOTE: Every step implementation class Extends PageInitializer{
 
-    /**
-     * Method for Assert Navigation Modules
-     * 
-     * @param studentInformation
-     * @param feesCollection
-     * @param income
-     * @param expenses
-     * @param academics
-     * @param humanResource
-     * @param homework
-     * @param reports
-     */
-    public static void AssertNavigationModules(String studentInformation, String feesCollection, String income,
-            String expenses, String academics, String humanResource, String homework, String reports) {
+        /**
+         * Method for Assert Navigation Modules
+         * 
+         * @param studentInformation
+         * @param feesCollection
+         * @param income
+         * @param expenses
+         * @param academics
+         * @param humanResource
+         * @param homework
+         * @param reports
+         */
+        public static void AssertNavigationModules(String studentInformation, String feesCollection, String income,
+                        String expenses, String academics, String humanResource, String homework, String reports) {
 
-        boolean isStudentInformarionDisplayed = DashboardPage.dynamicXpathForModule(studentInformation)
-                .getText().contentEquals(studentInformation);
+                String actualStudentInformationText = DashboardPage.dynamicXpathForModule(studentInformation)
+                                .getText();
+                CommonUtils.assertEquals(studentInformation, actualStudentInformationText);
 
-        Assert.assertTrue(isStudentInformarionDisplayed);
+                String actualFeesCollectionText = DashboardPage.dynamicXpathForModule(feesCollection)
+                                .getText();
+                CommonUtils.assertEquals(feesCollection, actualFeesCollectionText);
 
-        boolean isFeesCollectionInformarionDisplayed = DashboardPage.dynamicXpathForModule(feesCollection)
-                .getText().contentEquals(feesCollection);
+                String actualIncomeInformarionText = DashboardPage.dynamicXpathForModule(income)
+                                .getText();
+                CommonUtils.assertEquals(income, actualIncomeInformarionText);
 
-        Assert.assertTrue(isFeesCollectionInformarionDisplayed);
+                String actualExpensesInformarionText = DashboardPage.dynamicXpathForModule(expenses)
+                                .getText();
+                CommonUtils.assertEquals(expenses, actualExpensesInformarionText);
 
-        boolean isIncomeInformarionDisplayed = DashboardPage.dynamicXpathForModule(income)
-                .getText().contentEquals(income);
+                String actualAcademicsInformarionText = DashboardPage.dynamicXpathForModule(academics)
+                                .getText();
+                CommonUtils.assertEquals(academics, actualAcademicsInformarionText);
 
-        Assert.assertTrue(isIncomeInformarionDisplayed);
+                String actualHumanResourseInformarionText = DashboardPage.dynamicXpathForModule(humanResource)
+                                .getText();
+                CommonUtils.assertEquals(humanResource, actualHumanResourseInformarionText);
 
-        boolean isExpensesInformarionDisplayed = DashboardPage.dynamicXpathForModule(expenses)
-                .getText().contentEquals(expenses);
+                String actualHomeworkInformarionText = DashboardPage.dynamicXpathForModule(homework)
+                                .getText();
+                CommonUtils.assertEquals(homework, actualHomeworkInformarionText);
 
-        Assert.assertTrue(isExpensesInformarionDisplayed);
+                String actualReportsInformarionText = DashboardPage.dynamicXpathForModule(reports)
+                                .getText();
+                CommonUtils.assertEquals(reports, actualReportsInformarionText);
 
-        boolean isAcademicsInformarionDisplayed = DashboardPage.dynamicXpathForModule(academics)
-                .getText().contentEquals(academics);
-
-        Assert.assertTrue(isAcademicsInformarionDisplayed);
-
-        boolean isHumanResourseInformarionDisplayed = DashboardPage.dynamicXpathForModule(humanResource)
-                .getText().contentEquals(humanResource);
-
-        Assert.assertTrue(isHumanResourseInformarionDisplayed);
-
-        boolean isHomeworkInformarionDisplayed = DashboardPage.dynamicXpathForModule(homework)
-                .getText().contentEquals(homework);
-
-        Assert.assertTrue(isHomeworkInformarionDisplayed);
-
-        boolean isReportsInformarionDisplayed = DashboardPage.dynamicXpathForModule(reports)
-                .getText().contentEquals(reports);
-
-        Assert.assertTrue(isReportsInformarionDisplayed);
-
-    }
+        }
 
 }
