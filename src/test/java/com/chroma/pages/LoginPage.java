@@ -34,7 +34,6 @@ public class LoginPage extends PageInitializer {
     @FindBy(xpath = "//div[@class='alert alert-danger']")
     public WebElement invalidLoginMessage;
 
-
     public LoginPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
