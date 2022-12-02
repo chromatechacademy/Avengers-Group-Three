@@ -1,7 +1,7 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.pages.StudentDetailsPage;
+import com.chroma.pages.EditStudentPage;
 import com.chroma.stepsImplementation.EditStudentRecordsImpl;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
@@ -14,7 +14,7 @@ public class EditStudentRecordsStepDef extends PageInitializer {
                         String studentDetails, String sdet, String databaseTesting) {
 
                 EditStudentRecordsImpl.NavigationToRecord(studentDetails, sdet, databaseTesting);
-                StudentDetailsPage.editStudentRecordBtn.click();
+                EditStudentPage.editStudentRecordBtn.click();
 
         }
 
@@ -29,7 +29,7 @@ public class EditStudentRecordsStepDef extends PageInitializer {
         @Then("user is able to see Record Update Successfully information")
         public void user_is_able_to_see_Record_Update_Successfully_information() {
 
-                boolean resultsForRecordUpdateSuccessfulyAppears = StudentDetailsPage.resultsForRecordUpdateSuccessfuly
+                boolean resultsForRecordUpdateSuccessfulyAppears = EditStudentPage.resultsForRecordUpdateSuccessfuly
                                 .isDisplayed();
                 CommonUtils.assertTrue(resultsForRecordUpdateSuccessfulyAppears);
                 CucumberLogUtils.logExtentScreenshot();
@@ -43,14 +43,14 @@ public class EditStudentRecordsStepDef extends PageInitializer {
 
                 EditStudentRecordsImpl.NavigationToRecord(studentDetails, sdet, databaseTesting);
                 CommonUtils.sleep(3000);
-                CommonUtils.scrollIntoView(StudentDetailsPage.bloodAOption);
+                CommonUtils.scrollIntoView(EditStudentPage.bloodAOption);
                 CommonUtils.sleep(3000);
         }
 
         @Then("the changed information is displayed")
         public void the_changed_information_is_displayed() {
 
-                boolean resultsForChangedIngormationAppear = StudentDetailsPage.bloodAOption.isDisplayed();
+                boolean resultsForChangedIngormationAppear = EditStudentPage.bloodAOption.isDisplayed();
                 CommonUtils.assertTrue(resultsForChangedIngormationAppear);
                 CucumberLogUtils.logExtentScreenshot();
                 CucumberLogUtils.logScreenShot();

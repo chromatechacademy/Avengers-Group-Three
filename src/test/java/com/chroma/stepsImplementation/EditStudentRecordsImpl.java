@@ -1,11 +1,10 @@
 package com.chroma.stepsImplementation;
 
 import org.openqa.selenium.support.ui.Select;
-
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.BulkDeletePage;
 import com.chroma.pages.DashboardPage;
-import com.chroma.pages.StudentDetailsPage;
+import com.chroma.pages.EditStudentPage;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 
@@ -22,12 +21,12 @@ public class EditStudentRecordsImpl extends PageInitializer {
     public static void NavigationToRecord(String studentDetails, String sdet, String databaseTesting) {
 
         DashboardPage.dynamicXpathForSubModuleWithSpace(studentDetails).click();
-        Select classIdDropDown = new Select(StudentDetailsPage.classDropDown);
+        Select classIdDropDown = new Select(EditStudentPage.classDropDown);
         classIdDropDown.selectByVisibleText(sdet);
-        Select sectionIdDropDown = new Select(StudentDetailsPage.sectionDropDown);
+        Select sectionIdDropDown = new Select(EditStudentPage.sectionDropDown);
         sectionIdDropDown.selectByVisibleText(databaseTesting);
-        StudentDetailsPage.searchBarBtn.click();
-        StudentDetailsPage.studentRecordBtn.click();
+        EditStudentPage.searchBarBtn.click();
+        EditStudentPage.studentRecordBtn.click();
 
     }
 
@@ -43,11 +42,11 @@ public class EditStudentRecordsImpl extends PageInitializer {
             String databaseTesting) {
 
         DashboardPage.dynamicXpathForSubModuleWithSpace(bulkDelete).click();
-        Select classIdDropDown = new Select(StudentDetailsPage.classDropDown);
+        Select classIdDropDown = new Select(EditStudentPage.classDropDown);
         classIdDropDown.selectByVisibleText(sdet);
-        Select sectionIdDropDown = new Select(StudentDetailsPage.sectionDropDown);
+        Select sectionIdDropDown = new Select(EditStudentPage.sectionDropDown);
         sectionIdDropDown.selectByVisibleText(databaseTesting);
-        StudentDetailsPage.searchBarBtn.click();
+        EditStudentPage.searchBarBtn.click();
         CommonUtils.sleep(2000);
         BulkDeletePage.dynamicXpathForCheckBoxInBulkDelete(marleneFishen).click();
         CommonUtils.sleep(2000);
@@ -59,9 +58,10 @@ public class EditStudentRecordsImpl extends PageInitializer {
 
     public static void BloodInfoChanging(String aGroup) {
 
-        Select bloodGroupDropDown = new Select(StudentDetailsPage.bloodGroupDropDown);
+        Select bloodGroupDropDown = new Select(EditStudentPage.bloodGroupDropDown);
         bloodGroupDropDown.selectByVisibleText(aGroup);
-        CommonUtils.scrollIntoView(StudentDetailsPage.saveChangesBnt);
-        StudentDetailsPage.saveChangesBnt.click();
+        CommonUtils.scrollIntoView(EditStudentPage.saveChangesBnt);
+        EditStudentPage.saveChangesBnt.click();
+
     }
 }
