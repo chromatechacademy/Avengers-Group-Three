@@ -10,7 +10,6 @@ import org.testng.Assert;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.DashboardPage;
-import com.chroma.pages.StudentAdmissionForEditPage;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 
@@ -25,7 +24,6 @@ public class EditStudentRecordsStepDef extends PageInitializer {
         DashboardPage.dynamicXpathForModule(studentInformation).click();
         DashboardPage.dynamicXpathForSubModule(studentAdmission).click();
 
-       
         WebDriverUtils.driver.findElement(By.xpath("//input[@name='admission_no']")).sendKeys("77777");
 
         Select classIdDropDown = new Select(driver.findElement(By.xpath("//select[@name='class_id']")));

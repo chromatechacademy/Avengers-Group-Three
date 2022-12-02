@@ -15,6 +15,7 @@ public class PageInitializer extends WebDriverUtils {
         samplePage = new SamplePage();
         loginPage = new LoginPage();
         dashboardPage = new DashboardPage();
+
     }
 
 }
