@@ -26,7 +26,6 @@ public class EditStudentRecordsImpl extends PageInitializer {
         sectionIdDropDown.selectByVisibleText(databaseTesting);
         editStudentPage.searchBarBtn.click();
         editStudentPage.studentRecordBtn.click();
-
     }
 
     /**
@@ -52,7 +51,6 @@ public class EditStudentRecordsImpl extends PageInitializer {
         BulkDeletePage.deleteButton.click();
         CommonUtils.sleep(2000);
         WebDriverUtils.driver.switchTo().alert().accept();
-
     }
 
     public static void BloodInfoChanging(String aGroup) {
@@ -61,6 +59,5 @@ public class EditStudentRecordsImpl extends PageInitializer {
         bloodGroupDropDown.selectByVisibleText(aGroup);
         CommonUtils.scrollIntoView(editStudentPage.saveChangesBnt);
         editStudentPage.saveChangesBnt.click();
-
     }
 }

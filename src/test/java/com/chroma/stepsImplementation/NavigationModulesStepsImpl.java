@@ -19,7 +19,6 @@ public class NavigationModulesStepsImpl extends PageInitializer {
          */
         public static void AssertNavigationModules(String studentInformation, String feesCollection, String income,
                         String expenses, String academics, String humanResource, String homework, String reports) {
-
                 String actualStudentInformationText = DashboardPage.dynamicXpathForModule(studentInformation)
                                 .getText();
                 CommonUtils.assertEquals(studentInformation, actualStudentInformationText);
@@ -44,7 +43,5 @@ public class NavigationModulesStepsImpl extends PageInitializer {
                 String actualReportsInformarionText = DashboardPage.dynamicXpathForModule(reports)
                                 .getText();
                 CommonUtils.assertEquals(reports, actualReportsInformarionText);
-
         }
-
 }
