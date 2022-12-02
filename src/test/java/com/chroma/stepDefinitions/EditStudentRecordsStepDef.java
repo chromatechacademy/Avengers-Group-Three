@@ -10,6 +10,7 @@ import org.testng.Assert;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.DashboardPage;
+import com.chroma.pages.StudentAdmissionForEditPage;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 
@@ -18,11 +19,13 @@ import cucumber.api.java.en.When;
 
 public class EditStudentRecordsStepDef extends PageInitializer {
 
-    @When("clicks on Student Admission under Student Information and creates new student")
-    public void clicks_on_Student_Admission_under_Student_Information_and_creates_new_student() {
+    @When("clicks on {string} under {string} and creates new student")
+    public void clicks_on_under_and_creates_new_student(String studentAdmission, String studentInformation) {
 
-        WebDriverUtils.driver.findElement(By.xpath("//span[normalize-space()='Student Information']")).click();
-        WebDriverUtils.driver.findElement(By.xpath("//*[normalize-space()='Student Admission']")).click();
+        DashboardPage.dynamicXpathForModule(studentInformation).click();
+        DashboardPage.dynamicXpathForSubModule(studentAdmission).click();
+
+       
         WebDriverUtils.driver.findElement(By.xpath("//input[@name='admission_no']")).sendKeys("77777");
 
         Select classIdDropDown = new Select(driver.findElement(By.xpath("//select[@name='class_id']")));
@@ -60,9 +63,6 @@ public class EditStudentRecordsStepDef extends PageInitializer {
     @When("user looks for a studend, edits a record")
     public void user_looks_for_a_studend_edits_a_record() {
 
-
-        //studenr details
-
         WebDriverUtils.driver.findElement(By.xpath("(//*[normalize-space()='Student Details'])[3]")).click();
 
         Select classIdDropDown = new Select(driver.findElement(By.xpath("//select[@name='class_id']")));
@@ -89,13 +89,14 @@ public class EditStudentRecordsStepDef extends PageInitializer {
     }
 
     @Then("user is able to see links displayed {string}")
-    public void user_is_able_to_see_links_displayed(String string) {
+    public void user_is_able_to_see_links_displayed(String recordUpdateSuccessfuly) {
 
         // boolean
         boolean resultsForRecordUpdateSuccessfulyAppears = WebDriverUtils.driver
                 .findElement(By.xpath("//div[@student='alert alert-success text-left']")).isDisplayed();
         Assert.assertTrue(resultsForRecordUpdateSuccessfulyAppears);
 
+        //
 
     }
 
@@ -124,14 +125,14 @@ public class EditStudentRecordsStepDef extends PageInitializer {
                 .findElement(By.xpath("//td[normalize-space()='A+']")));
         CommonUtils.sleep(2000);
 
-        // boolean 
+        // boolean
 
         boolean resultsForChangedIngormationAppear = WebDriverUtils.driver
                 .findElement(By.xpath("//td[normalize-space()='A+']")).isDisplayed();
 
         Assert.assertTrue(resultsForChangedIngormationAppear);
 
-        // bulk delete 
+        //
 
         WebDriverUtils.driver.findElement(By.xpath("//a[normalize-space()='Bulk Delete']")).click();
 
@@ -147,15 +148,17 @@ public class EditStudentRecordsStepDef extends PageInitializer {
 
         CommonUtils.sleep(2000);
 
-        // parent 
+        // parent
 
         WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'Nataliia')]//parent::td//parent::tr/td[1]"))
                 .click();
 
         CommonUtils.sleep(2000);
+
         WebDriverUtils.driver.findElement(By.xpath("//button[normalize-space()='Delete']")).click();
 
         CommonUtils.sleep(2000);
+
         WebDriverUtils.driver.switchTo().alert().accept();
 
         CommonUtils.sleep(3000);
