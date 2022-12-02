@@ -22,7 +22,7 @@ And enters mother info as "Eugenia Insigna" in "Mother Name" text box and "37322
 And navigates to If Gaurdian is and clicks on the radio button in front of "mother"
 And enters "eugenia_insigna@rotormail.com" in Gaurdian Email text box and "18 Eclipse St, Rotor 05" in the Gaurdian address text box
 And clicks Save
-# Then student is admitted and "Record Saved Successfully" is displayed
+Then student is admitted and "Record Saved Successfully" is displayed
 
 Then student record with name "Marlene Fisher" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule
 # And selects the student "Marlene Fisher"
