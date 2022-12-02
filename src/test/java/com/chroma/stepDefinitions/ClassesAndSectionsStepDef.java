@@ -13,17 +13,12 @@ public class ClassesAndSectionsStepDef {
         CommonUtils.sleep(2000);
     }
 
-    //@When("navigates to {string} submodule")
-    //public void navigates_to_submodule(String subModule) {
-      //  DashboardPage.dynamicXpathForSubModule(subModule).click();
-
-      @When("navigates to {string} classSubModule")
-      public void navigates_toclass_module(String classText) {
-          DashboardPage.classText(classText).click();
-
-        
-
-
+    @When("navigates to {string} submodule")
+    public void navigates_to_submodule(String subModule) {
+        DashboardPage.dynamicXpathForSubModule(subModule).click();
+        // @When("navigates to {string} classSubModule")
+        // public void navigates_toclass_module(String classText) {
+        // DashboardPage.classText(classText).click();
         CommonUtils.sleep(2000);
 
     }

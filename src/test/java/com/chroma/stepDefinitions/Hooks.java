@@ -12,7 +12,7 @@ public class Hooks extends PageInitializer {
     public void start(Scenario scenario) {
         CucumberLogUtils.scenario = scenario;
         setUp();
-        initializeAllPages(); 
+        initializeAllPages();
     }
 
     @After
