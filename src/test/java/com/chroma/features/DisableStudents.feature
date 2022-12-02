@@ -14,7 +14,7 @@ And selects "Selenium" from the Category dropdown
 And enters "Marlene_Fisher@rotormail.com" in the Email text box
 And and selects "AB+" from the Blood Group dropdown
 And enters "04/29/2005" in Date of Birth
-And enters December "15" in Admission Date 
+And enters "12/15/2022" in Admission Date 
 And enters "08/23/2022" in As on Date 
 And enters "37322020989" in "Mobile Number" and enters "1.75" in "Height" and enters "59" in "Weight"
 And enters father info as "Crile Fisher" in "Father Name" text box and "37360302051" in "Father Phone" text box and "Pediatrician" in "Father Occupation" text box
@@ -24,10 +24,8 @@ And enters "eugenia_insigna@rotormail.com" in Gaurdian Email text box and "18 Ec
 And clicks Save
 Then student is admitted and "Record Saved Successfully" is displayed
 
-And clicks on "Student Details" submodule 
-And selects "SDET" from the Class dropdown and "Database Testing" from Section dropdown
-And clicks Search
-# And clicks on the student "Marlene Fisher"
+Then student record with name "Marlene Fisher" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule
+# And selects the student "Marlene Fisher"
 # And disables student and accepts alert
 # And enables student
 # Then student record with name "Marlene Fisher" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule
