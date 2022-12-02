@@ -20,7 +20,7 @@ public class StudentInformationModulSpetsImpl {
             String disabledStudents, String bulkDelete, String studentCategories, String studentHouse,
             String disableReason) {
         CommonUtils.sleep(3000);
-
+        
         String actualStudentDetails = DashboardPage.dynamicXpathForSubModuleWithSpace(studentDetails).getText();
         CommonUtils.assertEquals(studentDetails, actualStudentDetails);
 
@@ -38,11 +38,8 @@ public class StudentInformationModulSpetsImpl {
 
         String actualStudentHouse = DashboardPage.dynamicXpathForSubModuleWithSpace(studentHouse).getText();
         CommonUtils.assertEquals(studentHouse, actualStudentHouse);
-
         String actualDisableReason = DashboardPage.dynamicXpathForSubModuleWithSpace(disableReason).getText();
         CommonUtils.assertEquals(disableReason, actualDisableReason);
-
-        // screenshots for both reports
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }

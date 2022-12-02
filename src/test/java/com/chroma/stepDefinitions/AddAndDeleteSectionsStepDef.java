@@ -21,13 +21,11 @@ public class AddAndDeleteSectionsStepDef extends PageInitializer {
 
     @When("Record Saved Successfully and  Testing for everyone appeared in the Section List")
     public void record_Saved_Successfully_and_Testing_for_everyone_appeared_in_the_Section_List() {
-
         SectionStepImpl.AssertSection();
     }
 
     @Then("user clicks on delete and deleted Testing for everyone from the Section List")
     public void user_clicks_on_delete_and_deleted_Testing_for_everyone_from_the_Section_List() {
-
         SectionStepImpl.AssertSectionDelete();
     }
 }

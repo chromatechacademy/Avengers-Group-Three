@@ -8,6 +8,7 @@ import com.chroma.appsCommon.PageInitializer;
 import com.chroma.web.WebDriverUtils;
 
 public class SectionsPage extends PageInitializer {
+
     // Click on Academics Btn
     @FindBy(xpath = "//i[@class='fa fa-mortar-board ftlayer']")
     public WebElement academicsBtn;
