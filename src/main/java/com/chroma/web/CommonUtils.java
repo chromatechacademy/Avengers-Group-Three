@@ -497,14 +497,15 @@ public class CommonUtils extends WebDriverUtils {
 	}
 
 	/**
-     * Use this method to assert a boolean condition
-     * @param flag
-     */
-	public static void assertTrue(boolean flag) {
-		try{
-			Assert.assertTrue(flag);
-	  	} catch(AssertionError e) {
-			e.printStackTrace();
-		}
-	}
+	 * 
+     * Use this method to assert a boolean condition
+     * @param flag
+     */
+    public static void assertTrue(boolean flag) {
+        try {
+            Assert.assertTrue(flag);
+        } catch (AssertionError e) {
+            e.printStackTrace();
+        }
+    }
 }
