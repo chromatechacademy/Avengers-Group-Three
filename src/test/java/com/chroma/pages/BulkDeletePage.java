@@ -16,7 +16,12 @@ public class BulkDeletePage extends PageInitializer {
 
     @FindBy(xpath = "//button[normalize-space()='Delete']")
     public static WebElement deleteButton;
-
+    
+    /**
+     * 
+     * @param studentName
+     * @return
+     */
     public static WebElement dynamicXpathForCheckBoxInBulkDelete(String studentName) {
         return WebDriverUtils.driver
                 .findElement(By.xpath("//*[contains(text(),'" + studentName + "')]//parent::td//parent::tr/td/input"));

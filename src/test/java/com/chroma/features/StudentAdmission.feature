@@ -1,11 +1,11 @@
 Feature: A CTSMS user can admit a Student
 
-@Progression @Daniela @VNGRS-12
+@Daniela @VNGRS-12
 Scenario:Admit Student using the admissions page
 
 Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
 When user logs with valid username "general@teacher.com" and password "123456"
-Then user is navigated to the dashboard page
+Then user is navigated to the dashboard page and sees text "Chroma Tech Academy"
 And clicks on the "Student Information" module
 And clicks on "Student Admission" submodule 
 And enters "20989" in Admission No text box and "254" in Roll Number text box

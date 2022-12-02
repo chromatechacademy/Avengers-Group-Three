@@ -1,7 +1,5 @@
 package com.chroma.appsCommon;
 
-import org.bouncycastle.jcajce.provider.asymmetric.dsa.DSASigner.stdDSA;
-
 import com.chroma.pages.BulkDeletePage;
 import com.chroma.pages.DashboardPage;
 import com.chroma.pages.LoginPage;
@@ -27,5 +25,4 @@ public class PageInitializer extends WebDriverUtils {
         bulkDeletePage = new BulkDeletePage();
         studentDetailsPage = new StudentDetailsPage();
     }
-
 }

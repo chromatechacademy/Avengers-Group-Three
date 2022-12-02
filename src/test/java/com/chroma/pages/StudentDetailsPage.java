@@ -7,12 +7,16 @@ import com.chroma.appsCommon.PageInitializer;
 import com.chroma.web.WebDriverUtils;
 
 public class StudentDetailsPage extends PageInitializer{
+
+    //locate Search by keyword text box
     @FindBy(xpath = "(//input[@name='search_text'])[2]")
     public static WebElement searchByKeywordTextBox;
 
+    //locate Search button
     @FindBy(xpath = "//button[@value='search_full']")
     public static WebElement searchButton;
 
+    //locate no available data message
     @FindBy(xpath = "//*[contains(text(),'No data available in table ')]")
     public static WebElement noDataAvailableMessage;
 
