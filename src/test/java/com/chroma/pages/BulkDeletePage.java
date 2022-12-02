@@ -16,7 +16,7 @@ public class BulkDeletePage extends PageInitializer {
 
     @FindBy(xpath = "//button[normalize-space()='Delete']")
     public static WebElement deleteButton;
-    
+
     /**
      * 
      * @param studentName
