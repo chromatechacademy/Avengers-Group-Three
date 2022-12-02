@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.chroma.web.WebDriverUtils;
 
-public class StudentCategories {
+public class StudentCategoriesPage {
 
     /* Category text box */
     @FindBy(xpath = "//input[@name='category']")
@@ -36,7 +36,7 @@ public class StudentCategories {
                 .findElement(By.xpath("//*[contains(text(),'" + text + "')]//following-sibling::td[2]/a[2]"));
     }
 
-    public StudentCategories() {
+    public StudentCategoriesPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
 }

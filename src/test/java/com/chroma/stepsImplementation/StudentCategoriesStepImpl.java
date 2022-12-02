@@ -1,14 +1,14 @@
 package com.chroma.stepsImplementation;
 
 import com.chroma.appsCommon.PageInitializer;
-import com.chroma.pages.StudentCategories;
+import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 
 public class StudentCategoriesStepImpl extends PageInitializer {
     
     public void deletingStudentCategory(String category){
-        StudentCategories.dynamixCategoryLocatorXButton(category).click();
+        StudentCategoriesPage.dynamixCategoryLocatorXButton(category).click();
         CommonUtils.sleep(2000);
         CommonUtils.acceptAlert();
         CucumberLogUtils.logExtentScreenshot();
@@ -24,7 +24,7 @@ public class StudentCategoriesStepImpl extends PageInitializer {
     }
 
     public void verifyingStudentCategoryIsDisplayed(String expectedCategory){
-        String actualCategoryText = StudentCategories.dynamixCategoryText(expectedCategory).getText();
+        String actualCategoryText = StudentCategoriesPage.dynamixCategoryText(expectedCategory).getText();
         CommonUtils.assertEquals(expectedCategory, actualCategoryText);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();

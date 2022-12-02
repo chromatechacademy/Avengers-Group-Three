@@ -1,12 +1,13 @@
 package com.chroma.appsCommon;
 
 import com.chroma.pages.BulkDeletePage;
+import com.chroma.pages.ClassesAndSectionsPage;
 import com.chroma.pages.DashboardPage;
 import com.chroma.pages.LoginPage;
 import com.chroma.pages.SamplePage;
 import com.chroma.pages.SectionsPage;
 import com.chroma.pages.StudentAdmissionPage;
-import com.chroma.pages.StudentCategories;
+import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.pages.StudentDetailsPage;
 import com.chroma.stepsImplementation.StudentCategoriesStepImpl;
 import com.chroma.web.WebDriverUtils;
@@ -21,7 +22,8 @@ public class PageInitializer extends WebDriverUtils {
     public static BulkDeletePage bulkDeletePage;
     public static StudentDetailsPage studentDetailsPage;
     public static SectionsPage sectionsPage;
-    public static StudentCategories studentCategories;
+    public static StudentCategoriesPage studentCategories;
+    public static ClassesAndSectionsPage classesAndSectionsPage;
 
     /* STEPS IMPLEMENTATION INSTANCES */
     public static StudentCategoriesStepImpl studentCategoriesStepImpl;
@@ -34,7 +36,8 @@ public class PageInitializer extends WebDriverUtils {
         bulkDeletePage = new BulkDeletePage();
         studentDetailsPage = new StudentDetailsPage();
         sectionsPage = new SectionsPage();
-        studentCategories = new StudentCategories();
+        studentCategories = new StudentCategoriesPage();
         studentCategoriesStepImpl = new StudentCategoriesStepImpl();
+        classesAndSectionsPage = new ClassesAndSectionsPage();
     }
 }
