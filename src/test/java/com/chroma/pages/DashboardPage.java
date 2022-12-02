@@ -4,10 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import com.chroma.appsCommon.PageInitializer;
 import com.chroma.web.WebDriverUtils;
 
-public class DashboardPage extends PageInitializer {
+public class DashboardPage {
 
     // Chroma Tech Academy dashboard text
     @FindBy(xpath = "//span[normalize-space()='Chroma Tech Academy']")
