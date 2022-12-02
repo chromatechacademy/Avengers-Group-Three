@@ -16,6 +16,10 @@ public class DashboardPage {
     @FindBy(xpath = "//i[@class = 'fa fa-user-plus ftlayer']")
     public WebElement studentInfoBtn;
 
+    // Class Btn
+    @FindBy(xpath = "//a[normalize-space()='Class']")
+    public WebElement classText;
+
     /**
      * Use this method to locate modules
      * 
@@ -48,5 +52,6 @@ public class DashboardPage {
     
     public DashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
+    
     }
 }
