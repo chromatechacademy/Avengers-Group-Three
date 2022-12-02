@@ -1,9 +1,9 @@
 package com.chroma.stepDefinitions;
 
-import org.testng.Assert;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.StudentDetailsPage;
 import com.chroma.stepsImplementation.EditStudentRecordsImpl;
+import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import cucumber.api.java.en.Then;
 
@@ -29,11 +29,11 @@ public class EditStudentRecordsStepDef extends PageInitializer {
         @Then("user is able to see Record Update Successfully information")
         public void user_is_able_to_see_Record_Update_Successfully_information() {
 
-                // boolean
-
                 boolean resultsForRecordUpdateSuccessfulyAppears = StudentDetailsPage.resultsForRecordUpdateSuccessfuly
                                 .isDisplayed();
-                Assert.assertTrue(resultsForRecordUpdateSuccessfulyAppears);
+                CommonUtils.assertTrue(resultsForRecordUpdateSuccessfulyAppears);
+                CucumberLogUtils.logExtentScreenshot();
+                CucumberLogUtils.logScreenShot();
 
         }
 
@@ -43,18 +43,17 @@ public class EditStudentRecordsStepDef extends PageInitializer {
 
                 EditStudentRecordsImpl.NavigationToRecord(studentDetails, sdet, databaseTesting);
                 CommonUtils.sleep(3000);
-
+                CommonUtils.scrollIntoView(StudentDetailsPage.bloodAOption);
+                CommonUtils.sleep(3000);
         }
 
         @Then("the changed information is displayed")
         public void the_changed_information_is_displayed() {
 
-                // boolean
-                // add scroll into
-
                 boolean resultsForChangedIngormationAppear = StudentDetailsPage.bloodAOption.isDisplayed();
-
-                Assert.assertTrue(resultsForChangedIngormationAppear);
+                CommonUtils.assertTrue(resultsForChangedIngormationAppear);
+                CucumberLogUtils.logExtentScreenshot();
+                CucumberLogUtils.logScreenShot();
         }
 
         @Then("user deletes {string} records from {string} page, {string} class, {string} section")
