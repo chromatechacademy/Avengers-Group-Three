@@ -1,8 +1,7 @@
 Feature: A CTSMS user can admit a Student
 
-@Daniela @VNGRS-12
+@Daniela @VNGRS-12 
 Scenario:Admit Student using the admissions page
-
 Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
 When user logs with valid username "general@teacher.com" and password "123456"
 Then user is navigated to the dashboard page and sees text "Chroma Tech Academy"
@@ -16,7 +15,7 @@ And selects "Selenium" from the Category dropdown
 And enters "Marlene_Fisher@rotormail.com" in the Email text box
 And and selects "AB+" from the Blood Group dropdown
 And enters "04/29/2005" in Date of Birth
-And enters December "15" in Admission Date 
+And enters "12/15/2022" in Admission Date 
 And enters "08/23/2022" in As on Date 
 And enters "37322020989" in "Mobile Number" and enters "1.75" in "Height" and enters "59" in "Weight"
 And enters father info as "Crile Fisher" in "Father Name" text box and "37360302051" in "Father Phone" text box and "Pediatrician" in "Father Occupation" text box
@@ -26,10 +25,5 @@ And enters "eugenia_insigna@rotormail.com" in Gaurdian Email text box and "18 Ec
 And clicks Save
 Then student is admitted and "Record Saved Successfully" is displayed
 
-And clicks on "Bulk Delete" submodule 
-And selects "SDET" from the Class dropdown and "Database Testing" from Section dropdown
-And clicks Search
-And checks the box on the row of student named "Marlene Fisher" 
-And clicks Delete button and confirms the allert
-And clicks on "Student Admission" submodule
-Then student "Marlene Fisher" is deleted
+Then student record with name "Marlene Fisher" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule
+

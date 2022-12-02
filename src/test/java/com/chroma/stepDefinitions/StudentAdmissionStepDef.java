@@ -1,10 +1,13 @@
 package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.pages.BulkDeletePage;
 import com.chroma.pages.DashboardPage;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
+import com.chroma.web.JavascriptUtils;
+
 import cucumber.api.java.en.Then;
 
 public class StudentAdmissionStepDef extends PageInitializer {
@@ -70,22 +73,19 @@ public class StudentAdmissionStepDef extends PageInitializer {
 
     @Then("enters {string} in Date of Birth")
     public void enters_in_Date_of_Birth(String birthDate) {
-        StudentAdmissionPage.dateOfBirthBox.sendKeys(birthDate);
-        StudentAdmissionPage.keepDate.click();
+        JavascriptUtils.selectDateByJS(StudentAdmissionPage.dateOfBirthBox, birthDate);
         CommonUtils.sleep(2000);
     }
 
-    @Then("enters December {string} in Admission Date")
-    public void enters_December_in_Admission_Date(String day) {
-        StudentAdmissionPage.admissionDateBox.click();
-        StudentAdmissionPage.dynamicXpathForAdmissionDay(day).click();
+    @Then("enters {string} in Admission Date")
+    public void enters_in_Admission_Date(String date) {
+        JavascriptUtils.selectDateByJS(StudentAdmissionPage.admissionDateBox, date);
         CommonUtils.sleep(2000);
     }
 
     @Then("enters {string} in As on Date")
-    public void enters_in_As_on_Date(String asOfDate) {
-        CommonUtils.sendKeys(StudentAdmissionPage.asOfDateBox, asOfDate);
-        StudentAdmissionPage.keepDate.click();
+    public void enters_in_As_on_Date(String asOnDate) {
+        JavascriptUtils.selectDateByJS(StudentAdmissionPage.asOnDateBox, asOnDate);
         CommonUtils.sleep(2000);
     }
 
@@ -134,5 +134,21 @@ public class StudentAdmissionStepDef extends PageInitializer {
         CommonUtils.sleep(3500);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
+    }
+    @Then("student record with name {string} in Class {string} in section {string} is deleted through {string} submodule")
+    public void student_record_with_name_in_Class_in_section_is_deleted_through_submodule(String studentName, String className, String sectionName, String subModule) {
+        DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();
+        CommonUtils.selectDropDownValue(className, StudentAdmissionPage.classDropdown);
+        CommonUtils.selectDropDownValue(sectionName, StudentAdmissionPage.sectionDropdown);
+        BulkDeletePage.searchButton.click();
+        CommonUtils.sleep(2000);
+        BulkDeletePage.dynamicXpathForCheckBoxInBulkDelete(studentName).click();;
+        CommonUtils.sleep(2000);
+        CucumberLogUtils.logScreenShot();
+        CucumberLogUtils.logExtentScreenshot();
+        BulkDeletePage.deleteButton.click();
+        CommonUtils.sleep(2000);
+        CommonUtils.acceptAlert();
+        CommonUtils.sleep(3000);
     }
 }
