@@ -1,17 +1,13 @@
 package com.chroma.stepDefinitions;
 
-import java.io.IOException;
-import org.junit.Assert;
+import com.chroma.appsCommon.PageInitializer;
 import com.chroma.stepsImplementation.LoginStepsImpl;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
-import com.chroma.appsCommon.PageInitializer;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-// Add step definitions in this class
-// NOTE: Every step definitions class Extends PageInitializer
 
 public class LoginStepDef extends PageInitializer {
 
@@ -21,15 +17,13 @@ public class LoginStepDef extends PageInitializer {
     }
 
     @When("user logs with valid username {string} and password {string}")
-    public void user_logs_with_valid_username_and_password(String username, String password) throws IOException {
-        // cleaner code for username and password
+    public void user_logs_with_valid_username_and_password(String username, String password) {
         LoginStepsImpl.login(username, password);
     }
 
-    @Then("user is navigated to the dashboard page")
-    public void user_is_navigated_to_the_dashboard_page() {
-        boolean isChromaTextDisplayed = dashboardPage.dashBoardChromaTechText.isDisplayed();
-        Assert.assertTrue(isChromaTextDisplayed);
+    @Then("user is navigated to the dashboard page and sees text {string}")
+    public void user_is_navigated_to_the_dashboard_page_and_sees_text(String chromaTechAcademyText) {
+        CommonUtils.assertEquals(chromaTechAcademyText, dashboardPage.dashBoardChromaTechText.getText());
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
