@@ -4,10 +4,9 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import com.chroma.appsCommon.PageInitializer;
 import com.chroma.web.WebDriverUtils;
 
-public class SectionsPage extends PageInitializer {
+public class SectionsPage {
     // Click on Academics Btn
     @FindBy(xpath = "//i[@class='fa fa-mortar-board ftlayer']")
     public WebElement academicsBtn;
