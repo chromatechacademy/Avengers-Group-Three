@@ -1,6 +1,5 @@
 package com.chroma.stepDefinitions;
 
-import java.io.IOException;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.stepsImplementation.LoginStepsImpl;
 import com.chroma.utils.CucumberLogUtils;
@@ -18,7 +17,7 @@ public class LoginStepDef extends PageInitializer {
     }
 
     @When("user logs with valid username {string} and password {string}")
-    public void user_logs_with_valid_username_and_password(String username, String password) throws IOException {
+    public void user_logs_with_valid_username_and_password(String username, String password) {
         LoginStepsImpl.login(username, password);
     }
 
