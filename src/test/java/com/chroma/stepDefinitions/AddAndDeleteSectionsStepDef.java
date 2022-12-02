@@ -48,7 +48,6 @@ public class AddAndDeleteSectionsStepDef extends PageInitializer {
         WebDriverUtils.driver.findElement(By.xpath("//i[@class='fa fa-remove']")).click();
         CommonUtils.acceptAlert();
         CommonUtils.sleep(3000);
-
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }

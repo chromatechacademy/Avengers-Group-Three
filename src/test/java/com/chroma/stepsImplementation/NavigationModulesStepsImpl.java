@@ -4,8 +4,6 @@ import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.DashboardPage;
 import com.chroma.web.CommonUtils;
 
-import org.testng.Assert;
-
 public class NavigationModulesStepsImpl extends PageInitializer {
         // Add step implementation methods in this class
         // NOTE: Every step implementation class Extends PageInitializer{
