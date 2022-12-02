@@ -353,15 +353,12 @@ public class CommonUtils extends WebDriverUtils {
 	 * the drop down, then store elements in a list
 	 */
 	public static void selectValueFromBootStrapDropDown(List<WebElement> values, String value) {
-
 		for (WebElement dropDownValues : values) {
-
 			if (dropDownValues.getText().contentEquals(value)) {
 				dropDownValues.click();
 				break;
 			}
 		}
-
 	}
 
 	/**
@@ -427,7 +424,6 @@ public class CommonUtils extends WebDriverUtils {
 
 	public static void selectCheckboxDisplayed(List<WebElement> checkboxList, String attribute, String value) throws InterruptedException {
 		for (WebElement checkbox : checkboxList) {
-
 			if (checkbox.isEnabled() && checkbox.isDisplayed()) {
 				String checkboxText = checkbox.getAttribute(attribute);
 				if (checkboxText.equals(value)) {
@@ -484,21 +480,30 @@ public class CommonUtils extends WebDriverUtils {
  * Use below method to assert actual String value with an expected String value	
  */
 	public static void assertEquals(String expected, String actual) {
-		
 		try {
 		Assert.assertEquals(expected, actual);
 		}
 		catch(AssertionError e) {
-
 			e.printStackTrace();
 		}
 	}
-
 
 	public static void sleep(long milliSeconds){
 		try {
 			Thread.sleep(milliSeconds);
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+     * Use this method to assert a boolean condition
+     * @param flag
+     */
+	public static void assertTrue(boolean flag) {
+		try{
+			Assert.assertTrue(flag);
+	  	} catch(AssertionError e) {
 			e.printStackTrace();
 		}
 	}
