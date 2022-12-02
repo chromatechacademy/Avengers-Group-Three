@@ -15,7 +15,7 @@ Feature: A CTSMS user is able to edit student records by searching student detai
         And enters "Marlene_Fisher@rotormail.com" in the Email text box
         And and selects "AB+" from the Blood Group dropdown
         And enters "04/29/2005" in Date of Birth
-        And enters December "15" in Admission Date
+        And enters "12/15/2022" in Admission Date
         And enters "08/23/2022" in As on Date
         And enters "37322020989" in "Mobile Number" and enters "1.75" in "Height" and enters "59" in "Weight"
         And enters father info as "Crile Fisher" in "Father Name" text box and "37360302051" in "Father Phone" text box and "Pediatrician" in "Father Occupation" text box
@@ -29,5 +29,5 @@ Feature: A CTSMS user is able to edit student records by searching student detai
         And user clicks on "Student Details", looks for a studend in a "SDET" class and "Database Testing" section, chooshes and clicks on student
         Then the changed information is displayed
         And user deletes "Marlene Fisher" records from "Bulk Delete" page, "SDET" class, "Database Testing" section
-        
+
 
