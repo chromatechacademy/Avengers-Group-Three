@@ -22,9 +22,9 @@ public class LoginStepDef extends PageInitializer {
         LoginStepsImpl.login(username, password);
     }
 
-    @Then("user is navigated to the dashboard page")
-    public void user_is_navigated_to_the_dashboard_page() {
-        CommonUtils.assertEquals("Chroma Tech Academy", dashboardPage.dashBoardChromaTechText.getText());
+    @Then("user is navigated to the dashboard page and sees text {string}")
+    public void user_is_navigated_to_the_dashboard_page_and_sees_text(String chromaTechAcademyText) {
+        CommonUtils.assertEquals(chromaTechAcademyText, dashboardPage.dashBoardChromaTechText.getText());
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }

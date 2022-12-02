@@ -28,6 +28,5 @@ public class IncomeModuleStepDef {
                 .contentEquals(incomeHead);
         Assert.assertTrue(isIncomeHeadDisplayed);
         System.out.println(isIncomeHeadDisplayed);
-
     }
 }
