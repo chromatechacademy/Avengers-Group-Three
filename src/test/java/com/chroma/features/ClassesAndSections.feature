@@ -1,6 +1,6 @@
 Feature: Classes and Sections
 
-@Mari @Regression @VNGRS-2
+@Mari @Regression @VNGRS-18
 Scenario: Ability to add and delete classes
 Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
 When user logs with valid username "general@teacher.com" and password "123456"

@@ -1,7 +1,6 @@
 package com.chroma.appsCommon;
 
 import com.chroma.pages.BulkDeletePage;
-import com.chroma.pages.ClassesAndSectionsPage;
 import com.chroma.pages.DashboardPage;
 import com.chroma.pages.LoginPage;
 import com.chroma.pages.SamplePage;
@@ -18,11 +17,7 @@ public class PageInitializer extends WebDriverUtils {
     public static StudentAdmissionPage studentAdmissionPage;
     public static BulkDeletePage bulkDeletePage;
     public static StudentDetailsPage studentDetailsPage;
-<<<<<<< HEAD
-    public static ClassesAndSectionsPage classesAndSectionsPage;
-=======
     public static SectionsPage sectionsPage;
->>>>>>> d687f2eee950c9042300d9223c2a24ba37dc6110
 
     public void initializeAllPages() {
         samplePage = new SamplePage();
@@ -31,10 +26,6 @@ public class PageInitializer extends WebDriverUtils {
         studentAdmissionPage = new StudentAdmissionPage();
         bulkDeletePage = new BulkDeletePage();
         studentDetailsPage = new StudentDetailsPage();
-<<<<<<< HEAD
-        classesAndSectionsPage = new ClassesAndSectionsPage();
-=======
         sectionsPage = new SectionsPage();
->>>>>>> d687f2eee950c9042300d9223c2a24ba37dc6110
     }
 }
