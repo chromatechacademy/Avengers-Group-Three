@@ -17,14 +17,12 @@ public class DashboardPage extends PageInitializer {
     @FindBy(xpath = "//i[@class = 'fa fa-user-plus ftlayer']")
     public WebElement studentInfoBtn;
 
-
     /**
      * Use this method to locate modules
      * 
      * @param module
      * @return
      */
-
     public static WebElement dynamicXpathForModule(String module) {
         return WebDriverUtils.driver.findElement(By.xpath("//span[contains(text(),'" + module + "')]"));
     }

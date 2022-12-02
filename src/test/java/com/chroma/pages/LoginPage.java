@@ -29,11 +29,9 @@ public class LoginPage extends PageInitializer {
     @FindBy(xpath = "//button[normalize-space()='Sign In']")
     public WebElement signInBtn;
 
-
     // invalid login message
     @FindBy(xpath = "//div[@class='alert alert-danger']")
     public WebElement invalidLoginMessage;
-
 
     public LoginPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
