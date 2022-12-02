@@ -34,6 +34,16 @@ public class DashboardPage extends PageInitializer {
      * @return
      */
     public static WebElement dynamicXpathForSubModule(String value) {
+        return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + value + "')]"));
+    }
+
+    /**
+     * Use this methode to locate submodules with space in the front
+     * 
+     * @param value
+     * @return
+     */
+    public static WebElement dynamicXpathForSubModuleWithSpace(String value) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + " " + value + "')]"));
     }
     

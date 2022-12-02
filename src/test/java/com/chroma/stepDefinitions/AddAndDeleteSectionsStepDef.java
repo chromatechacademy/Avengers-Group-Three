@@ -2,12 +2,10 @@ package com.chroma.stepDefinitions;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
-
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -15,18 +13,14 @@ public class AddAndDeleteSectionsStepDef extends PageInitializer {
 
     @When("user clicks on {string} and {string}")
     public void user_clicks_on_and(String academics, String sections) {
-
         WebDriverUtils.driver.findElement(By.xpath("//i[@class='fa fa-mortar-board ftlayer']")).click();
         WebDriverUtils.driver.findElement(By.xpath("//a[normalize-space()='Sections']")).click();
-
     }
 
     @When("user enters {string} in the Section name and click on Save")
     public void user_enters_in_the_Section_name_and_click_on_Save(String string) {
-
         WebDriverUtils.driver.findElement(By.xpath("//input[@id='section']")).sendKeys("Testing for everyone");
         WebDriverUtils.driver.findElement(By.xpath("//button[@type='submit'][normalize-space()='Save']")).click();
-
     }
 
     @When("Record Saved Successfully and  Testing for everyone appeared in the Section List")

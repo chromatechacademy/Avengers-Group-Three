@@ -6,7 +6,7 @@ import com.chroma.utils.CucumberLogUtils;
 import cucumber.api.java.en.Then;
 
 public class IncomeModuleStepDef {
-    DashboardPage dashboardPage = new DashboardPage();
+    
 
     @Then("user clicks on {string} module")
     public void user_clicks_on_module(String module) {
