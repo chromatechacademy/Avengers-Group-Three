@@ -10,10 +10,7 @@ public class AcademicsStepDef extends PageInitializer {
     public void user_is_able_to_see_submodules_displayed(String classTimetableLink, String teachersTimetablelink,
             String assignClassTeacherlink, String promoteStudentsLink,
             String subjectGroupLink, String subjectsLink, String classLink, String sectionsLink) {
-
                 AcademicsModuleStepsImpl.AssertAcademicsSubModules(classTimetableLink, teachersTimetablelink, assignClassTeacherlink, 
                 promoteStudentsLink, subjectGroupLink, subjectsLink, classLink, sectionsLink);
-
-
     }
 }
