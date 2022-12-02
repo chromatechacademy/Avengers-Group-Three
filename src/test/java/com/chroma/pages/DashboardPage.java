@@ -36,7 +36,7 @@ public class DashboardPage extends PageInitializer {
     public static WebElement dynamicXpathForSubModule(String value) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + " " + value + "')]"));
     }
-
+    
     public DashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }

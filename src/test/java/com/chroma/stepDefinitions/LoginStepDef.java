@@ -9,8 +9,6 @@ import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-// Add step definitions in this class
-// NOTE: Every step definitions class Extends PageInitializer
 
 public class LoginStepDef extends PageInitializer {
 
@@ -21,7 +19,6 @@ public class LoginStepDef extends PageInitializer {
 
     @When("user logs with valid username {string} and password {string}")
     public void user_logs_with_valid_username_and_password(String username, String password) throws IOException {
-        // cleaner code for username and password
         LoginStepsImpl.login(username, password);
     }
 
