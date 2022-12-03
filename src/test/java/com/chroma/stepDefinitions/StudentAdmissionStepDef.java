@@ -133,7 +133,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
         CommonUtils.sleep(3500);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
-    } 
+    }
     @Then("student record with name {string} in Class {string} in section {string} is deleted through {string} submodule")
     public void student_record_with_name_in_Class_in_section_is_deleted_through_submodule(String studentName, String className, String sectionName, String subModule) {
         DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();
