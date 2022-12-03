@@ -513,6 +513,7 @@ public class CommonUtils extends WebDriverUtils {
             Assert.assertTrue(flag);
         } catch (AssertionError e) {
             e.printStackTrace();
-        }
-    }
-}
+		}
+     }
+ }
+    
