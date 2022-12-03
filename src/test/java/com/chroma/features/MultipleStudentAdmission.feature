@@ -1,6 +1,6 @@
 Feature: CTSMS - Adding multiple students
 
-  @Progression
+  @Daniela @VNGRS-19
   Scenario Outline: As a Chroma Tech Faculty member I want to be able to add multiple students in one session
     Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
     When user logs with valid username "general@teacher.com" and password "123456"

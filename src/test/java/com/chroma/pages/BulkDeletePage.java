@@ -20,7 +20,7 @@ public class BulkDeletePage extends PageInitializer {
     //Locator for Delete Button
     @FindBy(xpath = "//button[normalize-space()='Delete']")
     public static WebElement deleteButton;
-    
+
     /**
      * Use this method locate the checkbox in front of the desired student name
      * @param studentName
