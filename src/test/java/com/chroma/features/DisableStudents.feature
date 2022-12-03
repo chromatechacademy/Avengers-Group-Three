@@ -24,7 +24,8 @@ And enters "eugenia_insigna@rotormail.com" in Gaurdian Email text box and "18 Ec
 And clicks Save
 Then student is admitted and "Record Saved Successfully" is displayed
 
-Then student record with name "Marlene Fisher" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule
+# And clicks Student Details under Student Information, selects SDET in Class section, selects Testing Fundamentals in Section section and clicks on a search button
+# And clicks on a record 77777
 # And selects the student "Marlene Fisher"
 # And disables student and accepts alert
 # And enables student
