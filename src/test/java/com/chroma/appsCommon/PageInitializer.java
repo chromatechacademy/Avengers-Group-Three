@@ -8,11 +8,16 @@ import com.chroma.pages.LoginPage;
 import com.chroma.pages.SamplePage;
 import com.chroma.pages.SectionsPage;
 import com.chroma.pages.StudentAdmissionPage;
+import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.pages.StudentDetailsPage;
+import com.chroma.stepsImplementation.EditStudentRecordsImpl;
+import com.chroma.stepsImplementation.NavigationModulesStepsImpl;
+import com.chroma.stepsImplementation.StudentCategoriesStepImpl;
 import com.chroma.web.WebDriverUtils;
 
 public class PageInitializer extends WebDriverUtils {
 
+    /* PAGE INSTANCES */
     public static SamplePage samplePage;
     public static LoginPage loginPage;
     public static DashboardPage dashboardPage;
@@ -21,7 +26,13 @@ public class PageInitializer extends WebDriverUtils {
     public static StudentDetailsPage studentDetailsPage;
     public static EditStudentPage editStudentPage;
     public static SectionsPage sectionsPage;
+    public static StudentCategoriesPage studentCategories;
     public static ClassesAndSectionsPage classesAndSectionsPage;
+
+    /* STEPS IMPLEMENTATION INSTANCES */
+    public static StudentCategoriesStepImpl studentCategoriesStepImpl;
+    public static EditStudentRecordsImpl editStudentRecordsImpl;
+    public static NavigationModulesStepsImpl navigationModulesStepsImpl;
 
     public void initializeAllPages() {
         samplePage = new SamplePage();
@@ -32,6 +43,10 @@ public class PageInitializer extends WebDriverUtils {
         studentDetailsPage = new StudentDetailsPage();
         editStudentPage = new EditStudentPage();
         sectionsPage = new SectionsPage();
+        studentCategories = new StudentCategoriesPage();
+        studentCategoriesStepImpl = new StudentCategoriesStepImpl();
         classesAndSectionsPage = new ClassesAndSectionsPage();
+        editStudentRecordsImpl = new EditStudentRecordsImpl();
+        navigationModulesStepsImpl = new NavigationModulesStepsImpl();
     }
 }
