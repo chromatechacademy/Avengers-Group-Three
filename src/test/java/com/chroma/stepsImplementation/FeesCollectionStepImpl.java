@@ -4,7 +4,7 @@ import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.DashboardPage;
 import com.chroma.web.CommonUtils;
 
-public class FeesCollectionStepImpl extends PageInitializer{
+public class FeesCollectionStepImpl extends PageInitializer {
     /**
      * 
      * @param collectFeesLink
@@ -18,34 +18,35 @@ public class FeesCollectionStepImpl extends PageInitializer{
      * @param feesReminderLink
      */
     public static void AssertFeesCollectionSubModules(String collectFeesLink, String searchFeesPaymentLink,
-    String searchDueFeesLink, String feesMasterLink,
-    String feesGroupLink, String feesDiscountLink, String feesTypeLink, String feesCarryForwardLink, String feesReminderLink) {
+            String searchDueFeesLink, String feesMasterLink,
+            String feesGroupLink, String feesDiscountLink, String feesTypeLink, String feesCarryForwardLink,
+            String feesReminderLink) {
         String actualCollectFeesLink = DashboardPage.dynamicXpathForSubModule(collectFeesLink)
-        .getText();
+                .getText();
         CommonUtils.assertEquals(collectFeesLink, actualCollectFeesLink);
         String actualSearchFeesPaymentLink = DashboardPage.dynamicXpathForSubModule(searchFeesPaymentLink)
-        .getText();
+                .getText();
         CommonUtils.assertEquals(searchFeesPaymentLink, actualSearchFeesPaymentLink);
         String actualSearchDueFeesLinK = DashboardPage.dynamicXpathForSubModule(searchDueFeesLink)
-        .getText();
+                .getText();
         CommonUtils.assertEquals(searchDueFeesLink, actualSearchDueFeesLinK);
         String actualFeesMasterLink = DashboardPage.dynamicXpathForSubModule(feesMasterLink)
-        .getText();
+                .getText();
         CommonUtils.assertEquals(feesMasterLink, actualFeesMasterLink);
         String actualFeesGroupLink = DashboardPage.dynamicXpathForSubModule(feesGroupLink)
-        .getText();
+                .getText();
         CommonUtils.assertEquals(feesGroupLink, actualFeesGroupLink);
         String actualFeesTypeLink = DashboardPage.dynamicXpathForSubModule(feesTypeLink)
-        .getText();
+                .getText();
         CommonUtils.assertEquals(feesTypeLink, actualFeesTypeLink);
         String actualFeesDiscountLink = DashboardPage.dynamicXpathForSubModule(feesDiscountLink)
-        .getText();
+                .getText();
         CommonUtils.assertEquals(feesDiscountLink, actualFeesDiscountLink);
         String actualFeesCarryForwardLink = DashboardPage.dynamicXpathForSubModule(feesCarryForwardLink)
-        .getText();
+                .getText();
         CommonUtils.assertEquals(feesCarryForwardLink, actualFeesCarryForwardLink);
         String actualFeesReminderLink = DashboardPage.dynamicXpathForSubModule(feesReminderLink)
-        .getText();
+                .getText();
         CommonUtils.assertEquals(feesReminderLink, actualFeesReminderLink);
     }
 }

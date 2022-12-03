@@ -1,13 +1,13 @@
 Feature: Testing student admission unique admission number
 
-   @Hayk @Progression @VNGRS-13
+   @Hayk @Regression @VNGRS-13
    Scenario Outline: Scenario Outline name: Student admission unique admission number
       Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
       When user logs with valid username "general@teacher.com" and password "123456"
       Then user is navigated to the dashboard page and sees text "Chroma Tech Academy"
       And clicks on the "Student Information" module
       And clicks on "Student Admission" submodule
-      And enters "<admissionNO>" in Admission No text box and "254" in Roll Number text box
+      And enters "<admissionNO>" in Admission No text box and "<rollNo>" in Roll Number text box
       And enters "Marlene" in the First Name text box and "Fisher" in the Last Name text box
       And selects "SDET" from the Class dropdown and "Database Testing" from Section dropdown
       And selects "Female" from the Gender dropdown
@@ -24,7 +24,7 @@ Feature: Testing student admission unique admission number
       And enters "eugenia_insigna@rotormail.com" in Gaurdian Email text box and "18 Eclipse St, Rotor 05" in the Gaurdian address text box
       And clicks Save
       Then student is admitted and "Record Saved Successfully" is displayed
-      And enters "<admissionNO>" in Admission No text box and "254" in Roll Number text box
+      And enters "<admissionNO>" in Admission No text box and "<rollNo>" in Roll Number text box
       And enters "Marlene" in the First Name text box and "Fisher" in the Last Name text box
       And selects "SDET" from the Class dropdown and "Database Testing" from Section dropdown
       And selects "Female" from the Gender dropdown
@@ -40,12 +40,11 @@ Feature: Testing student admission unique admission number
       And navigates to If Gaurdian is and clicks on the radio button in front of "mother"
       And enters "eugenia_insigna@rotormail.com" in Gaurdian Email text box and "18 Eclipse St, Rotor 05" in the Gaurdian address text box
       And clicks Save
-      Then "The Admission No field must contain a unique value." is displayed 
+      Then "The Admission No field must contain a unique value." is displayed
       Then student record with name "Marlene Fisher" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule
       Examples:
-         | admissionNO | 
-         | 833004      | 
-         | 833004      |
+         | admissionNO | rollNo |
+         | 933456      | 255    |
 
 
 
