@@ -5,9 +5,6 @@ import com.chroma.pages.DashboardPage;
 import com.chroma.web.CommonUtils;
 
 public class NavigationModulesStepsImpl extends PageInitializer {
-        // Add step implementation methods in this class
-        // NOTE: Every step implementation class Extends PageInitializer{
-
         /**
          * Method for Assert Navigation Modules
          * 
