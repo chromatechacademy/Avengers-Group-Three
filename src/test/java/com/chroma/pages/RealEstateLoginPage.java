@@ -3,7 +3,6 @@ package com.chroma.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.chroma.web.WebDriverUtils;
 
 public class RealEstateLoginPage {
@@ -12,17 +11,15 @@ public class RealEstateLoginPage {
     @FindBy(xpath = "//input[@placeholder='Email']")
     public WebElement usernameTextBox;
 
-    //Password Text Box
+    // Password Text Box
     @FindBy(xpath = "//input[@placeholder='Password']")
     public WebElement passwordTextBox;
 
-    //Login Button
+    // Login Button
     @FindBy(xpath = "//button[normalize-space()='Login']")
     public WebElement loginButton;
-
 
     public RealEstateLoginPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
-    
 }

@@ -2,6 +2,7 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.stepsImplementation.RealEstateLoginStepImpl;
+import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Given;
@@ -23,5 +24,7 @@ public class RealEstateLoginStepDef extends PageInitializer {
     @Then("user navigates to dashboard page and {string} text displays")
     public void user_navigates_to_dashboard_page_and_text_displays(String helloAdmin) {
         CommonUtils.assertEquals(helloAdmin, realEstateDashboardPage.dashboardHelloAdminText.getText());
+        CucumberLogUtils.logExtentScreenshot();
+        CucumberLogUtils.logScreenShot();
     }
 }

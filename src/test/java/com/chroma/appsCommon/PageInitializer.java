@@ -29,7 +29,6 @@ public class PageInitializer extends WebDriverUtils {
     public static ClassesAndSectionsPage classesAndSectionsPage;
     public static RealEstateLoginPage realEstateLoginPage;
     public static RealEstateDashboardPage realEstateDashboardPage;
-    
 
     /* STEPS IMPLEMENTATION INSTANCES */
     public static StudentCategoriesStepImpl studentCategoriesStepImpl;
