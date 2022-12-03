@@ -2,6 +2,8 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.stepsImplementation.AcademicsModuleStepsImpl;
+import com.chroma.utils.CucumberLogUtils;
+import com.chroma.web.CommonUtils;
 import cucumber.api.java.en.Then;
 
 public class AcademicsStepDef extends PageInitializer {
@@ -11,6 +13,10 @@ public class AcademicsStepDef extends PageInitializer {
             String assignClassTeacherlink, String promoteStudentsLink,
             String subjectGroupLink, String subjectsLink, String classLink, String sectionsLink) {  
                 AcademicsModuleStepsImpl.AssertAcademicsSubModules(classTimetableLink, teachersTimetablelink, assignClassTeacherlink, 
-                promoteStudentsLink, subjectGroupLink, subjectsLink, classLink, sectionsLink);
+                promoteStudentsLink, subjectGroupLink, subjectsLink, sectionsLink);
+            CommonUtils.assertEquals(classLink, dashboardPage.classText.getText());
+            CucumberLogUtils.logExtentScreenshot();
+            CucumberLogUtils.logScreenShot();
+
     }
 }

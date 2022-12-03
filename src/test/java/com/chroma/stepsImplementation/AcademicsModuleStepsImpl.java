@@ -6,7 +6,7 @@ import com.chroma.web.CommonUtils;
 
 public class AcademicsModuleStepsImpl extends PageInitializer {
     /**
-     * 
+     * Use this method to assert academics submodules
      * @param classTimetableLink
      * @param teachersTimetablelink
      * @param assignClassTeacherlink
@@ -18,7 +18,7 @@ public class AcademicsModuleStepsImpl extends PageInitializer {
      */
     public static void AssertAcademicsSubModules(String classTimetableLink, String teachersTimetablelink,
     String assignClassTeacherlink, String promoteStudentsLink,
-    String subjectGroupLink, String subjectsLink, String classLink, String sectionsLink) {
+    String subjectGroupLink, String subjectsLink, String sectionsLink) {
         String actualClassTimetable = DashboardPage.dynamicXpathForSubModuleWithSpace(classTimetableLink)
                 .getText();
         CommonUtils.assertEquals(classTimetableLink, actualClassTimetable);
@@ -37,9 +37,6 @@ public class AcademicsModuleStepsImpl extends PageInitializer {
         String actualSubjectsLink = DashboardPage.dynamicXpathForSubModuleWithSpace(subjectsLink)
                 .getText();
         CommonUtils.assertEquals(subjectsLink, actualSubjectsLink);
-        String actualClassLink = DashboardPage.dynamicXpathForSubModuleWithSpace(classLink)
-                .getText();
-        CommonUtils.assertEquals(classLink, actualClassLink);
         String actualSectionsLink = DashboardPage.dynamicXpathForSubModuleWithSpace(sectionsLink)
                 .getText();
         CommonUtils.assertEquals(sectionsLink, actualSectionsLink);
