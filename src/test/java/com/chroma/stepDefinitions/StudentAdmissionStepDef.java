@@ -7,7 +7,6 @@ import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.JavascriptUtils;
-
 import cucumber.api.java.en.Then;
 
 public class StudentAdmissionStepDef extends PageInitializer {
@@ -135,6 +134,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
+    
     @Then("student record with name {string} in Class {string} in section {string} is deleted through {string} submodule")
     public void student_record_with_name_in_Class_in_section_is_deleted_through_submodule(String studentName, String className, String sectionName, String subModule) {
         DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();

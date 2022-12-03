@@ -1,7 +1,7 @@
-Feature: A CTSMS user can admit a Student
+Feature: CTSMS - Student Admission
 
 @Daniela @VNGRS-12 
-Scenario:Admit Student using the admissions page
+Scenario:As a Chroma Tech Academy faculty member, I want to be able to admit a student via the Student Admission module
 Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
 When user logs with valid username "general@teacher.com" and password "123456"
 Then user is navigated to the dashboard page and sees text "Chroma Tech Academy"
