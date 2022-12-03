@@ -8,7 +8,7 @@ import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 
 public class EditStudentRecordsImpl extends PageInitializer {
-
+   
     /**
      * Method for navigation student record
      * 
@@ -16,9 +16,7 @@ public class EditStudentRecordsImpl extends PageInitializer {
      * @param sdet
      * @param databaseTesting
      */
-
     public static void NavigationToRecord(String studentDetails, String sdet, String databaseTesting) {
-
         DashboardPage.dynamicXpathForSubModuleWithSpace(studentDetails).click();
         Select classIdDropDown = new Select(editStudentPage.classDropDown);
         classIdDropDown.selectByVisibleText(sdet);
@@ -38,7 +36,6 @@ public class EditStudentRecordsImpl extends PageInitializer {
      */
     public static void DeleteRecord(String marleneFishen, String bulkDelete, String sdet,
             String databaseTesting) {
-
         DashboardPage.dynamicXpathForSubModuleWithSpace(bulkDelete).click();
         Select classIdDropDown = new Select(editStudentPage.classDropDown);
         classIdDropDown.selectByVisibleText(sdet);
@@ -53,8 +50,12 @@ public class EditStudentRecordsImpl extends PageInitializer {
         WebDriverUtils.driver.switchTo().alert().accept();
     }
 
+    /**
+     * Method for changing blood group
+     * 
+     * @param aGroup
+     */
     public static void BloodInfoChanging(String aGroup) {
-
         Select bloodGroupDropDown = new Select(editStudentPage.bloodGroupDropDown);
         bloodGroupDropDown.selectByVisibleText(aGroup);
         CommonUtils.scrollIntoView(editStudentPage.saveChangesBnt);

@@ -14,7 +14,6 @@ public class EditStudentRecordsStepDef extends PageInitializer {
 
                 EditStudentRecordsImpl.NavigationToRecord(studentDetails, sdet, databaseTesting);
                 editStudentPage.editStudentRecordBtn.click();
-
         }
 
         @Then("user edits a record by adding Blood Group {string}")
@@ -22,7 +21,6 @@ public class EditStudentRecordsStepDef extends PageInitializer {
 
                 EditStudentRecordsImpl.BloodInfoChanging(aGroup);
                 CommonUtils.sleep(3000);
-
         }
 
         @Then("user is able to see Record Update Successfully information")
@@ -33,7 +31,6 @@ public class EditStudentRecordsStepDef extends PageInitializer {
                 CommonUtils.assertTrue(resultsForRecordUpdateSuccessfulyAppears);
                 CucumberLogUtils.logExtentScreenshot();
                 CucumberLogUtils.logScreenShot();
-
         }
 
         @Then("user clicks on {string}, looks for a studend in a {string} class and {string} section, chooshes and clicks on student")
@@ -61,7 +58,5 @@ public class EditStudentRecordsStepDef extends PageInitializer {
 
                 EditStudentRecordsImpl.DeleteRecord(marleneFishen, bulkDelete, sdet, databaseTesting);
                 CommonUtils.sleep(3000);
-
         }
-
 }
