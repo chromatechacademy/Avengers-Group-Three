@@ -15,12 +15,12 @@ public class ExpensesModuleStepImpl extends PageInitializer {
                         String expenseHeadLink) {
                 String actualAddExpenseLink = DashboardPage.dynamicXpathForSubModuleWithSpace(addExpenseLink)
                                 .getText();
-                CommonUtils.assertEquals(addExpenseLink, actualAddExpenseLink);
+                CommonUtils.assertEquals(actualAddExpenseLink, addExpenseLink);
                 String actualSearchExpenseLink = DashboardPage.dynamicXpathForSubModuleWithSpace(searchExpenseLink)
                                 .getText();
-                CommonUtils.assertEquals(searchExpenseLink, actualSearchExpenseLink);
+                CommonUtils.assertEquals(actualSearchExpenseLink, searchExpenseLink);
                 String actualExpenseHeadLink = DashboardPage.dynamicXpathForSubModuleWithSpace(expenseHeadLink)
                                 .getText();
-                CommonUtils.assertEquals(expenseHeadLink, actualExpenseHeadLink);
+                CommonUtils.assertEquals(actualExpenseHeadLink, expenseHeadLink);
         }
 }

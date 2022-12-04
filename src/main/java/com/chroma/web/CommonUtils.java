@@ -481,7 +481,7 @@ public class CommonUtils extends WebDriverUtils {
  */
 	public static void assertEquals(String expected, String actual) {
 		try {
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, expected);
 		}
 		catch(AssertionError e) {
 			e.printStackTrace();

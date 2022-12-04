@@ -23,30 +23,30 @@ public class FeesCollectionStepImpl extends PageInitializer {
             String feesReminderLink) {
         String actualCollectFeesLink = DashboardPage.dynamicXpathForSubModule(collectFeesLink)
                 .getText();
-        CommonUtils.assertEquals(collectFeesLink, actualCollectFeesLink);
+        CommonUtils.assertEquals(actualCollectFeesLink, collectFeesLink);
         String actualSearchFeesPaymentLink = DashboardPage.dynamicXpathForSubModule(searchFeesPaymentLink)
                 .getText();
-        CommonUtils.assertEquals(searchFeesPaymentLink, actualSearchFeesPaymentLink);
+        CommonUtils.assertEquals(actualSearchFeesPaymentLink, searchFeesPaymentLink);
         String actualSearchDueFeesLinK = DashboardPage.dynamicXpathForSubModule(searchDueFeesLink)
                 .getText();
-        CommonUtils.assertEquals(searchDueFeesLink, actualSearchDueFeesLinK);
+        CommonUtils.assertEquals(actualSearchDueFeesLinK, searchDueFeesLink);
         String actualFeesMasterLink = DashboardPage.dynamicXpathForSubModule(feesMasterLink)
                 .getText();
-        CommonUtils.assertEquals(feesMasterLink, actualFeesMasterLink);
+        CommonUtils.assertEquals(actualFeesMasterLink, feesMasterLink);
         String actualFeesGroupLink = DashboardPage.dynamicXpathForSubModule(feesGroupLink)
                 .getText();
-        CommonUtils.assertEquals(feesGroupLink, actualFeesGroupLink);
+        CommonUtils.assertEquals(actualFeesGroupLink, feesGroupLink);
         String actualFeesTypeLink = DashboardPage.dynamicXpathForSubModule(feesTypeLink)
                 .getText();
-        CommonUtils.assertEquals(feesTypeLink, actualFeesTypeLink);
+        CommonUtils.assertEquals(actualFeesTypeLink,feesTypeLink);
         String actualFeesDiscountLink = DashboardPage.dynamicXpathForSubModule(feesDiscountLink)
                 .getText();
-        CommonUtils.assertEquals(feesDiscountLink, actualFeesDiscountLink);
+        CommonUtils.assertEquals(actualFeesDiscountLink, feesDiscountLink);
         String actualFeesCarryForwardLink = DashboardPage.dynamicXpathForSubModule(feesCarryForwardLink)
                 .getText();
-        CommonUtils.assertEquals(feesCarryForwardLink, actualFeesCarryForwardLink);
+        CommonUtils.assertEquals(actualFeesCarryForwardLink, feesCarryForwardLink);
         String actualFeesReminderLink = DashboardPage.dynamicXpathForSubModule(feesReminderLink)
                 .getText();
-        CommonUtils.assertEquals(feesReminderLink, actualFeesReminderLink);
+        CommonUtils.assertEquals(actualFeesReminderLink, feesReminderLink);
     }
 }

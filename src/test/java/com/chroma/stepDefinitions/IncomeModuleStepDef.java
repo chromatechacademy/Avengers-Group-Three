@@ -12,6 +12,8 @@ public class IncomeModuleStepDef {
     public void user_clicks_on_module(String module) {
         DashboardPage.dynamicXpathForModule(module).click();
         CommonUtils.sleep(4000);
+        CucumberLogUtils.logExtentScreenshot();
+        CucumberLogUtils.logScreenShot();
     }
 
     @Then("User has to see folowing links {string}, {string}, {string}")

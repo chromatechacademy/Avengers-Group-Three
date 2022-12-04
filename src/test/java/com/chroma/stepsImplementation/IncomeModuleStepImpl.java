@@ -14,6 +14,6 @@ public class IncomeModuleStepImpl extends PageInitializer {
             String incomeHeadLink) {
         String actualAddIncome = DashboardPage.dynamicXpathForSubModule(addIncomeLink)
                 .getText();
-        CommonUtils.assertEquals(addIncomeLink, actualAddIncome);
+        CommonUtils.assertEquals(actualAddIncome, addIncomeLink);
     }
 }

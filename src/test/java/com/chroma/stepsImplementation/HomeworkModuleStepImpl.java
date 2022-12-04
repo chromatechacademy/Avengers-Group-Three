@@ -12,6 +12,6 @@ public class HomeworkModuleStepImpl extends PageInitializer {
     public static void AssertHomeworkSubModules(String homeworkLink) {
         String actualHomework = DashboardPage.dynamicXpathForSubModule(homeworkLink)
                 .getText();
-        CommonUtils.assertEquals(homeworkLink, actualHomework);
+        CommonUtils.assertEquals(actualHomework, homeworkLink);
     }
 }

@@ -10,6 +10,6 @@ public class StudentAddmisiionUniqueAdmissionNumberStepImpl extends PageInitiali
      */
     public static void AssertAdmissionNo(String admissionNoWarning) {
         String actualAdmissionNoFieldMustContainAUniqueValuetext = studentAdmissionPage.admissionNoWarning.getText();
-        CommonUtils.assertEquals(admissionNoWarning, actualAdmissionNoFieldMustContainAUniqueValuetext);
+        CommonUtils.assertEquals(actualAdmissionNoFieldMustContainAUniqueValuetext, admissionNoWarning);
     }
 }
