@@ -13,13 +13,10 @@ import com.chroma.pages.SectionsPage;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.pages.StudentDetailsPage;
-<<<<<<< HEAD
 import com.chroma.stepsImplementation.RealEstateLoginStepImpl;
-=======
 import com.chroma.stepsImplementation.DisableStudentsStepsImpl;
 import com.chroma.stepsImplementation.EditStudentRecordsImpl;
 import com.chroma.stepsImplementation.NavigationModulesStepsImpl;
->>>>>>> 0e7a7acc71e1959a9ab412068c5189912fa7aedc
 import com.chroma.stepsImplementation.StudentCategoriesStepImpl;
 import com.chroma.web.WebDriverUtils;
 
@@ -36,14 +33,13 @@ public class PageInitializer extends WebDriverUtils {
     public static SectionsPage sectionsPage;
     public static StudentCategoriesPage studentCategories;
     public static ClassesAndSectionsPage classesAndSectionsPage;
-<<<<<<< HEAD
     public static RealEstateLoginPage realEstateLoginPage;
     public static RealEstateDashboardPage realEstateDashboardPage;
+    public static DisableStudentsPage disableStudentsPage;
 
     /* STEPS IMPLEMENTATION INSTANCES */
     public static StudentCategoriesStepImpl studentCategoriesStepImpl;
     public static RealEstateLoginStepImpl realEstateLoginStepImpl;
-=======
     public static DisableStudentsPage disableStudentsPage;
 
     /* STEPS IMPLEMENTATION INSTANCES */
@@ -51,7 +47,6 @@ public class PageInitializer extends WebDriverUtils {
     public static EditStudentRecordsImpl editStudentRecordsImpl;
     public static NavigationModulesStepsImpl navigationModulesStepsImpl;
     public static DisableStudentsStepsImpl disableStudentsStepsImpl;
->>>>>>> 0e7a7acc71e1959a9ab412068c5189912fa7aedc
 
     public void initializeAllPages() {
         samplePage = new SamplePage();
@@ -66,14 +61,11 @@ public class PageInitializer extends WebDriverUtils {
         disableStudentsPage = new DisableStudentsPage();
         studentCategoriesStepImpl = new StudentCategoriesStepImpl();
         classesAndSectionsPage = new ClassesAndSectionsPage();
-<<<<<<< HEAD
         realEstateLoginPage = new RealEstateLoginPage();
         realEstateLoginStepImpl = new RealEstateLoginStepImpl();
         realEstateDashboardPage = new RealEstateDashboardPage();
-=======
         editStudentRecordsImpl = new EditStudentRecordsImpl();
         navigationModulesStepsImpl = new NavigationModulesStepsImpl();
         disableStudentsStepsImpl = new DisableStudentsStepsImpl();
->>>>>>> 0e7a7acc71e1959a9ab412068c5189912fa7aedc
     }
 }
