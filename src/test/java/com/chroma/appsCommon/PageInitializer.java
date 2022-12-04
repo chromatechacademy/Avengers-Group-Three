@@ -8,6 +8,7 @@ import com.chroma.pages.EditStudentPage;
 import com.chroma.pages.LoginPage;
 import com.chroma.pages.RealEstateDashboardPage;
 import com.chroma.pages.RealEstateLoginPage;
+import com.chroma.pages.RealEstateProjectsPage;
 import com.chroma.pages.SamplePage;
 import com.chroma.pages.SectionsPage;
 import com.chroma.pages.StudentAdmissionPage;
@@ -36,6 +37,7 @@ public class PageInitializer extends WebDriverUtils {
     public static RealEstateLoginPage realEstateLoginPage;
     public static RealEstateDashboardPage realEstateDashboardPage;
     public static DisableStudentsPage disableStudentsPage;
+    public static RealEstateProjectsPage realEstateProjectsPage;
 
     /* STEPS IMPLEMENTATION INSTANCES */
     public static EditStudentRecordsImpl editStudentRecordsImpl;
@@ -63,5 +65,6 @@ public class PageInitializer extends WebDriverUtils {
         editStudentRecordsImpl = new EditStudentRecordsImpl();
         navigationModulesStepsImpl = new NavigationModulesStepsImpl();
         disableStudentsStepsImpl = new DisableStudentsStepsImpl();
+        realEstateProjectsPage = new RealEstateProjectsPage();
     }
 }
