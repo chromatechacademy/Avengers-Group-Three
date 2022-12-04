@@ -8,15 +8,15 @@ import com.chroma.web.WebDriverUtils;
 
 public class DashboardPage {
 
-    // Chroma Tech Academy dashboard text
+    /* Chroma Tech Academy dashboard text */
     @FindBy(xpath = "//span[normalize-space()='Chroma Tech Academy']")
     public WebElement dashBoardChromaTechText;
 
-    // Student Information Module Btn
+    /* Student Information Module Btn */
     @FindBy(xpath = "//i[@class = 'fa fa-user-plus ftlayer']")
     public WebElement studentInfoBtn;
 
-    // Class Btn
+    /* Class Btn */
     @FindBy(xpath = "//a[normalize-space()='Class']")
     public WebElement classText;
 
