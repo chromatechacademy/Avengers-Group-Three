@@ -479,7 +479,8 @@ public class CommonUtils extends WebDriverUtils {
  * 
  * Use below method to assert actual String value with an expected String value	
  */
-	public static void assertEquals(String expected, String actual) {
+	public static void assertEquals(String actual, String expected) {
+		
 		try {
 		Assert.assertEquals(actual, expected);
 		}
@@ -506,6 +507,7 @@ public class CommonUtils extends WebDriverUtils {
             Assert.assertTrue(flag);
         } catch (AssertionError e) {
             e.printStackTrace();
-        }
-    }
-}
+		}
+     }
+ }
+    

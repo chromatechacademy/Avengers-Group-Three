@@ -8,27 +8,27 @@ import com.chroma.web.WebDriverUtils;
 
 public class LoginPage {
 
-    // username text box
+    /* Username text box */
     @FindBy(xpath = "//input[@placeholder='Username']")
     public WebElement usernameTextBox;
 
-    // password text box
+    /* Password text box */
     @FindBy(xpath = "//input[@placeholder='Password']")
     public WebElement passwordTextBox;
 
-     // username text box
+     /* Invalid username text box */
      @FindBy(xpath = "//input[@placeholder='Username']")
      public WebElement invalidusernameTextBox;
  
-     // password text box
+     /* Invalid password text box */
      @FindBy(xpath = "//input[@placeholder='Password']")
      public WebElement invalidpasswordTextBox;
 
-    // sign in button
+    /* Sign in button */
     @FindBy(xpath = "//button[normalize-space()='Sign In']")
     public WebElement signInBtn;
 
-    // invalid login message
+    /* Invalid login message */
     @FindBy(xpath = "//div[@class='alert alert-danger']")
     public WebElement invalidLoginMessage;
 
