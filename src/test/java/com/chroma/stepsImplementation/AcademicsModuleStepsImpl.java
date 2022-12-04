@@ -41,13 +41,10 @@ public class AcademicsModuleStepsImpl extends PageInitializer {
                 String actualSubjectsLink = DashboardPage.dynamicXpathForSubModuleWithSpace(subjectsLink)
                                 .getText();
                 CommonUtils.assertEquals(actualSubjectsLink, subjectsLink);
-                String actualClassLink = DashboardPage.dynamicXpathForSubModuleWithSpace(sectionsLink)
-                                .getText();
-                CommonUtils.assertEquals(actualClassLink, classLink);
                 String actualSectionsLink = DashboardPage.dynamicXpathForSubModuleWithSpace(sectionsLink)
                                 .getText();
                 CommonUtils.assertEquals(actualSectionsLink, sectionsLink);
-                //CommonUtils.assertEquals(classLink, dashboardPage.classText.getText());
+                CommonUtils.assertEquals(classLink, dashboardPage.classText.getText());
                 CucumberLogUtils.logExtentScreenshot();
                 CucumberLogUtils.logScreenShot();
         }

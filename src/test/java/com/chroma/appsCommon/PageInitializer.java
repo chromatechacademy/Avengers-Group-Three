@@ -13,12 +13,14 @@ import com.chroma.pages.SectionsPage;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.stepsImplementation.BulkDeleteStepImpl;
+import com.chroma.pages.ValidateAgentModulePage;
 import com.chroma.stepsImplementation.RealEstateLoginStepImpl;
 import com.chroma.stepsImplementation.DisableStudentsStepsImpl;
 import com.chroma.stepsImplementation.EditStudentRecordsImpl;
 import com.chroma.stepsImplementation.NavigationModulesStepsImpl;
 import com.chroma.stepsImplementation.StudentAdmissionsStepImpl;
 import com.chroma.stepsImplementation.StudentCategoriesStepImpl;
+import com.chroma.stepsImplementation.ValidateAgentImpl;
 import com.chroma.web.WebDriverUtils;
 
 public class PageInitializer extends WebDriverUtils {
@@ -33,10 +35,11 @@ public class PageInitializer extends WebDriverUtils {
     public static SectionsPage sectionsPage;
     public static StudentCategoriesPage studentCategories;
     public static ClassesAndSectionsPage classesAndSectionsPage;
+    public static ValidateAgentModulePage validateAgentModulePage;
     public static RealEstateLoginPage realEstateLoginPage;
     public static RealEstateDashboardPage realEstateDashboardPage;
     public static DisableStudentsPage disableStudentsPage;
-
+   
     /* STEPS IMPLEMENTATION INSTANCES */
     public static EditStudentRecordsImpl editStudentRecordsImpl;
     public static NavigationModulesStepsImpl navigationModulesStepsImpl;
@@ -45,6 +48,7 @@ public class PageInitializer extends WebDriverUtils {
     public static DisableStudentsStepsImpl disableStudentsStepsImpl;
     public static StudentCategoriesStepImpl studentCategoriesStepImpl;
     public static RealEstateLoginStepImpl realEstateLoginStepImpl;
+    public static ValidateAgentImpl validateAgentImpl;
 
     public void initializeAllPages() {
         samplePage = new SamplePage();
@@ -65,6 +69,7 @@ public class PageInitializer extends WebDriverUtils {
         navigationModulesStepsImpl = new NavigationModulesStepsImpl();
         studentAdmissionsStepImpl = new StudentAdmissionsStepImpl();
         bulkDeleteStepImpl = new BulkDeleteStepImpl();
+        validateAgentModulePage = new ValidateAgentModulePage();
         disableStudentsStepsImpl = new DisableStudentsStepsImpl();
     }
 }
