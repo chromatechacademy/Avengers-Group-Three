@@ -22,19 +22,19 @@ public class StudentInformationModulSpetsImpl {
             String disableReason) {
         CommonUtils.sleep(3000);
         String actualStudentDetails = DashboardPage.dynamicXpathForSubModuleWithSpace(studentDetails).getText();
-        CommonUtils.assertEquals(studentDetails, actualStudentDetails);
+        CommonUtils.assertEquals(actualStudentDetails, studentDetails);
         String actualStudentAdmission = DashboardPage.dynamicXpathForSubModuleWithSpace(studentAdmission).getText();
-        CommonUtils.assertEquals(studentAdmission, actualStudentAdmission);
+        CommonUtils.assertEquals(actualStudentAdmission, studentAdmission);
         String actualDisableStudents = DashboardPage.dynamicXpathForSubModuleWithSpace(disabledStudents).getText();
-        CommonUtils.assertEquals(disabledStudents, actualDisableStudents);
+        CommonUtils.assertEquals(actualDisableStudents, disabledStudents);
         String actualBulkDelete = DashboardPage.dynamicXpathForSubModuleWithSpace(bulkDelete).getText();
-        CommonUtils.assertEquals(bulkDelete, actualBulkDelete);
+        CommonUtils.assertEquals(actualBulkDelete, bulkDelete);
         String actualStudentCategories = DashboardPage.dynamicXpathForSubModuleWithSpace(studentCategories).getText();
-        CommonUtils.assertEquals(studentCategories, actualStudentCategories);
+        CommonUtils.assertEquals(actualStudentCategories, studentCategories);
         String actualStudentHouse = DashboardPage.dynamicXpathForSubModuleWithSpace(studentHouse).getText();
-        CommonUtils.assertEquals(studentHouse, actualStudentHouse);
+        CommonUtils.assertEquals(actualStudentHouse, studentHouse);
         String actualDisableReason = DashboardPage.dynamicXpathForSubModuleWithSpace(disableReason).getText();
-        CommonUtils.assertEquals(disableReason, actualDisableReason);
+        CommonUtils.assertEquals(actualDisableReason, disableReason);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
