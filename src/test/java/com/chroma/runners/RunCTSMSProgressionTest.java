@@ -1,4 +1,5 @@
 package com.chroma.runners;
+
 import org.junit.runner.RunWith;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -10,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 		features = "src/test/java/com/chroma/features", 
 		glue = "com.chroma.stepDefinitions", 
 		tags = "@Progression",
-		dryRun = false, 
+		dryRun = true, 
 		monochrome = true, 
 		strict = true
 )
