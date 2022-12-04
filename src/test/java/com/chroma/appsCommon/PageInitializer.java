@@ -40,10 +40,8 @@ public class PageInitializer extends WebDriverUtils {
     /* STEPS IMPLEMENTATION INSTANCES */
     public static StudentCategoriesStepImpl studentCategoriesStepImpl;
     public static RealEstateLoginStepImpl realEstateLoginStepImpl;
-    public static DisableStudentsPage disableStudentsPage;
 
     /* STEPS IMPLEMENTATION INSTANCES */
-    public static StudentCategoriesStepImpl studentCategoriesStepImpl;
     public static EditStudentRecordsImpl editStudentRecordsImpl;
     public static NavigationModulesStepsImpl navigationModulesStepsImpl;
     public static DisableStudentsStepsImpl disableStudentsStepsImpl;
