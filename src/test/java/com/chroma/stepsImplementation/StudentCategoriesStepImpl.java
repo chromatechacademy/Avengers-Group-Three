@@ -7,6 +7,10 @@ import com.chroma.web.CommonUtils;
 
 public class StudentCategoriesStepImpl extends PageInitializer {
     
+    /***
+     * Use this method to delete Category
+     * @param category
+     */
     public void deletingStudentCategory(String category){
         StudentCategoriesPage.dynamixCategoryLocatorXButton(category).click();
         CommonUtils.sleep(2000);
@@ -15,6 +19,10 @@ public class StudentCategoriesStepImpl extends PageInitializer {
         CucumberLogUtils.logScreenShot();
     }
 
+    /***
+     * Use this method enter and save Category
+     * @param category
+     */
     public void enteringAndSavingStudentCategory(String category){
         studentCategories.categoryTextBox.sendKeys(category);
         studentCategories.categorySaveButton.click();
@@ -23,6 +31,10 @@ public class StudentCategoriesStepImpl extends PageInitializer {
         CucumberLogUtils.logScreenShot();
     }
 
+    /***
+     * Use this method verify that expected Category is displayed
+     * @param expectedCategory
+     */
     public void verifyingStudentCategoryIsDisplayed(String expectedCategory){
         String actualCategoryText = StudentCategoriesPage.dynamixCategoryText(expectedCategory).getText();
         CommonUtils.assertEquals(expectedCategory, actualCategoryText);

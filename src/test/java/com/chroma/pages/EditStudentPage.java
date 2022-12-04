@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.chroma.web.WebDriverUtils;
 
 public class EditStudentPage {
+    
     /* class dropDown */
     @FindBy(xpath = "//select[@name='class_id']")
     public WebElement classDropDown;

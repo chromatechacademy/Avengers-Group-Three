@@ -1,6 +1,6 @@
 Feature: Income Module content 
 We need to test the content of income module 
-@Hayk @Regression @VNGRS-6
+@Regression @Hayk @VNGRS-6
 Scenario: Testing content in income module
 Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
 When user logs with valid username "general@teacher.com" and password "123456"
