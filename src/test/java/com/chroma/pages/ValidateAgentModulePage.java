@@ -7,47 +7,47 @@ import com.chroma.web.WebDriverUtils;
 
 public class ValidateAgentModulePage {
 
-    // Click on Agent Btn
-    @FindBy(xpath = "//span[normalize-space()='Agents']")
-    public WebElement agentBtn;
+  // Click on Agent Btn
+  @FindBy(xpath = "//span[normalize-space()='Agents']")
+  public WebElement agentBtn;
 
-    // Text Memebers List
-    @FindBy(xpath = "//button[@class='sidebar-item']")
-    public WebElement membersSign ;
+  // Text Memebers List
+  @FindBy(xpath = "//button[@class='sidebar-item']")
+  public WebElement membersSign;
 
-     // Text Active Sign
-     @FindBy(xpath = "(//*[contains(text(),'Active')])[1]")
-     public WebElement activeSign ;
+  // Text Active Sign
+  @FindBy(xpath = "(//*[contains(text(),'Active')])[1]")
+  public WebElement activeSign;
 
-     // Text Inactive Sign
-     @FindBy(xpath = "//*[contains(text(),'Inactive')]")
-     public WebElement inactiveSign ;
-     
-     // Text AllAgents Sign
-     @FindBy(xpath = "(//*[contains(text(),'All Agents')])[1]")
-     public WebElement allAgentsign ;
+  // Text Inactive Sign
+  @FindBy(xpath = "//*[contains(text(),'Inactive')]")
+  public WebElement inactiveSign;
 
-     // Text Add Now Sign
-     @FindBy(xpath = "//*[contains(text(),'Add Now')]")
-     public WebElement addNowsign ;
+  // Text AllAgents Sign
+  @FindBy(xpath = "(//*[contains(text(),'All Agents')])[1]")
+  public WebElement allAgentsign;
 
-    // Text Name Sign
-    @FindBy(xpath = "(//*[contains(text(), 'Name')])[1]")
-      public WebElement nameSign;
+  // Text Add Now Sign
+  @FindBy(xpath = "//*[contains(text(),'Add Now')]")
+  public WebElement addNowsign;
 
-    // Text Mail Sign
-    @FindBy(xpath = "//*[contains(text(), 'Mail')]")
-    public WebElement mailSign;
+  // Text Name Sign
+  @FindBy(xpath = "(//*[contains(text(), 'Name')])[1]")
+  public WebElement nameSign;
 
-    // Text Contac Number Sign
-    @FindBy(xpath = "//*[contains(text(), 'Contact Number')]")
-    public WebElement contactNumberSign;
+  // Text Mail Sign
+  @FindBy(xpath = "//*[contains(text(), 'Mail')]")
+  public WebElement mailSign;
 
-    // Text Contac Actions Sign
-    @FindBy(xpath = "//*[contains(text(), 'Actions')]")
-    public WebElement actionsSign;
+  // Text Contac Number Sign
+  @FindBy(xpath = "//*[contains(text(), 'Contact Number')]")
+  public WebElement contactNumberSign;
 
-    public ValidateAgentModulePage() {
-        PageFactory.initElements(WebDriverUtils.driver, this);
-    }  
+  // Text Contac Actions Sign
+  @FindBy(xpath = "//*[contains(text(), 'Actions')]")
+  public WebElement actionsSign;
+
+  public ValidateAgentModulePage() {
+    PageFactory.initElements(WebDriverUtils.driver, this);
+  }
 }

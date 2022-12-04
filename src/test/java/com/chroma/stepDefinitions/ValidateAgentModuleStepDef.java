@@ -2,7 +2,6 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.stepsImplementation.ValidateAgentImpl;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
