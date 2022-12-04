@@ -20,4 +20,17 @@ public class LoginStepsImpl extends PageInitializer {
         loginPage.signInBtn.click();
         CommonUtils.waitForVisibility(dashboardPage.studentInfoBtn);
     }
+
+    public static void verifyDashboardText(String chromaTechAcademyText) {
+        CommonUtils.assertEquals(chromaTechAcademyText, dashboardPage.dashBoardChromaTechText.getText());
+        CucumberLogUtils.logScreenShot();
+        CucumberLogUtils.logExtentScreenshot();
+    }
+
+    public static void verifyInvalidMessage(String invalidLoginMessage) {
+        String actualInvalidLoginMessage = loginPage.invalidLoginMessage.getText();
+        CommonUtils.assertEquals(invalidLoginMessage, actualInvalidLoginMessage);
+        CucumberLogUtils.logScreenShot();
+        CucumberLogUtils.logExtentScreenshot();
+    }
 }

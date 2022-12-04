@@ -19,11 +19,11 @@ public class ClassesAndSectionsPage {
     @FindBy(xpath = "//input[@name='class']")
     public WebElement mariClass;
 
-    /* Clicks on Sample Section */
+    /* Sample Section */
     @FindBy(xpath = "//input[@value='231']")
     public WebElement sampleSection;
 
-    /* Clicks on Save */
+    /* Save Button*/
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 

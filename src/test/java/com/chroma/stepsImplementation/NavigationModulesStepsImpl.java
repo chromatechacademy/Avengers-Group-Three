@@ -21,27 +21,27 @@ public class NavigationModulesStepsImpl extends PageInitializer {
                         String expenses, String academics, String humanResource, String homework, String reports) {
                 String actualStudentInformationText = DashboardPage.dynamicXpathForModule(studentInformation)
                                 .getText();
-                CommonUtils.assertEquals(studentInformation, actualStudentInformationText);
+                CommonUtils.assertEquals(actualStudentInformationText, studentInformation);
                 String actualFeesCollectionText = DashboardPage.dynamicXpathForModule(feesCollection)
                                 .getText();
-                CommonUtils.assertEquals(feesCollection, actualFeesCollectionText);
+                CommonUtils.assertEquals(actualFeesCollectionText, feesCollection);
                 String actualIncomeInformarionText = DashboardPage.dynamicXpathForModule(income)
                                 .getText();
-                CommonUtils.assertEquals(income, actualIncomeInformarionText);
+                CommonUtils.assertEquals(actualIncomeInformarionText, income);
                 String actualExpensesInformarionText = DashboardPage.dynamicXpathForModule(expenses)
                                 .getText();
-                CommonUtils.assertEquals(expenses, actualExpensesInformarionText);
+                CommonUtils.assertEquals(actualExpensesInformarionText, expenses);
                 String actualAcademicsInformarionText = DashboardPage.dynamicXpathForModule(academics)
                                 .getText();
-                CommonUtils.assertEquals(academics, actualAcademicsInformarionText);
+                CommonUtils.assertEquals(actualAcademicsInformarionText, academics);
                 String actualHumanResourseInformarionText = DashboardPage.dynamicXpathForModule(humanResource)
                                 .getText();
-                CommonUtils.assertEquals(humanResource, actualHumanResourseInformarionText);
+                CommonUtils.assertEquals(actualHumanResourseInformarionText, humanResource);
                 String actualHomeworkInformarionText = DashboardPage.dynamicXpathForModule(homework)
                                 .getText();
-                CommonUtils.assertEquals(homework, actualHomeworkInformarionText);
+                CommonUtils.assertEquals(actualHomeworkInformarionText, homework);
                 String actualReportsInformarionText = DashboardPage.dynamicXpathForModule(reports)
                                 .getText();
-                CommonUtils.assertEquals(reports, actualReportsInformarionText);
+                CommonUtils.assertEquals(actualReportsInformarionText, reports);
         }
 }
