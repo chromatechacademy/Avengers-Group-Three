@@ -10,6 +10,7 @@ import com.chroma.pages.SectionsPage;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.pages.StudentDetailsPage;
+import com.chroma.pages.ValidateAgentModulePage;
 import com.chroma.stepsImplementation.EditStudentRecordsImpl;
 import com.chroma.stepsImplementation.NavigationModulesStepsImpl;
 import com.chroma.stepsImplementation.StudentCategoriesStepImpl;
@@ -28,6 +29,7 @@ public class PageInitializer extends WebDriverUtils {
     public static SectionsPage sectionsPage;
     public static StudentCategoriesPage studentCategories;
     public static ClassesAndSectionsPage classesAndSectionsPage;
+    public static ValidateAgentModulePage validateAgentModulePage;
 
     /* STEPS IMPLEMENTATION INSTANCES */
     public static StudentCategoriesStepImpl studentCategoriesStepImpl;
@@ -48,5 +50,6 @@ public class PageInitializer extends WebDriverUtils {
         classesAndSectionsPage = new ClassesAndSectionsPage();
         editStudentRecordsImpl = new EditStudentRecordsImpl();
         navigationModulesStepsImpl = new NavigationModulesStepsImpl();
+        validateAgentModulePage = new ValidateAgentModulePage();
     }
 }

@@ -2,6 +2,7 @@ package com.chroma.stepsImplementation;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.utils.CucumberLogUtils;
+import com.chroma.web.CommonUtils;
 
 public class LoginStepsImpl extends PageInitializer {
 
@@ -11,5 +12,6 @@ public class LoginStepsImpl extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
         loginPage.signInBtn.click();
+        CommonUtils.waitForVisibility(dashboardPage.studentInfoBtn);
     }
 }
