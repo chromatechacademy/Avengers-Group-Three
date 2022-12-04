@@ -1,6 +1,6 @@
 Feature: An admin user navigates to the “*Agents*” page and able to view the text
 
-@Anastasiia @VNGRS-44 @Progression
+@Anastasiia @VNGRS-44 @Regression
 Scenario: an admin user is able to view the text on the Agents page
 Given a user is on the CTRE login page "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/admin/login.php"
 When a user logs with valid username "admin@mexil.it" and password "123456"
