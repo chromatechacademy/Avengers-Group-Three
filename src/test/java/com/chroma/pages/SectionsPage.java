@@ -10,11 +10,11 @@ import com.chroma.web.WebDriverUtils;
 public class SectionsPage extends PageInitializer {
 
     /* Academics Btn */
-    @FindBy(xpath = "//i[@class='fa fa-mortar-board ftlayer']")
+    @FindBy(xpath = "//*[contains(text(),'Academics')]")
     public WebElement academicsBtn;
 
     /* Section Btn */
-    @FindBy(xpath = "//a[normalize-space()='Sections']")
+    @FindBy(xpath = "//*[contains(text(),'Sections')]")
     public WebElement sectionBtn;
 
     /* Enter text */
