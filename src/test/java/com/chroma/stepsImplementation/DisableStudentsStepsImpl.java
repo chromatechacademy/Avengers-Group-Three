@@ -6,6 +6,11 @@ import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 
 public class DisableStudentsStepsImpl extends PageInitializer {
+    
+    /***
+     * Use this method to disable student
+     * @param disableReason
+     */
     public void disableStudent(String disableReason) {
         disableStudentsPage.disableButton.click();
         CommonUtils.sleep(1500);
@@ -22,6 +27,9 @@ public class DisableStudentsStepsImpl extends PageInitializer {
         CommonUtils.sleep(2000);
     }
 
+    /***
+     * Use this method to enable student
+     */
     public void selectStudent() {
         disableStudentsPage.enableButton.click();
         CommonUtils.sleep(1500);
@@ -29,6 +37,5 @@ public class DisableStudentsStepsImpl extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
         CommonUtils.sleep(1500);
-
     }
 }

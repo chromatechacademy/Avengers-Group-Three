@@ -3,10 +3,10 @@ package com.chroma.stepDefinitions;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.DisableStudentsPage;
 import com.chroma.utils.CucumberLogUtils;
-
 import cucumber.api.java.en.Then;
 
 public class DisableStudentsStepDef extends PageInitializer {
+
     @Then("clicks on a search button")
     public void clicks_on_a_search_button() {
         disableStudentsPage.searchButton.click();
