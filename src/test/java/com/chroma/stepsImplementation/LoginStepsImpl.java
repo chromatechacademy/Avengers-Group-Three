@@ -6,6 +6,12 @@ import com.chroma.web.CommonUtils;
 
 public class LoginStepsImpl extends PageInitializer {
 
+    /****
+     * Use this method to login into CTSMS
+     * 
+     * @param username
+     * @param password
+     */
     public static void login(String username, String password) {
         loginPage.usernameTextBox.sendKeys(username);
         loginPage.passwordTextBox.sendKeys(password);

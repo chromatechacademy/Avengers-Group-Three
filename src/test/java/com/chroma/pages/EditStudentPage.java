@@ -6,39 +6,39 @@ import org.openqa.selenium.support.PageFactory;
 import com.chroma.web.WebDriverUtils;
 
 public class EditStudentPage {
-    // class dropDown
+    /* class dropDown */
     @FindBy(xpath = "//select[@name='class_id']")
     public WebElement classDropDown;
 
-    // section dropDown
+    /* section dropDown */
     @FindBy(xpath = "//select[@name='section_id']")
     public WebElement sectionDropDown;
 
-    // searchBar btn
+    /* searchBar btn */
     @FindBy(xpath = "//button[@value='search_filter']")
     public WebElement searchBarBtn;
 
-    // student record bnt
+    /* student record btn */
     @FindBy(xpath = "//tr[@role='row']//a[contains(text(),'Marlene Fisher')]")
     public WebElement studentRecordBtn;
 
-    // edit student record bnt
+    /* edit student record btn */
     @FindBy(xpath = "//a[@title='Edit']//i")
     public WebElement editStudentRecordBtn;
 
-    // blood group Drop Down
+    /* blood group Drop Down */
     @FindBy(xpath = "//select[@name='blood_group']")
     public WebElement bloodGroupDropDown;
 
-    // blood a+ option
+    /* blood a+ option */
     @FindBy(xpath = "//td[normalize-space()='A+']")
     public WebElement bloodAOption;
 
-    // save changes bnt
+    /* save changes btn */
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveChangesBnt;
 
-    // results for record update successfuly
+    /* results for record update successfuly */
     @FindBy(xpath = "//div[@student='alert alert-success text-left']")
     public WebElement resultsForRecordUpdateSuccessfuly;
 

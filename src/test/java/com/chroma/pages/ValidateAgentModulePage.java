@@ -12,11 +12,11 @@ public class ValidateAgentModulePage {
     public WebElement agentBtn;
 
     // Text Memebers List
-    @FindBy(xpath = "//button[@class='sidebar-item' and @xpath='1']")
+    @FindBy(xpath = "//button[@class='sidebar-item']")
     public WebElement membersSign ;
 
      // Text Active Sign
-     @FindBy(xpath = "//*[contains(text(),'Active')]")
+     @FindBy(xpath = "(//*[contains(text(),'Active')])[1]")
      public WebElement activeSign ;
 
      // Text Inactive Sign

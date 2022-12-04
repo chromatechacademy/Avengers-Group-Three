@@ -10,11 +10,11 @@ import cucumber.api.junit.Cucumber;
 		features = "src/test/java/com/chroma/features", 
 		glue = "com.chroma.stepDefinitions", 
 		tags = "@Progression",
-		dryRun = true, 
+		dryRun = false, 
 		monochrome = true, 
 		strict = true
 )
 
 public class RunCTSMSProgressionTest {
-
+	
 }

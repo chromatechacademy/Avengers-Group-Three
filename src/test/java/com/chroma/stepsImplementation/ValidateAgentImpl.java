@@ -4,10 +4,11 @@ import com.chroma.appsCommon.PageInitializer;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 
-public class ValidateAgentPageImpl extends PageInitializer {
+public class ValidateAgentImpl extends PageInitializer {
     public static void AssertSections(String members, String active, String inactive, String allAgents, String addNow, String name, String mail, String contactNumber, String actions) {
         boolean membersSign = validateAgentModulePage.membersSign.isDisplayed();
         CommonUtils.assertTrue(membersSign);
+        CommonUtils.sleep(2000);
         boolean activeSign = validateAgentModulePage.activeSign.isDisplayed();
         CommonUtils.assertTrue(activeSign);
         boolean inactiveSign = validateAgentModulePage.inactiveSign.isDisplayed();
