@@ -22,8 +22,7 @@ import org.testng.Assert;
 
 public class CommonUtils extends WebDriverUtils {
 
-
-/**
+	/**
 	 * Use this method in need of clicking on a WebElement by selenium WebDriver.
 	 * 
 	 * @param element Pass the desired WebElement to be clicked.
@@ -267,7 +266,7 @@ public class CommonUtils extends WebDriverUtils {
 	 * 
 	 * @return WebDriverWait
 	 */
-    public static WebDriverWait getWaitObject() {
+	public static WebDriverWait getWaitObject() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		return wait;
 	}
@@ -404,9 +403,11 @@ public class CommonUtils extends WebDriverUtils {
 
 	/**
 	 * Use this method to select a checkbox value
+	 * 
 	 * @throws InterruptedException
 	 */
-	public static void selectCheckbox(List<WebElement> checkboxList, String attribute, String value) throws InterruptedException {
+	public static void selectCheckbox(List<WebElement> checkboxList, String attribute, String value)
+			throws InterruptedException {
 		for (WebElement checkbox : checkboxList) {
 			if (checkbox.isEnabled()) {
 				String checkboxText = checkbox.getAttribute(attribute);
@@ -422,10 +423,12 @@ public class CommonUtils extends WebDriverUtils {
 	/**
 	 * Use this method to select a checkbox value & to check that checkbox is
 	 * displayed
+	 * 
 	 * @throws InterruptedException
 	 */
 
-	public static void selectCheckboxDisplayed(List<WebElement> checkboxList, String attribute, String value) throws InterruptedException {
+	public static void selectCheckboxDisplayed(List<WebElement> checkboxList, String attribute, String value)
+			throws InterruptedException {
 		for (WebElement checkbox : checkboxList) {
 
 			if (checkbox.isEnabled() && checkbox.isDisplayed()) {
@@ -477,25 +480,22 @@ public class CommonUtils extends WebDriverUtils {
 			throw e;
 		}
 	}
-	
 
-/*
- * 
- * Use below method to assert actual String value with an expected String value	
- */
+	/*
+	 * 
+	 * Use below method to assert actual String value with an expected String value
+	 */
 	public static void assertEquals(String expected, String actual) {
-		
+
 		try {
-		Assert.assertEquals(expected, actual);
-		}
-		catch(AssertionError e) {
+			Assert.assertEquals(expected, actual);
+		} catch (AssertionError e) {
 
 			e.printStackTrace();
 		}
 	}
 
-
-	public static void sleep(long milliSeconds){
+	public static void sleep(long milliSeconds) {
 		try {
 			Thread.sleep(milliSeconds);
 		} catch (Exception e) {
@@ -505,15 +505,15 @@ public class CommonUtils extends WebDriverUtils {
 
 	/**
 	 * 
-     * Use this method to assert a boolean condition
-     * @param flag
-     */
-    public static void assertTrue(boolean flag) {
-        try {
-            Assert.assertTrue(flag);
-        } catch (AssertionError e) {
-            e.printStackTrace();
+	 * Use this method to assert a boolean condition
+	 * 
+	 * @param flag
+	 */
+	public static void assertTrue(boolean flag) {
+		try {
+			Assert.assertTrue(flag);
+		} catch (AssertionError e) {
+			e.printStackTrace();
 		}
-     }
- }
-    
+	}
+}

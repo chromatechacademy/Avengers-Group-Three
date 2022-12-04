@@ -8,73 +8,71 @@ import com.chroma.web.WebDriverUtils;
 
 public class StudentAdmissionPage {
 
-    // Locator for Admission No
+    /* Locator for Admission No */
     @FindBy(xpath = "//input[@name='admission_no']")
     public WebElement admissionNoTextBox;
 
-    //Locator for Roll Number
+    /* Locator for Roll Number */
     @FindBy(xpath = "//input[@name='roll_no']")
     public WebElement rollNumberTextBox;
 
-
-    // Locator for First Name text box
+    /* Locator for First Name text box */
     @FindBy(xpath = "//input[@name='firstname']")
     public WebElement firstNameTextBox;
 
-    //Locator for lirst Name text box
+    /* Locator for lirst Name text box */
     @FindBy(xpath = "//input[@name='lastname']")
     public WebElement lastNameTextBox;
 
-
-    //Locator for Class dropdown
+    /* Locator for Class dropdown */
     @FindBy(xpath = "//select[@name='class_id']")
     public WebElement classDropdown;
 
-    //Locator for Section dropdown
+    /* Locator for Section dropdown */
     @FindBy(xpath = "//select[@name='section_id']")
     public WebElement sectionDropdown;
 
-    //Locator for Gender dropdown
+    /* Locator for Gender dropdown */
     @FindBy(xpath = "//select[@name='gender']")
     public WebElement genderDropdown;
 
-    //Locator for Category dropdown
+    /* Locator for Category dropdown */
     @FindBy(xpath = "//select[@name='category_id']")
     public WebElement categoryDropdown;
 
-    //Locator for Blood Group dropdown
+    /* Locator for Blood Group dropdown */
     @FindBy(xpath = "//select[@name='blood_group']")
     public WebElement bloodGroupDropdown;
 
-    //Locator for Email text box
+    /* Locator for Email text box */
     @FindBy(xpath = "//input[@name='email']")
     public WebElement emailTextBox;
 
-    //Locator for Date of Birth box
+    /* Locator for Date of Birth box */
     @FindBy(xpath = "//input[@name='dob']")
     public WebElement dateOfBirthBox;
 
-    // Locator for Admission Date box
+    /* Locator for Admission Date box */
     @FindBy(xpath = "//*[@id='admission_date']")
     public WebElement admissionDateBox;
 
-    // Locator for As on Date box
+    /* Locator for As on Date box */
     @FindBy(xpath = "//input[@name='measure_date']")
     public WebElement asOnDateBox;
 
-    // Locator for Guardian Email text box
+    /* Locator for Guardian Email text box */
     @FindBy(xpath = "//input[@name='guardian_email']")
     public WebElement guardianEmail;
 
-    //Locator for Guardian Address text box
+    /* Locator for Guardian Address text box */
     @FindBy(xpath = "//textarea[@name='guardian_address']")
     public WebElement guardianAddress;
 
-    //Locator for save button
+    /* Locator for save button */
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 
-    //Locator for Record Saved Message
+    /* Locator for Record Saved Message */
     @FindBy(xpath = "//div[normalize-space()='Record Saved Successfully']")
     public WebElement recordSavedMessage;
 

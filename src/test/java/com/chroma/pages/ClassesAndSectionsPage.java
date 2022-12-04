@@ -7,31 +7,31 @@ import com.chroma.web.WebDriverUtils;
 
 public class ClassesAndSectionsPage {
 
-    // Academics Module
+    /* Academics Module */
     @FindBy(xpath = "//span[normalize-space()='Academics']")
     public WebElement academicsText;
 
-    // Class Submodule
+    /* Class Submodule */
     @FindBy(xpath = "//a[normalize-space()='Class']")
     public WebElement classText;
 
-    // Adding Mari Class Text
+    /* Adding Mari Class Text */
     @FindBy(xpath = "//input[@name='class']")
     public WebElement mariClass;
 
-    // Clicks on Sample section
+    /* Clicks on Sample Section */
     @FindBy(xpath = "//input[@value='231']")
     public WebElement sampleSection;
 
-    // Clicks on Save
+    /* Clicks on Save */
     @FindBy(xpath = "//button[@type='submit'][normalize-space()='Save']")
     public WebElement saveButton;
 
-    // Record Saved Successfully Message
+    /* Record Saved Successfully Message */
    @FindBy(xpath = "//*[contains(text(),'Record Saved Successfully')]")
     public WebElement recordSavedSuccessfullyMessage;
-
-    // x button for Mari Class record
+    
+    /* x button for Mari Class record */
     @FindBy(xpath = "//*[contains(text(),'Mari Class')]//following-sibling::td[2]/a[2]")
     public WebElement deleteMariClass;
 
