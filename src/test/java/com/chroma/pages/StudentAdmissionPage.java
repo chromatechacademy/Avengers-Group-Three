@@ -76,7 +76,7 @@ public class StudentAdmissionPage {
     @FindBy(xpath = "//div[normalize-space()='Record Saved Successfully']")
     public WebElement recordSavedMessage;
 
-    // Admission No Field Must Contain A Unique Value text
+    /* Admission No Field Must Contain A Unique Value text */
     @FindBy(xpath = "//p[contains(text(),'The Admission No field must contain a unique value')]")
     public WebElement admissionNoWarning;
 
