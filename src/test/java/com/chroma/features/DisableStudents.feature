@@ -1,6 +1,6 @@
 Feature: CTSMS Ability to disable and enable students
 
-  @Progression @Valeriia @VNGRS-15 @VNGRS-16
+  @Regression @Valeriia @VNGRS-15 @VNGRS-16
   Scenario: Ability to disable and enable students
     Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
     When user logs with valid username "general@teacher.com" and password "123456"
