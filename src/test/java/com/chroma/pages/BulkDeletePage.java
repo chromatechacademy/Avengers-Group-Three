@@ -9,15 +9,15 @@ import com.chroma.web.WebDriverUtils;
 
 public class BulkDeletePage extends PageInitializer {
     
-    //Locator for Class Dropdown
+    /* Class Dropdown */ 
     @FindBy(xpath = "//select[@name='class_id']")
     public static WebElement classDropdown;
 
-    //Locator for Search Button
+    /* Search Button */
     @FindBy(xpath = "//button[normalize-space()='Search']")
     public static WebElement searchButton;
     
-    //Locator for Delete Button
+    /* Delete Button */
     @FindBy(xpath = "//button[normalize-space()='Delete']")
     public static WebElement deleteButton;
 

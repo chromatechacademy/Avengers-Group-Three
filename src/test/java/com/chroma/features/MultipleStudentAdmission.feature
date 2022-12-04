@@ -1,6 +1,6 @@
 Feature: CTSMS - Adding multiple students
 
-  @Daniela @VNGRS-19 
+  @Regression @Daniela @VNGRS-19
   Scenario Outline: As a Chroma Tech Faculty member I want to be able to add multiple students in one session
     Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
     When user logs with valid username "general@teacher.com" and password "123456"
@@ -20,8 +20,8 @@ Feature: CTSMS - Adding multiple students
     And enters "<Mobile Number>" in "Mobile Number" and enters "<Height>" in "Height" and enters "<Weight>" in "Weight"
     And enters father info as "<Father Name>" in "Father Name" text box and "<Father Phone>" in "Father Phone" text box and "<Father Occupation>" in "Father Occupation" text box
     And enters mother info as "<Mother Name>" in "Mother Name" text box and "<Mother Phone>" in "Mother Phone" text box and "<Mother Occupation>" in "Mother Occupation" text box
-    And navigates to If Gaurdian is and clicks on the radio button in front of "<Guardian>"
-    And enters "<Guardian Email>" in Gaurdian Email text box and "<Guardian Address>" in the Gaurdian address text box
+    And navigates to If Guardian is and clicks on the radio button in front of "<Guardian>"
+    And enters "<Guardian Email>" in Guardian Email text box and "<Guardian Address>" in the Guardian address text box
     And clicks Save
     Then student is admitted and "Record Saved Successfully" is displayed
     Then student record with name "<Student Name>" in Class "<Class>" in section "<Section>" is deleted through "Bulk Delete" submodule

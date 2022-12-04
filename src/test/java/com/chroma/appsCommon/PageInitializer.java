@@ -10,8 +10,10 @@ import com.chroma.pages.SectionsPage;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.pages.StudentCategoriesPage;
 import com.chroma.pages.StudentDetailsPage;
+import com.chroma.stepsImplementation.BulkDeleteStepImpl;
 import com.chroma.stepsImplementation.EditStudentRecordsImpl;
 import com.chroma.stepsImplementation.NavigationModulesStepsImpl;
+import com.chroma.stepsImplementation.StudentAdmissionsStepImpl;
 import com.chroma.stepsImplementation.StudentCategoriesStepImpl;
 import com.chroma.web.WebDriverUtils;
 
@@ -33,6 +35,8 @@ public class PageInitializer extends WebDriverUtils {
     public static StudentCategoriesStepImpl studentCategoriesStepImpl;
     public static EditStudentRecordsImpl editStudentRecordsImpl;
     public static NavigationModulesStepsImpl navigationModulesStepsImpl;
+    public static StudentAdmissionsStepImpl studentAdmissionsStepImpl;
+    public static BulkDeleteStepImpl bulkDeleteStepImpl;
 
     public void initializeAllPages() {
         samplePage = new SamplePage();
@@ -48,5 +52,7 @@ public class PageInitializer extends WebDriverUtils {
         classesAndSectionsPage = new ClassesAndSectionsPage();
         editStudentRecordsImpl = new EditStudentRecordsImpl();
         navigationModulesStepsImpl = new NavigationModulesStepsImpl();
+        studentAdmissionsStepImpl = new StudentAdmissionsStepImpl();
+        bulkDeleteStepImpl = new BulkDeleteStepImpl();
     }
 }
