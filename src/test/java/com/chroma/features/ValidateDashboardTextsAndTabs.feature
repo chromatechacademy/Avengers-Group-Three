@@ -1,6 +1,6 @@
 Feature: A Real Estate admin user is able to validate the following elements, tabs and their text display on the dashboard
 
-  @Nataliia @Regression @VNGRS-42
+  @Regression @Nataliia @VNGRS-42
   Scenario: Real Estate - Validate Dashboard Texts and Tabs
     Given a user is on the CTRE login page "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/admin/login.php"
     When a user scrolls down

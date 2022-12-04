@@ -9,23 +9,23 @@ import com.chroma.web.WebDriverUtils;
 
 public class RealEstateDashboardPage {
 
-    // Hello Admin Text
+    /* Hello Admin Text */
     @FindBy(xpath = "//h1[normalize-space()='Hello, Admin']")
     public WebElement dashboardHelloAdminText;
 
-    // Dashboard side bar module
+    /* Dashboard side bar module */
     @FindBy(xpath = "//a[@type='button' and @class ='sidebar-item']")
     public WebElement dashboardSideBarModule;
 
-    // Properties text
+    /* Properties text */
     @FindBy(xpath = "//h6[normalize-space()='Properties']")
     public WebElement propertiesText;
    
-    // Tabs options
+    /* Tabs options */
     @FindBy(xpath = " //span[@class='navbar-label']")
     public List<WebElement> tabsOptions;
 
-     // Agents Graph model 
+     /* Agents Graph model */
      @FindBy(xpath = " //a[normalize-space()='Agents Graph']")
      public WebElement AgentGraphModel;
    
