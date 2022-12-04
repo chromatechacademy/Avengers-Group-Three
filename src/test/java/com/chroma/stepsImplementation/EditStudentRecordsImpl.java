@@ -4,13 +4,14 @@ import org.openqa.selenium.support.ui.Select;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.BulkDeletePage;
 import com.chroma.pages.DashboardPage;
+import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 
 public class EditStudentRecordsImpl extends PageInitializer {
-   
+
     /**
-     * Method for navigation student record
+     * Use this method to navigation student record
      * 
      * @param studentDetails
      * @param sdet
@@ -24,10 +25,11 @@ public class EditStudentRecordsImpl extends PageInitializer {
         sectionIdDropDown.selectByVisibleText(databaseTesting);
         editStudentPage.searchBarBtn.click();
         editStudentPage.studentRecordBtn.click();
+        CommonUtils.sleep(2000);
     }
 
     /**
-     * Method for delete student record
+     * Use this method to delete student record
      * 
      * @param marleneFishen
      * @param bulkDelete
@@ -48,10 +50,11 @@ public class EditStudentRecordsImpl extends PageInitializer {
         BulkDeletePage.deleteButton.click();
         CommonUtils.sleep(2000);
         WebDriverUtils.driver.switchTo().alert().accept();
+        CommonUtils.sleep(2000);
     }
 
     /**
-     * Method for changing blood group
+     * Use this method to change blood group
      * 
      * @param aGroup
      */
@@ -60,5 +63,27 @@ public class EditStudentRecordsImpl extends PageInitializer {
         bloodGroupDropDown.selectByVisibleText(aGroup);
         CommonUtils.scrollIntoView(editStudentPage.saveChangesBnt);
         editStudentPage.saveChangesBnt.click();
+        CommonUtils.sleep(3000);
+    }
+
+    /***
+     * Use this method to verify that record was updated successfully
+     */
+    public static void recordRecordUpdateSuccessfully() {
+        boolean resultsForRecordUpdateSuccessfulyAppears = editStudentPage.resultsForRecordUpdateSuccessfuly
+                .isDisplayed();
+        CommonUtils.assertTrue(resultsForRecordUpdateSuccessfulyAppears);
+        CucumberLogUtils.logExtentScreenshot();
+        CucumberLogUtils.logScreenShot();
+    }
+
+    /***
+     * Use this method to verify that changed student information is displayed
+     */
+    public static void verifyChangedInformationIsDisplayed() {
+        boolean resultsForChangedIngormationAppear = editStudentPage.bloodAOption.isDisplayed();
+        CommonUtils.assertTrue(resultsForChangedIngormationAppear);
+        CucumberLogUtils.logExtentScreenshot();
+        CucumberLogUtils.logScreenShot();
     }
 }

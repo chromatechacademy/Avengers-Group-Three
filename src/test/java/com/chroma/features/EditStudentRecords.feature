@@ -1,6 +1,6 @@
 Feature: A CTSMS user is able to edit student records by searching student detail
 
-    @Regression @Nataliia @VNGRS-14
+    @Nataliia @Regression @VNGRS-14
     Scenario: A CTSMS user creates and edit student records by searching student detail
         Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
         When user logs with valid username "general@teacher.com" and password "123456"
@@ -29,5 +29,7 @@ Feature: A CTSMS user is able to edit student records by searching student detai
         And user clicks on "Student Details", looks for a studend in a "SDET" class and "Database Testing" section, chooshes and clicks on student
         Then the changed information is displayed
         And user deletes "Marlene Fisher" records from "Bulk Delete" page, "SDET" class, "Database Testing" section
+
+
 
 

@@ -24,27 +24,30 @@ public class AcademicsModuleStepsImpl extends PageInitializer {
                         String subjectGroupLink, String subjectsLink, String classLink, String sectionsLink) {
                 String actualClassTimetable = DashboardPage.dynamicXpathForSubModuleWithSpace(classTimetableLink)
                                 .getText();
-                CommonUtils.assertEquals(classTimetableLink, actualClassTimetable);
+                CommonUtils.assertEquals(actualClassTimetable, classTimetableLink);
                 String actualTeachersTimetable = DashboardPage.dynamicXpathForSubModuleWithSpace(teachersTimetablelink)
                                 .getText();
-                CommonUtils.assertEquals(teachersTimetablelink, actualTeachersTimetable);
+                CommonUtils.assertEquals(actualTeachersTimetable, teachersTimetablelink);
                 String actualAssignClassTeacher = DashboardPage
                                 .dynamicXpathForSubModuleWithSpace(assignClassTeacherlink)
                                 .getText();
-                CommonUtils.assertEquals(assignClassTeacherlink, actualAssignClassTeacher);
+                CommonUtils.assertEquals(actualAssignClassTeacher, assignClassTeacherlink);
                 String actualPromoteStudentsLink = DashboardPage.dynamicXpathForSubModuleWithSpace(promoteStudentsLink)
                                 .getText();
-                CommonUtils.assertEquals(promoteStudentsLink, actualPromoteStudentsLink);
+                CommonUtils.assertEquals(actualPromoteStudentsLink, promoteStudentsLink);
                 String actualSubjectGroupLink = DashboardPage.dynamicXpathForSubModuleWithSpace(subjectGroupLink)
                                 .getText();
-                CommonUtils.assertEquals(subjectGroupLink, actualSubjectGroupLink);
+                CommonUtils.assertEquals(actualSubjectGroupLink, subjectGroupLink);
                 String actualSubjectsLink = DashboardPage.dynamicXpathForSubModuleWithSpace(subjectsLink)
                                 .getText();
-                CommonUtils.assertEquals(subjectsLink, actualSubjectsLink);
+                CommonUtils.assertEquals(actualSubjectsLink, subjectsLink);
+                String actualClassLink = DashboardPage.dynamicXpathForSubModuleWithSpace(sectionsLink)
+                                .getText();
+                CommonUtils.assertEquals(actualClassLink, classLink);
                 String actualSectionsLink = DashboardPage.dynamicXpathForSubModuleWithSpace(sectionsLink)
                                 .getText();
-                CommonUtils.assertEquals(sectionsLink, actualSectionsLink);
-                CommonUtils.assertEquals(classLink, dashboardPage.classText.getText());
+                CommonUtils.assertEquals(actualSectionsLink, sectionsLink);
+                //CommonUtils.assertEquals(classLink, dashboardPage.classText.getText());
                 CucumberLogUtils.logExtentScreenshot();
                 CucumberLogUtils.logScreenShot();
         }

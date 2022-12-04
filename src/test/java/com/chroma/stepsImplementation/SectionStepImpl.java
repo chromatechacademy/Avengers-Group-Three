@@ -13,7 +13,6 @@ public class SectionStepImpl extends PageInitializer {
         boolean testForEveryOneBtn = sectionsPage.addedSection.isDisplayed();
         CommonUtils.assertTrue(testForEveryOneBtn);
         CommonUtils.sleep(6000);
-        // screenshoots
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
@@ -26,7 +25,6 @@ public class SectionStepImpl extends PageInitializer {
             String subjectText = sectionsPage.subject.get(i).getText();
             Assert.assertNotEquals(subjectText, "Testing for everyone");
         }
-        // screenshoots
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
