@@ -5,6 +5,20 @@ import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 
 public class ValidateAgentImpl extends PageInitializer {
+
+    /**
+     * Method for assert and validate text on agent page
+     * 
+     * @param members
+     * @param active
+     * @param inactive
+     * @param allAgents
+     * @param addNow
+     * @param name
+     * @param mail
+     * @param contactNumber
+     * @param actions
+     */
     public static void AssertSections(String members, String active, String inactive, String allAgents, String addNow, String name, String mail, String contactNumber, String actions) {
         boolean membersSign = validateAgentModulePage.membersSign.isDisplayed();
         CommonUtils.assertTrue(membersSign);
