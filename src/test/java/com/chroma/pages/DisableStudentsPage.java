@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.chroma.web.WebDriverUtils;
 
 public class DisableStudentsPage {
-    
+
     /* Search button */
     @FindBy(xpath = "(//button[normalize-space()='Search'])[1]")
     public WebElement searchButton;
@@ -16,7 +16,7 @@ public class DisableStudentsPage {
     @FindBy(xpath = "//a[@class='text-red']")
     public WebElement disableButton;
 
-    /* Xpath for iframe text */
+    /* iframe text */
     @FindBy(xpath = "//h4[normalize-space()='Disable Student']")
     public WebElement iframeText;
 

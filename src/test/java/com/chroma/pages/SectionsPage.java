@@ -9,11 +9,11 @@ import com.chroma.web.WebDriverUtils;
 
 public class SectionsPage extends PageInitializer {
 
-    /* Click on Academics Btn */
+    /* Academics Btn */
     @FindBy(xpath = "//i[@class='fa fa-mortar-board ftlayer']")
     public WebElement academicsBtn;
 
-    /* Click on Section Btn */
+    /* Section Btn */
     @FindBy(xpath = "//a[normalize-space()='Sections']")
     public WebElement sectionBtn;
 
@@ -21,23 +21,23 @@ public class SectionsPage extends PageInitializer {
     @FindBy(xpath = "//input[@id='section']")
     public WebElement text;
 
-    /* Click Save Btn */
+    /* Save Btn */
     @FindBy(xpath = "(//button[@type ='submit'])[3]")
     public WebElement saveBtn;
 
-    /* Click on delete Btn */
+    /* Delete Btn */
     @FindBy(xpath = "//*[contains(text(), 'Testing for everyone')]/following-sibling::td/a[2]")
     public WebElement deleteBtn;
 
-    /* Assert for Success sign */
+    /* Success sign */
     @FindBy(xpath = "//div[@class='alert alert-success text-left']")
     public WebElement successSign;
 
-    /* Assert for added section */
+    /* Added section */
     @FindBy(xpath = "//*[contains(text(), 'Testing for everyone')]")
     public WebElement addedSection;
 
-    /* Assert deleted section from the List of WebElements */
+    /* Deleted section from the List of WebElements */
     @FindBy(xpath = "//*[@class ='mailbox-name']")
     public List<WebElement> subject;
 
