@@ -27,10 +27,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
         // Explicit wait bc we are explisity waiting for something
         // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         // wait.until(ExpectedConditions.visibilityOf(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule)));
-
-        // Implicit wait - global wait
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-
+        
         CommonUtils.waitForVisibility(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule));
 
         DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();

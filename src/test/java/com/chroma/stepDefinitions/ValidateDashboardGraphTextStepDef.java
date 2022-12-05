@@ -3,6 +3,8 @@ package com.chroma.stepDefinitions;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.RealEstateDashboardPage;
 import com.chroma.stepsImplementation.ValidateDashboardGraphTextImpl;
+import com.chroma.web.CommonUtils;
+
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -10,6 +12,7 @@ public class ValidateDashboardGraphTextStepDef extends PageInitializer {
 
     @When("user clicks on {string} agent module")
     public void user_clicks_on_agent_module(String agentGraph) {
+        CommonUtils.waitForVisibility(realEstateDashboardPage.AgentGraphModel);
         realEstateDashboardPage.AgentGraphModel.click();
     }
 
@@ -20,6 +23,7 @@ public class ValidateDashboardGraphTextStepDef extends PageInitializer {
 
     @When("user clicks on {string} agent module under Dashboard")
     public void user_clicks_on_agent_module_under_Dashboard(String overview) {
+        CommonUtils.waitForVisibility(RealEstateDashboardPage.dynamicXpathForModule(overview));
         RealEstateDashboardPage.dynamicXpathForModule(overview).click();
     }
 
