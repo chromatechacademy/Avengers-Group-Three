@@ -23,9 +23,14 @@ public class StudentAdmissionStepDef extends PageInitializer {
 
     @Then("clicks on {string} submodule")
     public void clicks_on_submodule(String subModule) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOf(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule)));
-        
+
+        // Explicit wait bc we are explisity waiting for something
+        // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        // wait.until(ExpectedConditions.visibilityOf(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule)));
+
+        // Implicit wait - global wait
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
         DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();
         CommonUtils.sleep(3000);
     }
@@ -142,14 +147,17 @@ public class StudentAdmissionStepDef extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
     }
+
     @Then("student record with name {string} in Class {string} in section {string} is deleted through {string} submodule")
-    public void student_record_with_name_in_Class_in_section_is_deleted_through_submodule(String studentName, String className, String sectionName, String subModule) {
+    public void student_record_with_name_in_Class_in_section_is_deleted_through_submodule(String studentName,
+            String className, String sectionName, String subModule) {
         DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();
         CommonUtils.selectDropDownValue(className, studentAdmissionPage.classDropdown);
         CommonUtils.selectDropDownValue(sectionName, studentAdmissionPage.sectionDropdown);
         BulkDeletePage.searchButton.click();
         CommonUtils.sleep(2000);
-        BulkDeletePage.dynamicXpathForCheckBoxInBulkDelete(studentName).click();;
+        BulkDeletePage.dynamicXpathForCheckBoxInBulkDelete(studentName).click();
+        ;
         CommonUtils.sleep(2000);
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
