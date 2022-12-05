@@ -14,7 +14,7 @@ public class RealEstateDashboardPage {
     public WebElement dashboardHelloAdminText;
 
     /* Dashboard side bar module */
-    @FindBy(xpath = "//a[@type='button' and @class ='sidebar-item']")
+    @FindBy(xpath = "//a[@type='button']")
     public WebElement dashboardSideBarModule;
 
     /* Properties text */
