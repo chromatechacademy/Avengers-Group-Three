@@ -12,7 +12,7 @@ public class ValidateDashboardGraphTextStepDef extends PageInitializer {
 
     @When("user clicks on {string} agent module")
     public void user_clicks_on_agent_module(String agentGraph) {
-        CommonUtils.waitForVisibility(realEstateDashboardPage.AgentGraphModel);
+        CommonUtils.waitForClickability(realEstateDashboardPage.AgentGraphModel);
         realEstateDashboardPage.AgentGraphModel.click();
     }
 
@@ -23,7 +23,7 @@ public class ValidateDashboardGraphTextStepDef extends PageInitializer {
 
     @When("user clicks on {string} agent module under Dashboard")
     public void user_clicks_on_agent_module_under_Dashboard(String overview) {
-        CommonUtils.waitForVisibility(RealEstateDashboardPage.dynamicXpathForModule(overview));
+        CommonUtils.waitForClickability(RealEstateDashboardPage.dynamicXpathForModule(overview));
         RealEstateDashboardPage.dynamicXpathForModule(overview).click();
     }
 
