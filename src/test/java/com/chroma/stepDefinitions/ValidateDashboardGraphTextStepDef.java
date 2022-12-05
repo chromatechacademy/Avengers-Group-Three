@@ -11,6 +11,7 @@ public class ValidateDashboardGraphTextStepDef extends PageInitializer {
 
     @When("user clicks on {string} agent module")
     public void user_clicks_on_agent_module(String agentGraph) {
+        CommonUtils.sleep(5000);
         realEstateDashboardPage.AgentGraphModel.click();
         CommonUtils.sleep(5000);
     }
