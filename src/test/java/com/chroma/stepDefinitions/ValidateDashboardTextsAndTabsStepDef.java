@@ -24,6 +24,7 @@ public class ValidateDashboardTextsAndTabsStepDef extends PageInitializer {
 
     @Then("user is able to see following tabs displayed {string}, {string}, {string}")
     public void user_is_able_to_see_following_tabs_displayed(String agents, String dashboard, String projects) {
+        CommonUtils.sleep(3000);
         ValidateDashboardTextsAndTabsImpl.FollowingTabs(agents, dashboard, projects);
     }
 }
