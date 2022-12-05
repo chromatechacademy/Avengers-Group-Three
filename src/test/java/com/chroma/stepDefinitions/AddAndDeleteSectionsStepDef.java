@@ -2,6 +2,8 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.stepsImplementation.SectionStepImpl;
+import com.chroma.web.CommonUtils;
+
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -9,6 +11,7 @@ public class AddAndDeleteSectionsStepDef extends PageInitializer {
 
     @When("user clicks on {string} and {string}")
     public void user_clicks_on_and(String academics, String sections) {
+        CommonUtils.sleep(3000);
         sectionsPage.academicsBtn.click();
         sectionsPage.sectionBtn.click();
     }
