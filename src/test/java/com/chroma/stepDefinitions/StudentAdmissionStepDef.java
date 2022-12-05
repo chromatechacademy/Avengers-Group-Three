@@ -15,8 +15,9 @@ public class StudentAdmissionStepDef extends PageInitializer {
 
     @Then("clicks on {string} submodule")
     public void clicks_on_submodule(String subModule) {
-        DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();
         CommonUtils.sleep(4000);
+        DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();
+        //CommonUtils.sleep(4000);
     }
 
     @Then("enters {string} in Admission No text box and {string} in Roll Number text box")

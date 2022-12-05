@@ -18,7 +18,8 @@ public class LoginStepsImpl extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
         loginPage.signInBtn.click();
-        CommonUtils.waitForVisibility(dashboardPage.studentInfoBtn);
+        CommonUtils.sleep(3000);
+       // CommonUtils.waitForVisibility(dashboardPage.studentInfoBtn);
     }
 
     public static void verifyDashboardText(String chromaTechAcademyText) {

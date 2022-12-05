@@ -10,7 +10,7 @@ import com.chroma.web.WebDriverUtils;
 public class RealEstateDashboardPage {
 
     /* Hello Admin Text */
-    @FindBy(xpath = "//h1[normalize-space()='Hello, Admin']")
+    @FindBy(xpath = "//h1[@class='mainUserText']")    
     public WebElement dashboardHelloAdminText;
 
     /* Dashboard side bar module */
