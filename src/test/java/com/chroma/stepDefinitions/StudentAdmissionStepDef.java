@@ -1,5 +1,10 @@
 package com.chroma.stepDefinitions;
 
+import java.time.Duration;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.BulkDeletePage;
 import com.chroma.pages.DashboardPage;
@@ -18,6 +23,9 @@ public class StudentAdmissionStepDef extends PageInitializer {
 
     @Then("clicks on {string} submodule")
     public void clicks_on_submodule(String subModule) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOf(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule)));
+        
         DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();
         CommonUtils.sleep(3000);
     }
