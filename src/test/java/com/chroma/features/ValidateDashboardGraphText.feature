@@ -1,6 +1,6 @@
 Feature: A Real Estate admin user is able to navigate to the dashboard and see graph displays with header text
 
-  @Regression @Nataliia @VNGRS-43
+  @Progression @Nataliia @VNGRS-43
   Scenario: Real Estate - Validate Dashboard Graph Text
     Given a user is on the CTRE login page "https://chroma-tech-academy.mexil.it/chroma_real_estate/project_files/admin/login.php"
     When a user scrolls down

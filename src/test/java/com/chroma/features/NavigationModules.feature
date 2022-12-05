@@ -1,6 +1,6 @@
 Feature: A CTSMS user is able to see Navigation modules on portal
 
-    @Nataliia @Regression @VNGRS-3
+    @Nataliia @Progression @VNGRS-3
     Scenario: Navigation modules are displayed on portal
         Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
         When user logs with valid username "general@teacher.com" and password "123456"
