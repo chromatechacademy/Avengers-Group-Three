@@ -23,8 +23,8 @@ public class RealEstateLoginStepDef extends PageInitializer {
 
     @Then("user navigates to dashboard page and {string} text displays")
     public void user_navigates_to_dashboard_page_and_text_displays(String helloAdmin) {
+        CommonUtils.waitForVisibility(realEstateDashboardPage.dashboardHelloAdminText);
         CommonUtils.assertEquals(helloAdmin, realEstateDashboardPage.dashboardHelloAdminText.getText());
-        CommonUtils.sleep(3000);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
     }
