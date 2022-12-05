@@ -45,6 +45,8 @@ public class StudentAdmissionStepDef extends PageInitializer {
 
     @Then("selects {string} from the Class dropdown and {string} from Section dropdown")
     public void selects_from_the_Class_dropdown_and_from_Section_dropdown(String classOption, String sectionOption) {
+        CommonUtils.waitForVisibility(studentAdmissionPage.categoryDropdown);
+        ////////////////
         CommonUtils.selectDropDownValue(classOption, studentAdmissionPage.classDropdown);
         CommonUtils.selectDropDownValue(sectionOption, studentAdmissionPage.sectionDropdown);
     }
