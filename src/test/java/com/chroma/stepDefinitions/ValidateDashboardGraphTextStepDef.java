@@ -12,27 +12,25 @@ public class ValidateDashboardGraphTextStepDef extends PageInitializer {
 
     @When("user clicks on {string} agent module")
     public void user_clicks_on_agent_module(String agentGraph) {
-        //////////
-        CommonUtils.waitForVisibility(realEstateDashboardPage.AgentGraphModel);
-        CommonUtils.sleep(3000);
+        CommonUtils.sleep(5000);
         realEstateDashboardPage.AgentGraphModel.click();
     }
 
     @Then("the graph displays with header text {string}")
     public void the_graph_displays_with_header_text(String reservedByAgents) {
+        CommonUtils.sleep(5000);
         ValidateDashboardGraphTextImpl.GraphDisplaysAndHeaderTextByAgents(reservedByAgents);
     }
 
     @When("user clicks on {string} agent module under Dashboard")
     public void user_clicks_on_agent_module_under_Dashboard(String overview) {
-        ////////
-        CommonUtils.waitForInvisibility(RealEstateDashboardPage.dynamicXpathForModule(overview));
-        CommonUtils.sleep(3000);
+        CommonUtils.sleep(5000);
         RealEstateDashboardPage.dynamicXpathForModule(overview).click();
     }
 
     @Then("the graph displays with the header text {string}")
     public void the_graph_displays_with_the_header_text(String propertiesOverview) {
+        CommonUtils.sleep(5000);
         ValidateDashboardGraphTextImpl.GraphDisplaysAndHeaderTextPropertiesOverview(propertiesOverview);
     }
 }
