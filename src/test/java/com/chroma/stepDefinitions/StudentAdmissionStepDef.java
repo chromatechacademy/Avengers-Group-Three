@@ -23,9 +23,9 @@ public class StudentAdmissionStepDef extends PageInitializer {
         // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         // wait.until(ExpectedConditions.visibilityOf(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule)));
 
-       // CommonUtils.waitForVisibility(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule));
+       CommonUtils.waitForVisibility(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule));
 
-        CommonUtils.waitForClickability(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule));
+      //  CommonUtils.waitForClickability(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule));
 
         DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();
         CommonUtils.sleep(3000);
