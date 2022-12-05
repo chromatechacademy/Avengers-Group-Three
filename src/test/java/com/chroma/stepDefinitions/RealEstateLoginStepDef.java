@@ -19,12 +19,12 @@ public class RealEstateLoginStepDef extends PageInitializer {
     @When("a user logs with valid username {string} and password {string}")
     public void a_user_logs_with_valid_username_and_password(String username, String password) {
         RealEstateLoginStepImpl.realEstateLogin(username, password);
-        CommonUtils.sleep(3000);
     }
 
     @Then("user navigates to dashboard page and {string} text displays")
     public void user_navigates_to_dashboard_page_and_text_displays(String helloAdmin) {
         CommonUtils.assertEquals(helloAdmin, realEstateDashboardPage.dashboardHelloAdminText.getText());
+        CommonUtils.sleep(3000);
         CucumberLogUtils.logExtentScreenshot();
         CucumberLogUtils.logScreenShot();
     }
