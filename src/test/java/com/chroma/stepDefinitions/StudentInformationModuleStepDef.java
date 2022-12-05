@@ -17,8 +17,9 @@ public class StudentInformationModuleStepDef extends PageInitializer {
 
     @When("user clicks on {string}")
     public void user_clicks_on(String string) throws InterruptedException {
+        CommonUtils.waitForClickability(dashboardPage.studentInfoBtn);
         dashboardPage.studentInfoBtn.click();
-        CommonUtils.sleep(3000);
+      
     }
 
     @Then("user is able to see links displayed {string}, {string}, {string}, {string}, {string}, {string}, {string}")
