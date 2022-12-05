@@ -2,6 +2,7 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.stepsImplementation.LoginStepsImpl;
+import com.chroma.web.CommonUtils;
 import com.chroma.web.WebDriverUtils;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -26,6 +27,7 @@ public class LoginStepDef extends PageInitializer {
 
     @Then("message {string} displays")
     public void message_displays(String invalidLoginMessage) {
+        CommonUtils.sleep(3000);
         LoginStepsImpl.verifyInvalidMessage(invalidLoginMessage);
     }
 }
