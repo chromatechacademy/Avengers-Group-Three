@@ -18,12 +18,8 @@ public class StudentAdmissionStepDef extends PageInitializer {
 
     @Then("clicks on {string} submodule")
     public void clicks_on_submodule(String subModule) {
-
-        // Explicit wait bc we are explisity waiting for something
-        // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        // wait.until(ExpectedConditions.visibilityOf(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule)));
-       CommonUtils.waitForVisibility(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule));
-
+        ///////
+        CommonUtils.waitForVisibility(DashboardPage.dynamicXpathForSubModuleWithSpace(subModule));
         DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();
         CommonUtils.sleep(3000);
     }
@@ -42,7 +38,9 @@ public class StudentAdmissionStepDef extends PageInitializer {
 
     @Then("selects {string} from the Class dropdown and {string} from Section dropdown")
     public void selects_from_the_Class_dropdown_and_from_Section_dropdown(String classOption, String sectionOption) {
+        CommonUtils.waitForVisibility(studentAdmissionPage.classDropdown);
         CommonUtils.selectDropDownValue(classOption, studentAdmissionPage.classDropdown);
+        CommonUtils.waitForVisibility(studentAdmissionPage.sectionDropdown);
         CommonUtils.selectDropDownValue(sectionOption, studentAdmissionPage.sectionDropdown);
     }
 
