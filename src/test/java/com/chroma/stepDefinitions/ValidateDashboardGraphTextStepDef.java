@@ -4,7 +4,6 @@ import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.RealEstateDashboardPage;
 import com.chroma.stepsImplementation.ValidateDashboardGraphTextImpl;
 import com.chroma.web.CommonUtils;
-
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
@@ -12,8 +11,8 @@ public class ValidateDashboardGraphTextStepDef extends PageInitializer {
 
     @When("user clicks on {string} agent module")
     public void user_clicks_on_agent_module(String agentGraph) {
-        CommonUtils.sleep(5000);
         realEstateDashboardPage.AgentGraphModel.click();
+        CommonUtils.sleep(5000);
     }
 
     @Then("the graph displays with header text {string}")
