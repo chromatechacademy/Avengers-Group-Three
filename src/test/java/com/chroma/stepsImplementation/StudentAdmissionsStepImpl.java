@@ -1,11 +1,21 @@
 package com.chroma.stepsImplementation;
 
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.pages.DashboardPage;
 import com.chroma.pages.StudentAdmissionPage;
+import com.chroma.utils.ConfigReader;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
+import com.chroma.web.JavascriptUtils;
 
 public class StudentAdmissionsStepImpl extends PageInitializer{
+
+    public void navigate(String navigateToModule){
+        if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            dashboardPage.toggleNavigationMobile.click();
+        }
+        DashboardPage.dynamicXpathForModule(navigateToModule).click();
+    }
 
     /***
      * Use this method to enter Admission No and Roll number
@@ -93,7 +103,7 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
      * @param guardianChoise
      */
     public void navigateToGuardianChooseGuardian(String guardianChoise) {
-        CommonUtils.scrollIntoView(studentAdmissionPage.guardianAddress);
+        JavascriptUtils.scrollIntoView(studentAdmissionPage.guardianAddress);
         StudentAdmissionPage.dynamicXpathForGuardianChoise(guardianChoise).click();
     }
 

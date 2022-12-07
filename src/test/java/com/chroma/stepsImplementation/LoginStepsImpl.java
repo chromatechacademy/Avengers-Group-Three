@@ -1,6 +1,7 @@
 package com.chroma.stepsImplementation;
 
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.utils.ConfigReader;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 
@@ -15,16 +16,21 @@ public class LoginStepsImpl extends PageInitializer {
     public static void login(String username, String password) {
         loginPage.usernameTextBox.sendKeys(username);
         loginPage.passwordTextBox.sendKeys(password);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        // CucumberLogUtils.logScreenShot();
+        // CucumberLogUtils.logExtentScreenshot();
         loginPage.signInBtn.click();
-        CommonUtils.waitForVisibility(dashboardPage.studentInfoBtn);
+        if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            CommonUtils.waitForVisibility(dashboardPage.studentInfoBtn);
+        }
     }
 
     public static void verifyDashboardText(String chromaTechAcademyText) {
-        CommonUtils.assertEquals(chromaTechAcademyText, dashboardPage.dashBoardChromaTechText.getText());
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            CommonUtils.waitForVisibility(dashboardPage.dashBoardChromaTechText);
+        }
+        CommonUtils.assertEquals(dashboardPage.dashBoardChromaTechText.getText(), chromaTechAcademyText);
+        // CucumberLogUtils.logScreenShot();
+        // CucumberLogUtils.logExtentScreenshot();
     }
 
     public static void verifyInvalidMessage(String invalidLoginMessage) {

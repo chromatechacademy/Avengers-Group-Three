@@ -3,6 +3,7 @@ package com.chroma.stepsImplementation;
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.BulkDeletePage;
 import com.chroma.pages.DashboardPage;
+import com.chroma.utils.ConfigReader;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 
@@ -16,6 +17,9 @@ public class BulkDeleteStepImpl extends PageInitializer{
      * @param subModule
      */
     public void deleteStudent(String studentName, String className, String sectionName, String subModule) {
+        if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            dashboardPage.toggleNavigationMobile.click();
+        }
         DashboardPage.dynamicXpathForSubModuleWithSpace(subModule).click();
         CommonUtils.selectDropDownValue(className, studentAdmissionPage.classDropdown);
         CommonUtils.selectDropDownValue(sectionName, studentAdmissionPage.sectionDropdown);

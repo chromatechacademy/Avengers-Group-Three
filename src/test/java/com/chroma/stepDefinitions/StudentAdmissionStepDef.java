@@ -2,6 +2,7 @@ package com.chroma.stepDefinitions;
 
 import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.DashboardPage;
+import com.chroma.utils.ConfigReader;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.JavascriptUtils;
 import cucumber.api.java.en.Then;
@@ -10,7 +11,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
 
     @Then("clicks on the {string} module")
     public void clicks_on_the_module(String module) {
-        DashboardPage.dynamicXpathForModule(module).click();
+       studentAdmissionsStepImpl.navigate(module);
     }
 
     @Then("clicks on {string} submodule")

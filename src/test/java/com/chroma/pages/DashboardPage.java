@@ -20,6 +20,9 @@ public class DashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Class']")
     public WebElement classText;
 
+    @FindBy(xpath = "//a[@role='button']")
+    public WebElement toggleNavigationMobile;
+
     /**
      * Use this method to locate modules
      * 
