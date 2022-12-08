@@ -25,14 +25,13 @@ public class BulkDeleteStepImpl extends PageInitializer{
         CommonUtils.selectDropDownValue(sectionName, studentAdmissionPage.sectionDropdown);
         BulkDeletePage.searchButton.click();
         CommonUtils.sleep(1000);
-        BulkDeletePage.dynamicXpathForCheckBoxInBulkDelete(admissionNum).click();;
-        CommonUtils.sleep(2000);
-        BulkDeletePage.deleteButton.click(); 
+        BulkDeletePage.dynamicXpathForCheckBoxInBulkDelete(admissionNum).click();
         if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
             CucumberLogUtils.logScreenShot();
             CucumberLogUtils.logExtentScreenshot();
-            CommonUtils.acceptAlert();
         }
+        BulkDeletePage.deleteButton.click(); 
+        CommonUtils.acceptAlert();
         CommonUtils.sleep(1000);
     }
 }
