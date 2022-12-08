@@ -10,6 +10,10 @@ import com.chroma.web.JavascriptUtils;
 
 public class StudentAdmissionsStepImpl extends PageInitializer {
 
+    /***
+     * Use this method to navigate to a module on the CTSMS dashboard page
+     * @param navigateToModule
+     */
     public void navigate(String navigateToModule) {
         if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
             dashboardPage.toggleNavigationMobile.click();
@@ -19,7 +23,6 @@ public class StudentAdmissionsStepImpl extends PageInitializer {
 
     /***
      * Use this method to enter Admission No and Roll number
-     * 
      * @param admissionsNumber
      * @param rollNumber
      */
@@ -30,7 +33,6 @@ public class StudentAdmissionsStepImpl extends PageInitializer {
 
     /***
      * Use this method to enter First Name and Last Name
-     * 
      * @param firstName
      * @param lastName
      */
@@ -40,9 +42,7 @@ public class StudentAdmissionsStepImpl extends PageInitializer {
     }
 
     /***
-     * Use this method to select Class form Class dropdown and Section from Section
-     * dropdown
-     * 
+     * Use this method to select Class form Class dropdown and Section from Section dropdown
      * @param classOption
      * @param sectionOption
      */
@@ -53,7 +53,6 @@ public class StudentAdmissionsStepImpl extends PageInitializer {
 
     /***
      * Use this method to enter Mobile Number, Height and Weight
-     * 
      * @param mobileNumber
      * @param mobileNumberTextBoxLabel
      * @param height
@@ -71,7 +70,6 @@ public class StudentAdmissionsStepImpl extends PageInitializer {
 
     /***
      * Use this method to enter Father Name, Father Phone and Father Occupation
-     * 
      * @param fatherName
      * @param fatherNameBoxLabel
      * @param fatherPhone
@@ -89,7 +87,6 @@ public class StudentAdmissionsStepImpl extends PageInitializer {
 
     /***
      * Use this method to enter Mother Name, Mother Phone and Mother Occupation
-     * 
      * @param motherName
      * @param motherNameBoxLabel
      * @param motherPhone
@@ -107,7 +104,6 @@ public class StudentAdmissionsStepImpl extends PageInitializer {
 
     /***
      * Use this method to navigate to Guardian Detail Section and to choose Guardian
-     * 
      * @param guardianChoise
      */
     public void navigateToGuardianChooseGuardian(String guardianChoise) {
@@ -117,7 +113,6 @@ public class StudentAdmissionsStepImpl extends PageInitializer {
 
     /***
      * Use this method to enter Guardian Email and Guardian Address
-     * 
      * @param guardianEmail
      * @param guardianAddress
      */
@@ -132,7 +127,6 @@ public class StudentAdmissionsStepImpl extends PageInitializer {
 
     /***
      * Use this method to assert Student Admission
-     * 
      * @param recordSavedMessage
      */
     public void verifyStudentAdmission(String recordSavedMessage) {
