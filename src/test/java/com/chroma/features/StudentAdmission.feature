@@ -1,6 +1,6 @@
 Feature: CTSMS - Student Admission
 
-@Progression @Daniela @VNGRS-12 
+@Regression @Daniela @VNGRS-23 @VNGRS-12
 Scenario:As a Chroma Tech Academy faculty member, I want to be able to admit a student via the Student Admission module
 Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
 When user logs with valid username "general@teacher.com" and password "123456"
@@ -24,5 +24,5 @@ And navigates to If Guardian is and clicks on the radio button in front of "moth
 And enters "eugenia_insigna@rotormail.com" in Guardian Email text box and "18 Eclipse St, Rotor 05" in the Guardian address text box
 And clicks Save
 Then student is admitted and "Record Saved Successfully" is displayed
-Then student record with name "Marlene Fisher" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule
+Then student record with admission No "20989" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule
 

@@ -8,9 +8,9 @@ import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 import com.chroma.web.JavascriptUtils;
 
-public class StudentAdmissionsStepImpl extends PageInitializer{
+public class StudentAdmissionsStepImpl extends PageInitializer {
 
-    public void navigate(String navigateToModule){
+    public void navigate(String navigateToModule) {
         if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
             dashboardPage.toggleNavigationMobile.click();
         }
@@ -19,36 +19,41 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
 
     /***
      * Use this method to enter Admission No and Roll number
+     * 
      * @param admissionsNumber
      * @param rollNumber
      */
-    public void enterAdmissionNoEnterRollNo(String admissionsNumber,String rollNumber){
+    public void enterAdmissionNoEnterRollNo(String admissionsNumber, String rollNumber) {
         studentAdmissionPage.admissionNoTextBox.sendKeys(admissionsNumber);
-        studentAdmissionPage.rollNumberTextBox.sendKeys(rollNumber);  
+        studentAdmissionPage.rollNumberTextBox.sendKeys(rollNumber);
     }
 
     /***
      * Use this method to enter First Name and Last Name
+     * 
      * @param firstName
      * @param lastName
      */
-    public void enterFirstNameLastName(String firstName,String lastName){
+    public void enterFirstNameLastName(String firstName, String lastName) {
         studentAdmissionPage.firstNameTextBox.sendKeys(firstName);
-        studentAdmissionPage.lastNameTextBox.sendKeys(lastName);  
+        studentAdmissionPage.lastNameTextBox.sendKeys(lastName);
     }
 
     /***
-     * Use this method to select Class form Class dropdown and Section from Section dropdown
+     * Use this method to select Class form Class dropdown and Section from Section
+     * dropdown
+     * 
      * @param classOption
      * @param sectionOption
      */
-    public void selectClassDropdownAndSectionDropdown(String classOption,String sectionOption){
+    public void selectClassDropdownAndSectionDropdown(String classOption, String sectionOption) {
         CommonUtils.selectDropDownValue(classOption, studentAdmissionPage.classDropdown);
         CommonUtils.selectDropDownValue(sectionOption, studentAdmissionPage.sectionDropdown);
     }
 
     /***
      * Use this method to enter Mobile Number, Height and Weight
+     * 
      * @param mobileNumber
      * @param mobileNumberTextBoxLabel
      * @param height
@@ -66,6 +71,7 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
 
     /***
      * Use this method to enter Father Name, Father Phone and Father Occupation
+     * 
      * @param fatherName
      * @param fatherNameBoxLabel
      * @param fatherPhone
@@ -74,8 +80,8 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
      * @param fatherOccupationBoxLabel
      */
     public void entersFatherInformation(String fatherName,
-    String fatherNameBoxLabel,
-    String fatherPhone, String fatherPhoneBoxLabel, String fatherOccupation, String fatherOccupationBoxLabel){
+            String fatherNameBoxLabel,
+            String fatherPhone, String fatherPhoneBoxLabel, String fatherOccupation, String fatherOccupationBoxLabel) {
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(fatherNameBoxLabel).sendKeys(fatherName);
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(fatherPhoneBoxLabel).sendKeys(fatherPhone);
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(fatherOccupationBoxLabel).sendKeys(fatherOccupation);
@@ -83,6 +89,7 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
 
     /***
      * Use this method to enter Mother Name, Mother Phone and Mother Occupation
+     * 
      * @param motherName
      * @param motherNameBoxLabel
      * @param motherPhone
@@ -91,8 +98,8 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
      * @param motherOccupationBoxLabel
      */
     public void entersMotherInformation(String motherName,
-    String motherNameBoxLabel,
-    String motherPhone, String motherPhoneBoxLabel, String motherOccupation, String motherOccupationBoxLabel){
+            String motherNameBoxLabel,
+            String motherPhone, String motherPhoneBoxLabel, String motherOccupation, String motherOccupationBoxLabel) {
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(motherNameBoxLabel).sendKeys(motherName);
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(motherPhoneBoxLabel).sendKeys(motherPhone);
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(motherOccupationBoxLabel).sendKeys(motherOccupation);
@@ -100,6 +107,7 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
 
     /***
      * Use this method to navigate to Guardian Detail Section and to choose Guardian
+     * 
      * @param guardianChoise
      */
     public void navigateToGuardianChooseGuardian(String guardianChoise) {
@@ -109,24 +117,30 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
 
     /***
      * Use this method to enter Guardian Email and Guardian Address
+     * 
      * @param guardianEmail
      * @param guardianAddress
      */
     public void entersGuardianEmailAndGuardianAddress(String guardianEmail, String guardianAddress) {
         studentAdmissionPage.guardianEmail.sendKeys(guardianEmail);
         studentAdmissionPage.guardianAddress.sendKeys(guardianAddress);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            CucumberLogUtils.logScreenShot();
+            CucumberLogUtils.logExtentScreenshot();
+        }
     }
 
     /***
      * Use this method to assert Student Admission
+     * 
      * @param recordSavedMessage
      */
     public void verifyStudentAdmission(String recordSavedMessage) {
+        CommonUtils.waitForVisibility(studentAdmissionPage.recordSavedMessage);
         CommonUtils.assertEquals(recordSavedMessage, studentAdmissionPage.recordSavedMessage.getText());
-        CommonUtils.sleep(2000);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
-    } 
+        if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            CucumberLogUtils.logScreenShot();
+            CucumberLogUtils.logExtentScreenshot();
+        }
+    }
 }

@@ -16,10 +16,10 @@ public class LoginStepsImpl extends PageInitializer {
     public static void login(String username, String password) {
         loginPage.usernameTextBox.sendKeys(username);
         loginPage.passwordTextBox.sendKeys(password);
-        // CucumberLogUtils.logScreenShot();
-        // CucumberLogUtils.logExtentScreenshot();
         loginPage.signInBtn.click();
         if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            CucumberLogUtils.logScreenShot();
+            CucumberLogUtils.logExtentScreenshot();
             CommonUtils.waitForVisibility(dashboardPage.studentInfoBtn);
         }
     }
@@ -27,16 +27,19 @@ public class LoginStepsImpl extends PageInitializer {
     public static void verifyDashboardText(String chromaTechAcademyText) {
         if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
             CommonUtils.waitForVisibility(dashboardPage.dashBoardChromaTechText);
+        } else {
+            CucumberLogUtils.logScreenShot();
+            CucumberLogUtils.logExtentScreenshot();
         }
         CommonUtils.assertEquals(dashboardPage.dashBoardChromaTechText.getText(), chromaTechAcademyText);
-        // CucumberLogUtils.logScreenShot();
-        // CucumberLogUtils.logExtentScreenshot();
     }
 
     public static void verifyInvalidMessage(String invalidLoginMessage) {
         String actualInvalidLoginMessage = loginPage.invalidLoginMessage.getText();
-        CommonUtils.assertEquals(invalidLoginMessage, actualInvalidLoginMessage);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        CommonUtils.assertEquals(actualInvalidLoginMessage, invalidLoginMessage);
+        if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            CucumberLogUtils.logScreenShot();
+            CucumberLogUtils.logExtentScreenshot();
+        }
     }
 }
