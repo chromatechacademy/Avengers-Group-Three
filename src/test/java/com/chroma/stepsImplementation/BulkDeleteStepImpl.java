@@ -4,7 +4,6 @@ import com.chroma.appsCommon.PageInitializer;
 import com.chroma.pages.BulkDeletePage;
 import com.chroma.pages.DashboardPage;
 import com.chroma.utils.ConfigReader;
-import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
 
 public class BulkDeleteStepImpl extends PageInitializer{
@@ -26,12 +25,13 @@ public class BulkDeleteStepImpl extends PageInitializer{
         BulkDeletePage.searchButton.click();
         CommonUtils.sleep(1000);
         BulkDeletePage.dynamicXpathForCheckBoxInBulkDelete(admissionNum).click();
+        CommonUtils.nonMobileScreenshots();
+        CommonUtils.sleep(1000);
+        BulkDeletePage.deleteButton.click();
+        CommonUtils.sleep(1000);
         if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
-            CucumberLogUtils.logScreenShot();
-            CucumberLogUtils.logExtentScreenshot();
+            CommonUtils.acceptAlert();
         }
-        BulkDeletePage.deleteButton.click(); 
-        CommonUtils.acceptAlert();
         CommonUtils.sleep(1000);
     }
 }

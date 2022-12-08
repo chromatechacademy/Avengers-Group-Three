@@ -20,6 +20,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.chroma.utils.ConfigReader;
+import com.chroma.utils.CucumberLogUtils;
+
 public class CommonUtils extends WebDriverUtils {
 
 
@@ -457,6 +460,10 @@ public class CommonUtils extends WebDriverUtils {
 		}
 	}
 
+	/***
+	 * Use this overloaded method to scroll into view by passing the locator of an element
+	 * @param locator
+	 */
 	public static void scrollIntoView(By locator) {
 		try {
 			WebElement element = WebDriverUtils.driver.findElement(locator);
@@ -468,6 +475,10 @@ public class CommonUtils extends WebDriverUtils {
 		}
 	}
 
+	/***
+	 * Use this overloaded method to scroll into view by passing the WebElement
+	 * @param element
+	 */
 	public static void scrollIntoView(WebElement element) {
 		try {
 			Actions action = new Actions(WebDriverUtils.driver);
@@ -495,6 +506,10 @@ public class CommonUtils extends WebDriverUtils {
 	}
 
 
+	/***
+	 * Use this method in need of Thread.sleep(millis)
+	 * @param milliSeconds
+	 */
 	public static void sleep(long milliSeconds){
 		try {
 			Thread.sleep(milliSeconds);
@@ -515,5 +530,16 @@ public class CommonUtils extends WebDriverUtils {
             e.printStackTrace();
 		}
      }
+
+	 /**
+	  * Use this method to take screenshots with CucumberLogUtils when doing non-mobile testing
+	  * i.e. when testing runs in a browser on PC
+	  */
+	 public static void nonMobileScreenshots(){
+		if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            CucumberLogUtils.logScreenShot();
+            CucumberLogUtils.logExtentScreenshot();
+        }
+	 }
  }
     
