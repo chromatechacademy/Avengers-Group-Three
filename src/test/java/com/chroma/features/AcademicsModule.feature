@@ -1,10 +1,6 @@
 Feature: CTSMS - Academics module
 
-<<<<<<< HEAD
  @Regression @Daniela @VNGRS-8 
-=======
- @Regression @Daniela @VNGRS-8
->>>>>>> 1411d810e63f11a07f482dd6af0105ecabbf68f9
   Scenario: Academics module to include the following modules
   Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
   When user logs with valid username "general@teacher.com" and password "123456"
