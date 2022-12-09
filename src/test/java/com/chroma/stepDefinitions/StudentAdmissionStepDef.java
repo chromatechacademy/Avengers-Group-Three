@@ -10,7 +10,7 @@ public class StudentAdmissionStepDef extends PageInitializer {
 
     @Then("clicks on the {string} module")
     public void clicks_on_the_module(String module) {
-        DashboardPage.dynamicXpathForModule(module).click();
+       studentAdmissionsStepImpl.navigate(module);
     }
 
     @Then("clicks on {string} submodule")
@@ -109,8 +109,8 @@ public class StudentAdmissionStepDef extends PageInitializer {
         studentAdmissionsStepImpl.verifyStudentAdmission(recordSavedMessage);
     }
     
-    @Then("student record with name {string} in Class {string} in section {string} is deleted through {string} submodule")
-    public void student_record_with_name_in_Class_in_section_is_deleted_through_submodule(String studentName, String className, String sectionName, String subModule) {
+    @Then("student record with admission No {string} in Class {string} in section {string} is deleted through {string} submodule")
+    public void student_record_with_admission_No_in_Class_in_section_is_deleted_through_submodule(String studentName, String className, String sectionName, String subModule) {
         bulkDeleteStepImpl.deleteStudent(studentName, className, sectionName, subModule);
     }
 }

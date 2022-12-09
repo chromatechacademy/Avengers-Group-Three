@@ -26,9 +26,9 @@ public class BulkDeletePage extends PageInitializer {
      * @param studentName
      * @return
      */
-    public static WebElement dynamicXpathForCheckBoxInBulkDelete(String studentName) {
+    public static WebElement dynamicXpathForCheckBoxInBulkDelete(String admissionNo) {
         return WebDriverUtils.driver
-                .findElement(By.xpath("//*[contains(text(),'" + studentName + "')]//parent::td//parent::tr/td/input"));
+                .findElement(By.xpath("//*[contains(text(),'" + admissionNo + "')]//parent::td//parent::tr/td/input"));
     }
 
     public BulkDeletePage() {

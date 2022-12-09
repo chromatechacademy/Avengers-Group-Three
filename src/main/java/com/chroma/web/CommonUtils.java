@@ -19,9 +19,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import com.chroma.utils.ConfigReader;
+import com.chroma.utils.CucumberLogUtils;
 
 public class CommonUtils extends WebDriverUtils {
-
 
 /**
 	 * Use this method in need of clicking on a WebElement by selenium WebDriver.
@@ -108,9 +109,7 @@ public class CommonUtils extends WebDriverUtils {
 	 * 
 	 * @throws will throw NoAlertExeption if alert is not present.
 	 */
-
 	public static void acceptAlert() {
-
 		try {
 			Alert alert = driver.switchTo().alert();
 			alert.accept();
@@ -124,9 +123,7 @@ public class CommonUtils extends WebDriverUtils {
 	 * 
 	 * @throws will throw NoAlertExeption if alert is not present.
 	 */
-
 	public static void dismissAlert() {
-
 		try {
 			Alert alert = driver.switchTo().alert();
 			alert.dismiss();
@@ -140,9 +137,7 @@ public class CommonUtils extends WebDriverUtils {
 	 * 
 	 * @throws will throw NoAlertExeption if alert is not present.
 	 */
-
 	public static String getAlertText() {
-
 		try {
 			Alert alert = driver.switchTo().alert();
 			return alert.getText();
@@ -157,9 +152,7 @@ public class CommonUtils extends WebDriverUtils {
 	 * 
 	 * @param nameOrId
 	 */
-
 	public static void switchToFrame(String nameOrId) {
-
 		try {
 			driver.switchTo().frame(nameOrId);
 		} catch (NoSuchFrameException e) {
@@ -186,7 +179,6 @@ public class CommonUtils extends WebDriverUtils {
 	 * @param index
 	 */
 	public static void switchToFrame(int index) {
-
 		try {
 			driver.switchTo().frame(index);
 		} catch (NoSuchFrameException e) {
@@ -365,7 +357,6 @@ public class CommonUtils extends WebDriverUtils {
 	 * Use this method to pass an email concatenated with current date and time into
 	 * an email text box
 	 */
-
 	public static String getEmail() {
 		Date date = new Date();
 		Timestamp ts = new Timestamp(date.getTime());
@@ -381,7 +372,6 @@ public class CommonUtils extends WebDriverUtils {
 	 * an email text box and you can pass same value (email+date+time) in another
 	 * steps.
 	 */
-
 	public static String email = getEmail();
 
 	/**
@@ -421,7 +411,6 @@ public class CommonUtils extends WebDriverUtils {
 	 * displayed
 	 * @throws InterruptedException
 	 */
-
 	public static void selectCheckboxDisplayed(List<WebElement> checkboxList, String attribute, String value) throws InterruptedException {
 		for (WebElement checkbox : checkboxList) {
 			if (checkbox.isEnabled() && checkbox.isDisplayed()) {
@@ -453,6 +442,10 @@ public class CommonUtils extends WebDriverUtils {
 		}
 	}
 
+	/***
+	 * Use this overloaded method to scroll into view by passing the locator of an element
+	 * @param locator
+	 */
 	public static void scrollIntoView(By locator) {
 		try {
 			WebElement element = WebDriverUtils.driver.findElement(locator);
@@ -464,6 +457,10 @@ public class CommonUtils extends WebDriverUtils {
 		}
 	}
 
+	/***
+	 * Use this overloaded method to scroll into view by passing the WebElement
+	 * @param element
+	 */
 	public static void scrollIntoView(WebElement element) {
 		try {
 			Actions action = new Actions(WebDriverUtils.driver);
@@ -480,7 +477,6 @@ public class CommonUtils extends WebDriverUtils {
  * Use below method to assert actual String value with an expected String value	
  */
 	public static void assertEquals(String actual, String expected) {
-		
 		try {
 		Assert.assertEquals(actual, expected);
 		}
@@ -489,6 +485,10 @@ public class CommonUtils extends WebDriverUtils {
 		}
 	}
 
+	/***
+	 * Use this method in need of Thread.sleep(millis)
+	 * @param milliSeconds
+	 */
 	public static void sleep(long milliSeconds){
 		try {
 			Thread.sleep(milliSeconds);
@@ -509,5 +509,16 @@ public class CommonUtils extends WebDriverUtils {
             e.printStackTrace();
 		}
      }
+
+	 /**
+	  * Use this method to take screenshots with CucumberLogUtils when doing non-mobile testing
+	  * i.e. when testing runs in a browser on PC
+	  */
+	 public static void nonMobileScreenshots(){
+		if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            CucumberLogUtils.logScreenShot();
+            CucumberLogUtils.logExtentScreenshot();
+        }
+	 }
  }
     

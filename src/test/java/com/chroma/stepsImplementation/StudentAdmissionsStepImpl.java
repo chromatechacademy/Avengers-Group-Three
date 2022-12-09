@@ -1,20 +1,34 @@
 package com.chroma.stepsImplementation;
 
 import com.chroma.appsCommon.PageInitializer;
+import com.chroma.pages.DashboardPage;
 import com.chroma.pages.StudentAdmissionPage;
+import com.chroma.utils.ConfigReader;
 import com.chroma.utils.CucumberLogUtils;
 import com.chroma.web.CommonUtils;
+import com.chroma.web.JavascriptUtils;
 
-public class StudentAdmissionsStepImpl extends PageInitializer{
+public class StudentAdmissionsStepImpl extends PageInitializer {
+
+    /***
+     * Use this method to navigate to a module on the CTSMS dashboard page
+     * @param navigateToModule
+     */
+    public void navigate(String navigateToModule) {
+        if (ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            dashboardPage.toggleNavigationMobile.click();
+        }
+        DashboardPage.dynamicXpathForModule(navigateToModule).click();
+    }
 
     /***
      * Use this method to enter Admission No and Roll number
      * @param admissionsNumber
      * @param rollNumber
      */
-    public void enterAdmissionNoEnterRollNo(String admissionsNumber,String rollNumber){
+    public void enterAdmissionNoEnterRollNo(String admissionsNumber, String rollNumber) {
         studentAdmissionPage.admissionNoTextBox.sendKeys(admissionsNumber);
-        studentAdmissionPage.rollNumberTextBox.sendKeys(rollNumber);  
+        studentAdmissionPage.rollNumberTextBox.sendKeys(rollNumber);
     }
 
     /***
@@ -22,9 +36,9 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
      * @param firstName
      * @param lastName
      */
-    public void enterFirstNameLastName(String firstName,String lastName){
+    public void enterFirstNameLastName(String firstName, String lastName) {
         studentAdmissionPage.firstNameTextBox.sendKeys(firstName);
-        studentAdmissionPage.lastNameTextBox.sendKeys(lastName);  
+        studentAdmissionPage.lastNameTextBox.sendKeys(lastName);
     }
 
     /***
@@ -32,7 +46,7 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
      * @param classOption
      * @param sectionOption
      */
-    public void selectClassDropdownAndSectionDropdown(String classOption,String sectionOption){
+    public void selectClassDropdownAndSectionDropdown(String classOption, String sectionOption) {
         CommonUtils.selectDropDownValue(classOption, studentAdmissionPage.classDropdown);
         CommonUtils.selectDropDownValue(sectionOption, studentAdmissionPage.sectionDropdown);
     }
@@ -64,8 +78,8 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
      * @param fatherOccupationBoxLabel
      */
     public void entersFatherInformation(String fatherName,
-    String fatherNameBoxLabel,
-    String fatherPhone, String fatherPhoneBoxLabel, String fatherOccupation, String fatherOccupationBoxLabel){
+            String fatherNameBoxLabel,
+            String fatherPhone, String fatherPhoneBoxLabel, String fatherOccupation, String fatherOccupationBoxLabel) {
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(fatherNameBoxLabel).sendKeys(fatherName);
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(fatherPhoneBoxLabel).sendKeys(fatherPhone);
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(fatherOccupationBoxLabel).sendKeys(fatherOccupation);
@@ -81,8 +95,8 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
      * @param motherOccupationBoxLabel
      */
     public void entersMotherInformation(String motherName,
-    String motherNameBoxLabel,
-    String motherPhone, String motherPhoneBoxLabel, String motherOccupation, String motherOccupationBoxLabel){
+            String motherNameBoxLabel,
+            String motherPhone, String motherPhoneBoxLabel, String motherOccupation, String motherOccupationBoxLabel) {
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(motherNameBoxLabel).sendKeys(motherName);
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(motherPhoneBoxLabel).sendKeys(motherPhone);
         StudentAdmissionPage.dynamicXpathParentGuardianDetail(motherOccupationBoxLabel).sendKeys(motherOccupation);
@@ -93,7 +107,7 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
      * @param guardianChoise
      */
     public void navigateToGuardianChooseGuardian(String guardianChoise) {
-        CommonUtils.scrollIntoView(studentAdmissionPage.guardianAddress);
+        JavascriptUtils.scrollIntoView(studentAdmissionPage.guardianAddress);
         StudentAdmissionPage.dynamicXpathForGuardianChoise(guardianChoise).click();
     }
 
@@ -105,8 +119,10 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
     public void entersGuardianEmailAndGuardianAddress(String guardianEmail, String guardianAddress) {
         studentAdmissionPage.guardianEmail.sendKeys(guardianEmail);
         studentAdmissionPage.guardianAddress.sendKeys(guardianAddress);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
+        if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            CucumberLogUtils.logScreenShot();
+            CucumberLogUtils.logExtentScreenshot();
+        }
     }
 
     /***
@@ -114,9 +130,11 @@ public class StudentAdmissionsStepImpl extends PageInitializer{
      * @param recordSavedMessage
      */
     public void verifyStudentAdmission(String recordSavedMessage) {
+        CommonUtils.waitForVisibility(studentAdmissionPage.recordSavedMessage);
         CommonUtils.assertEquals(recordSavedMessage, studentAdmissionPage.recordSavedMessage.getText());
-        CommonUtils.sleep(2000);
-        CucumberLogUtils.logScreenShot();
-        CucumberLogUtils.logExtentScreenshot();
-    } 
+        if (!ConfigReader.getPropertyValue("browser").equalsIgnoreCase("mobile")) {
+            CucumberLogUtils.logScreenShot();
+            CucumberLogUtils.logExtentScreenshot();
+        }
+    }
 }

@@ -30,4 +30,4 @@ Feature: CTSMS Ability to disable and enable students
     And clicks on a record "20989" and selects the student "Marlene Fisher"
     And disables student for a reason "Very Loud" and accepts alert
     And enables student and accepts alert
-    Then student record with name "Marlene Fisher" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule
+   Then student record with admission No "20989" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule

@@ -24,7 +24,7 @@ Feature: CTSMS - Adding multiple students
     And enters "<Guardian Email>" in Guardian Email text box and "<Guardian Address>" in the Guardian address text box
     And clicks Save
     Then student is admitted and "Record Saved Successfully" is displayed
-    Then student record with name "<Student Name>" in Class "<Class>" in section "<Section>" is deleted through "Bulk Delete" submodule
+    Then student record with admission No "20989" in Class "<Class>" in section "<Section>" is deleted through "Bulk Delete" submodule
 
     Examples: 
       | Roll No | First Name | Last Name          | Class          | Section                             | Gender | Email                  | Blood Group | Date of Birth | Admission Date | As on Date | Mobile Number | Height | Weight | Father Name            | Father Phone | Father Occupation         | Mother Name       | Mother Phone | Mother Occupation     | Guardian | Guardian Email        | Guardian Address                                | Student Name             |
