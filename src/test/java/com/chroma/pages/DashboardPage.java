@@ -53,9 +53,9 @@ public class DashboardPage {
     public static WebElement dynamicXpathForSubModuleWithSpace(String value) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + " " + value + "')]"));
     }
-    
+
     public DashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
-    
+
     }
 }

@@ -355,15 +355,12 @@ public class CommonUtils extends WebDriverUtils {
 	 * the drop down, then store elements in a list
 	 */
 	public static void selectValueFromBootStrapDropDown(List<WebElement> values, String value) {
-
 		for (WebElement dropDownValues : values) {
-
 			if (dropDownValues.getText().contentEquals(value)) {
 				dropDownValues.click();
 				break;
 			}
 		}
-
 	}
 
 	/**
@@ -429,7 +426,6 @@ public class CommonUtils extends WebDriverUtils {
 
 	public static void selectCheckboxDisplayed(List<WebElement> checkboxList, String attribute, String value) throws InterruptedException {
 		for (WebElement checkbox : checkboxList) {
-
 			if (checkbox.isEnabled() && checkbox.isDisplayed()) {
 				String checkboxText = checkbox.getAttribute(attribute);
 				if (checkboxText.equals(value)) {
@@ -499,16 +495,18 @@ public class CommonUtils extends WebDriverUtils {
 		Assert.assertEquals(actual, expected);
 		}
 		catch(AssertionError e) {
-
 			e.printStackTrace();
 		}
 	}
 
+<<<<<<< HEAD
 
 	/***
 	 * Use this method in need of Thread.sleep(millis)
 	 * @param milliSeconds
 	 */
+=======
+>>>>>>> 1411d810e63f11a07f482dd6af0105ecabbf68f9
 	public static void sleep(long milliSeconds){
 		try {
 			Thread.sleep(milliSeconds);
