@@ -13,12 +13,13 @@ import com.chroma.pages.SamplePage;
 import com.chroma.pages.SectionsPage;
 import com.chroma.pages.StudentAdmissionPage;
 import com.chroma.pages.StudentCategoriesPage;
-import com.chroma.pages.StudentDetailsPage;
+import com.chroma.stepsImplementation.BulkDeleteStepImpl;
 import com.chroma.pages.ValidateAgentModulePage;
 import com.chroma.stepsImplementation.RealEstateLoginStepImpl;
 import com.chroma.stepsImplementation.DisableStudentsStepsImpl;
 import com.chroma.stepsImplementation.EditStudentRecordsImpl;
 import com.chroma.stepsImplementation.NavigationModulesStepsImpl;
+import com.chroma.stepsImplementation.StudentAdmissionsStepImpl;
 import com.chroma.stepsImplementation.StudentCategoriesStepImpl;
 import com.chroma.stepsImplementation.ValidateAgentImpl;
 import com.chroma.web.WebDriverUtils;
@@ -31,7 +32,6 @@ public class PageInitializer extends WebDriverUtils {
     public static DashboardPage dashboardPage;
     public static StudentAdmissionPage studentAdmissionPage;
     public static BulkDeletePage bulkDeletePage;
-    public static StudentDetailsPage studentDetailsPage;
     public static EditStudentPage editStudentPage;
     public static SectionsPage sectionsPage;
     public static StudentCategoriesPage studentCategories;
@@ -45,6 +45,8 @@ public class PageInitializer extends WebDriverUtils {
     /* STEPS IMPLEMENTATION INSTANCES */
     public static EditStudentRecordsImpl editStudentRecordsImpl;
     public static NavigationModulesStepsImpl navigationModulesStepsImpl;
+    public static StudentAdmissionsStepImpl studentAdmissionsStepImpl;
+    public static BulkDeleteStepImpl bulkDeleteStepImpl;
     public static DisableStudentsStepsImpl disableStudentsStepsImpl;
     public static StudentCategoriesStepImpl studentCategoriesStepImpl;
     public static RealEstateLoginStepImpl realEstateLoginStepImpl;
@@ -56,7 +58,6 @@ public class PageInitializer extends WebDriverUtils {
         dashboardPage = new DashboardPage();
         studentAdmissionPage = new StudentAdmissionPage();
         bulkDeletePage = new BulkDeletePage();
-        studentDetailsPage = new StudentDetailsPage();
         editStudentPage = new EditStudentPage();
         sectionsPage = new SectionsPage();
         studentCategories = new StudentCategoriesPage();
@@ -68,6 +69,8 @@ public class PageInitializer extends WebDriverUtils {
         realEstateDashboardPage = new RealEstateDashboardPage();
         editStudentRecordsImpl = new EditStudentRecordsImpl();
         navigationModulesStepsImpl = new NavigationModulesStepsImpl();
+        studentAdmissionsStepImpl = new StudentAdmissionsStepImpl();
+        bulkDeleteStepImpl = new BulkDeleteStepImpl();
         validateAgentModulePage = new ValidateAgentModulePage();
         disableStudentsStepsImpl = new DisableStudentsStepsImpl();
         realEstateProjectsPage = new RealEstateProjectsPage();

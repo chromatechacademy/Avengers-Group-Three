@@ -9,15 +9,15 @@ import com.chroma.web.WebDriverUtils;
 
 public class BulkDeletePage extends PageInitializer {
     
-    /* Locator for Class Dropdown */
+    /* Class Dropdown */ 
     @FindBy(xpath = "//select[@name='class_id']")
     public static WebElement classDropdown;
 
-    /* Locator for Search Button */
+    /* Search Button */
     @FindBy(xpath = "//button[normalize-space()='Search']")
     public static WebElement searchButton;
     
-    /* Locator for Delete Button */
+    /* Delete Button */
     @FindBy(xpath = "//button[normalize-space()='Delete']")
     public static WebElement deleteButton;
 
@@ -26,9 +26,9 @@ public class BulkDeletePage extends PageInitializer {
      * @param studentName
      * @return
      */
-    public static WebElement dynamicXpathForCheckBoxInBulkDelete(String studentName) {
+    public static WebElement dynamicXpathForCheckBoxInBulkDelete(String admissionNo) {
         return WebDriverUtils.driver
-                .findElement(By.xpath("//*[contains(text(),'" + studentName + "')]//parent::td//parent::tr/td/input"));
+                .findElement(By.xpath("//*[contains(text(),'" + admissionNo + "')]//parent::td//parent::tr/td/input"));
     }
 
     public BulkDeletePage() {

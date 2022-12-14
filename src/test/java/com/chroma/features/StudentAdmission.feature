@@ -1,7 +1,7 @@
-Feature: A CTSMS user can admit a Student
+Feature: CTSMS - Student Admission
 
-@Daniela @VNGRS-12 
-Scenario:Admit Student using the admissions page
+@Regression @Daniela @VNGRS-23 @VNGRS-12
+Scenario:As a Chroma Tech Academy faculty member, I want to be able to admit a student via the Student Admission module
 Given a user is on the CTSMS login page "https://chroma.mexil.it/site/login"
 When user logs with valid username "general@teacher.com" and password "123456"
 Then user is navigated to the dashboard page and sees text "Chroma Tech Academy"
@@ -20,10 +20,9 @@ And enters "08/23/2022" in As on Date
 And enters "37322020989" in "Mobile Number" and enters "1.75" in "Height" and enters "59" in "Weight"
 And enters father info as "Crile Fisher" in "Father Name" text box and "37360302051" in "Father Phone" text box and "Pediatrician" in "Father Occupation" text box
 And enters mother info as "Eugenia Insigna" in "Mother Name" text box and "37322235441" in "Mother Phone" text box and "Astronomer" in "Mother Occupation" text box
-And navigates to If Gaurdian is and clicks on the radio button in front of "mother"
-And enters "eugenia_insigna@rotormail.com" in Gaurdian Email text box and "18 Eclipse St, Rotor 05" in the Gaurdian address text box
+And navigates to If Guardian is and clicks on the radio button in front of "mother"
+And enters "eugenia_insigna@rotormail.com" in Guardian Email text box and "18 Eclipse St, Rotor 05" in the Guardian address text box
 And clicks Save
 Then student is admitted and "Record Saved Successfully" is displayed
-
-Then student record with name "Marlene Fisher" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule
+Then student record with admission No "20989" in Class "SDET" in section "Database Testing" is deleted through "Bulk Delete" submodule
 

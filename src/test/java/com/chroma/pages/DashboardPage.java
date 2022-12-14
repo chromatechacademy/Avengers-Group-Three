@@ -20,6 +20,10 @@ public class DashboardPage {
     @FindBy(xpath = "//a[normalize-space()='Class']")
     public WebElement classText;
 
+    /* Hamburger menu for Modules navigation on mobile */
+    @FindBy(xpath = "//a[@role='button']")
+    public WebElement toggleNavigationMobile;
+
     /**
      * Use this method to locate modules
      * 
@@ -49,9 +53,9 @@ public class DashboardPage {
     public static WebElement dynamicXpathForSubModuleWithSpace(String value) {
         return WebDriverUtils.driver.findElement(By.xpath("//*[contains(text(),'" + " " + value + "')]"));
     }
-    
+
     public DashboardPage() {
         PageFactory.initElements(WebDriverUtils.driver, this);
-    
+
     }
 }
