@@ -18,6 +18,6 @@ public class LoginStepsImpl extends PageInitializer {
         CucumberLogUtils.logScreenShot();
         CucumberLogUtils.logExtentScreenshot();
         loginPage.signInBtn.click();
-        CommonUtils.waitForVisibility(dashboardPage.studentInfoBtn);
+//        CommonUtils.waitForVisibility(dashboardPage.studentInfoBtn);
     }
 }

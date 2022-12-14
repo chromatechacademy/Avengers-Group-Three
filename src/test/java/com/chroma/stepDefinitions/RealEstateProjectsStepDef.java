@@ -23,6 +23,11 @@ public class RealEstateProjectsStepDef extends PageInitializer {
         CommonUtils.assertEquals(actualAllProjectsText, realEstateProjectsPage.allProjectsText.getText());
     }
 
+    @Then("we see {string}, {string}, {string}, and {string}")
+    public void we_see_and(String string, String string2, String string3, String string4) {
+
+    }
+
     public RealEstateProjectsStepDef() {
         PageFactory.initElements(WebDriverUtils.driver, this);
     }
